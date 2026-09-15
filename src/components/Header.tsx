@@ -32,7 +32,7 @@ export default function Header() {
               alt="RCA Charisma logo"
               className="h-12 w-12 object-contain"
             />
-            <h1 className="font-heading text-2xl md:text-3xl text-royal-blue tracking-tight">
+            <h1 className="font-heading text-2xl text-royal-blue tracking-tight md:text-sm">
               RCA Charisma
             </h1>
           </Link>
