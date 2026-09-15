@@ -1,0 +1,142 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Calendar, Clock, MapPin, ExternalLink } from 'lucide-react';
+import { format } from 'date-fns';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { BaseCrudService } from '@/integrations';
+import { Events } from '@/entities';
+import { Image } from '@/components/ui/image';
+
+export default function EventsPage() {
+  const [events, setEvents] = useState<Events[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
+  const loadEvents = async () => {
+    try {
+      const result = await BaseCrudService.getAll<Events>('events');
+      const sortedEvents = result.items.sort((a, b) => {
+        const dateA = a.eventDate ? new Date(a.eventDate).getTime() : 0;
+        const dateB = b.eventDate ? new Date(b.eventDate).getTime() : 0;
+        return dateB - dateA;
+      });
+      setEvents(sortedEvents);
+    } catch (error) {
+      console.error('Failed to load events:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-off-white">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="w-full bg-royal-blue py-20">
+        <div className="max-w-[100rem] mx-auto px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary-foreground mb-6">
+              Upcoming Events
+            </h1>
+            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+              Join us for fellowship, worship, and community gatherings throughout the year.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="w-full py-16">
+        <div className="max-w-[100rem] mx-auto px-8">
+          <div className="min-h-[600px]">
+            {isLoading ? null : events.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="font-paragraph text-xl text-dark-slate">
+                  No upcoming events at this time. Please check back soon.
+                </p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 gap-8">
+                {events.map((event, index) => (
+                  <motion.div
+                    key={event._id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold transition-all duration-300"
+                  >
+                    {event.eventImage && (
+                      <div className="aspect-video overflow-hidden">
+                        <Image
+                          src={event.eventImage}
+                          alt={event.eventTitle || 'Event image'}
+                          className="w-full h-full object-cover"
+                          width={800}
+                        />
+                      </div>
+                    )}
+                    <div className="p-8">
+                      <h2 className="font-heading text-3xl text-royal-blue mb-4">
+                        {event.eventTitle}
+                      </h2>
+                      
+                      <div className="space-y-3 mb-6 font-paragraph text-base text-dark-slate">
+                        {event.eventDate && (
+                          <div className="flex items-center gap-3">
+                            <Calendar className="w-5 h-5 text-muted-gold flex-shrink-0" />
+                            <span>{format(new Date(event.eventDate), 'EEEE, MMMM d, yyyy')}</span>
+                          </div>
+                        )}
+                        {event.eventTime && (
+                          <div className="flex items-center gap-3">
+                            <Clock className="w-5 h-5 text-muted-gold flex-shrink-0" />
+                            <span>{event.eventTime}</span>
+                          </div>
+                        )}
+                        {event.location && (
+                          <div className="flex items-center gap-3">
+                            <MapPin className="w-5 h-5 text-muted-gold flex-shrink-0" />
+                            <span>{event.location}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {event.eventDescription && (
+                        <p className="font-paragraph text-base text-dark-slate leading-relaxed mb-6">
+                          {event.eventDescription}
+                        </p>
+                      )}
+
+                      {event.registrationUrl && (
+                        <a
+                          href={event.registrationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-royal-blue text-primary-foreground px-6 py-3 rounded font-paragraph font-semibold transition-all duration-300 hover:bg-opacity-90"
+                        >
+                          Register Now
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

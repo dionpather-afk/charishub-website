@@ -2,6 +2,13 @@ import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
+import HomePage from '@/components/pages/HomePage';
+import SermonsPage from '@/components/pages/SermonsPage';
+import EventsPage from '@/components/pages/EventsPage';
+import GivingPage from '@/components/pages/GivingPage';
+import AboutPage from '@/components/pages/AboutPage';
+import GalleryPage from '@/components/pages/GalleryPage';
+import ContactPage from '@/components/pages/ContactPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -21,9 +28,51 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Wix Vibe</div>,
+        element: <HomePage />,
         routeMetadata: {
           pageIdentifier: 'home',
+        },
+      },
+      {
+        path: "sermons",
+        element: <SermonsPage />,
+        routeMetadata: {
+          pageIdentifier: 'sermons',
+        },
+      },
+      {
+        path: "events",
+        element: <EventsPage />,
+        routeMetadata: {
+          pageIdentifier: 'events',
+        },
+      },
+      {
+        path: "giving",
+        element: <GivingPage />,
+        routeMetadata: {
+          pageIdentifier: 'giving',
+        },
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+        routeMetadata: {
+          pageIdentifier: 'about',
+        },
+      },
+      {
+        path: "gallery",
+        element: <GalleryPage />,
+        routeMetadata: {
+          pageIdentifier: 'gallery',
+        },
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
+        routeMetadata: {
+          pageIdentifier: 'contact',
         },
       },
       {
