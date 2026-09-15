@@ -33,7 +33,7 @@ export default function Header() {
               alt="RCA Charisma logo"
               className="h-44 w-44 object-contain"
             />
-            <span className="font-heading text-xl md:text-2xl text-muted-gold tracking-tight leading-none">
+            <span className="font-heading text-3xl md:text-5xl text-muted-gold tracking-tight leading-none">
               RCA Charisma
             </span>
           </Link>
