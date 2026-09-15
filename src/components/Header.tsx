@@ -23,7 +23,7 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-off-white border-b border-dark-slate/10 sticky top-0 z-50 shadow-sm">
+    <header className="bg-charcoal-light border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -33,7 +33,7 @@ export default function Header() {
               alt="RCA Charisma logo"
               className="h-44 w-44 object-contain"
             />
-            <span className="font-heading text-xl md:text-2xl text-royal-blue tracking-tight leading-none">
+            <span className="font-heading text-xl md:text-2xl text-muted-gold tracking-tight leading-none">
               RCA Charisma
             </span>
           </Link>
@@ -46,13 +46,13 @@ export default function Header() {
                 to={link.path}
                 className={`font-paragraph text-sm transition-colors duration-300 relative group ${
                   isActive(link.path)
-                    ? 'text-royal-blue font-semibold'
-                    : 'text-dark-slate/80 hover:text-royal-blue'
+                    ? 'text-muted-gold font-semibold'
+                    : 'text-muted-gold/70 hover:text-muted-gold'
                 }`}
               >
                 {link.label}
                 {isActive(link.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-royal-blue" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-muted-gold" />
                 )}
               </Link>
             ))}
@@ -61,7 +61,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-royal-blue p-2 hover:bg-dark-slate/10 rounded transition-colors"
+            className="lg:hidden text-muted-gold p-2 hover:bg-off-white/10 rounded transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,7 +76,7 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden border-t border-dark-slate/10"
+              className="lg:hidden overflow-hidden border-t border-off-white/10"
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
@@ -86,8 +86,8 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                     className={`block font-paragraph text-base py-3 px-4 rounded transition-colors duration-300 ${
                       isActive(link.path)
-                        ? 'text-royal-blue font-semibold bg-dark-slate/10'
-                        : 'text-dark-slate/80 hover:text-royal-blue hover:bg-dark-slate/5'
+                        ? 'text-muted-gold font-semibold bg-off-white/10'
+                        : 'text-muted-gold/70 hover:text-muted-gold hover:bg-off-white/5'
                     }`}
                   >
                     {link.label}

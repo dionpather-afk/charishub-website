@@ -28,6 +28,7 @@ export default {
                 'slate-gray': '#708090',
                 'off-white': '#F5F5DC',
                 'dark-slate': '#333333',
+                'charcoal-light': '#4D4D4D',
                 destructive: '#D32F2F',
                 'destructive-foreground': '#FFFFFF',
                 background: '#F5F5DC',
