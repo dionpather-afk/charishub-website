@@ -63,6 +63,57 @@ export default function DevotionalsPage() {
           </div>
         </section>
 
+        {/* Bible Reading Plan */}
+        <section className="py-16 md:py-24 bg-white border-t border-slate-gray/10">
+          <div className="max-w-[100rem] mx-auto px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl mx-auto text-center mb-12"
+            >
+              <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-6">
+                A Bible Reading Plan for You
+              </h2>
+              <p className="font-paragraph text-lg text-dark-slate/80 leading-relaxed">
+                God's Word is a lamp for our feet and a light for our path. Whether you're just
+                beginning your walk with the Lord or have been in the Word for years, we'd love
+                for you to journey through Scripture with us. Here's a simple daily rhythm to
+                help you stay rooted in God's Word this week.
+              </p>
+            </motion.div>
+
+            <div className="max-w-3xl mx-auto bg-off-white rounded-lg border border-slate-gray/20 overflow-hidden">
+              {[
+                { day: 'Monday', reading: 'Psalm 1 – 5' },
+                { day: 'Tuesday', reading: 'Proverbs 1 – 3' },
+                { day: 'Wednesday', reading: 'Matthew 1 – 4' },
+                { day: 'Thursday', reading: 'Genesis 1 – 3' },
+                { day: 'Friday', reading: 'John 1 – 3' },
+                { day: 'Saturday', reading: 'Romans 1 – 3' },
+                { day: 'Sunday', reading: 'Psalm 100; 103; 150 (Day of rest & worship)' },
+              ].map((item, index) => (
+                <div
+                  key={item.day}
+                  className={`flex items-center justify-between px-8 py-5 ${
+                    index !== 6 ? 'border-b border-slate-gray/10' : ''
+                  }`}
+                >
+                  <span className="font-heading text-lg text-royal-blue">{item.day}</span>
+                  <span className="font-paragraph text-base text-dark-slate/80">{item.reading}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="font-paragraph text-base text-dark-slate/60 text-center max-w-2xl mx-auto mt-8">
+              A new weekly plan will be posted here regularly. If you'd like a printed copy for
+              home or a longer plan to read through the whole Bible in a year, please reach out
+              to us on the Contact page — we'd love to help you get started.
+            </p>
+          </div>
+        </section>
+
         {/* Devotionals Content */}
         <section className="py-16 md:py-24">
           <div className="max-w-[100rem] mx-auto px-8">
@@ -73,7 +124,8 @@ export default function DevotionalsPage() {
             ) : devotionals.length === 0 ? (
               <div className="text-center py-20">
                 <p className="font-paragraph text-lg text-slate-gray">
-                  No devotionals available yet. Check back soon for weekly reflections.
+                  Our pastoral team is preparing weekly reflections to share with you soon —
+                  check back shortly, and God bless you in the meantime.
                 </p>
               </div>
             ) : (

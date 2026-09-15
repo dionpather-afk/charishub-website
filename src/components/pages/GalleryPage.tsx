@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, User } from 'lucide-react';
 import { format } from 'date-fns';
@@ -8,10 +8,23 @@ import { BaseCrudService } from '@/integrations';
 import { PhotoGallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 
+// Friendlier display names for the raw category values stored on each photo.
+// Add more entries here as new categories (Youth, Sunday School, Feeding Scheme, etc.)
+// get tagged on future photo uploads.
+const CATEGORY_LABELS: Record<string, string> = {
+  'History': 'History',
+  'church and times': 'Church & Times',
+  'congregation formal': 'Congregation',
+  'Missions and random congregational pics': 'Missions & Outreach',
+};
+
+const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || 'General';
+
 export default function GalleryPage() {
   const [photos, setPhotos] = useState<PhotoGallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoGallery | null>(null);
+  const [activeTab, setActiveTab] = useState<string>('All');
 
   useEffect(() => {
     loadPhotos();
@@ -32,6 +45,20 @@ export default function GalleryPage() {
       setIsLoading(false);
     }
   };
+
+  const tabs = useMemo(() => {
+    const seen = new Map<string, string>();
+    photos.forEach((p) => {
+      const label = getCategoryLabel(p.eventName);
+      if (!seen.has(label)) seen.set(label, label);
+    });
+    return ['All', ...Array.from(seen.keys())];
+  }, [photos]);
+
+  const visiblePhotos = useMemo(() => {
+    if (activeTab === 'All') return photos;
+    return photos.filter((p) => getCategoryLabel(p.eventName) === activeTab);
+  }, [photos, activeTab]);
 
   return (
     <div className="min-h-screen bg-off-white">
@@ -58,6 +85,23 @@ export default function GalleryPage() {
       {/* Gallery Section */}
       <section className="w-full py-24 md:py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
+          {!isLoading && photos.length > 0 && (
+            <div className="flex flex-wrap justify-center gap-3 mb-16">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`font-paragraph text-sm px-6 py-3 rounded-full border transition-all duration-300 ${
+                    activeTab === tab
+                      ? 'bg-royal-blue text-primary-foreground border-royal-blue'
+                      : 'bg-white text-dark-slate border-slate-gray/20 hover:border-muted-gold hover:text-muted-gold'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          )}
           <div className="min-h-[600px]">
             {isLoading ? null : photos.length === 0 ? (
               <div className="text-center py-20">
@@ -67,7 +111,7 @@ export default function GalleryPage() {
               </div>
             ) : (
               <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                {photos.map((photo, index) => (
+                {visiblePhotos.map((photo, index) => (
                   <motion.div
                     key={photo._id}
                     initial={{ opacity: 0, y: 20 }}
@@ -98,7 +142,7 @@ export default function GalleryPage() {
                           )}
                           {photo.eventName && (
                             <p className="font-paragraph text-sm text-muted-gold font-semibold mb-2">
-                              {photo.eventName}
+                              {getCategoryLabel(photo.eventName)}
                             </p>
                           )}
                           {photo.dateTaken && (
@@ -165,8 +209,8 @@ export default function GalleryPage() {
                 <div className="flex flex-wrap gap-6 mb-4 font-paragraph text-base text-dark-slate">
                   {selectedPhoto.eventName && (
                     <div className="flex items-center gap-2">
-                      <span className="text-muted-gold font-semibold">Event:</span>
-                      <span>{selectedPhoto.eventName}</span>
+                      <span className="text-muted-gold font-semibold">Category:</span>
+                      <span>{getCategoryLabel(selectedPhoto.eventName)}</span>
                     </div>
                   )}
                   {selectedPhoto.dateTaken && (

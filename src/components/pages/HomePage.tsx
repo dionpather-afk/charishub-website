@@ -74,7 +74,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{ y: heroY }}
         >
-          <Image src="/rca-photo-1.jpg" alt="RCA Charisma Church sanctuary architecture" className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
           {/* Gradient overlay for text legibility and mood */}
           <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/80 via-royal-blue/50 to-royal-blue/90" />
         </motion.div>
@@ -213,7 +213,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
           style={{ y: breatherY }}
         >
-          <Image src="/rca-outreach.jpg" alt="Church architectural details" className="w-full h-full object-cover" />
+          <Image src="https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg" alt="RCA Charisma church exterior" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-royal-blue/80 mix-blend-multiply" />
         </motion.div>
         
