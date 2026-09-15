@@ -9,6 +9,8 @@ import GivingPage from '@/components/pages/GivingPage';
 import AboutPage from '@/components/pages/AboutPage';
 import GalleryPage from '@/components/pages/GalleryPage';
 import ContactPage from '@/components/pages/ContactPage';
+import DevotionalsPage from '@/components/pages/DevotionalsPage';
+import FeedbackPage from '@/components/pages/FeedbackPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -73,6 +75,20 @@ const router = createBrowserRouter([
         element: <ContactPage />,
         routeMetadata: {
           pageIdentifier: 'contact',
+        },
+      },
+      {
+        path: "devotionals",
+        element: <DevotionalsPage />,
+        routeMetadata: {
+          pageIdentifier: 'devotionals',
+        },
+      },
+      {
+        path: "feedback",
+        element: <FeedbackPage />,
+        routeMetadata: {
+          pageIdentifier: 'feedback',
         },
       },
       {

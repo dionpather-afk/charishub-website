@@ -10,11 +10,13 @@ export default function Header() {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/sermons', label: 'Sermons' },
+    { path: '/devotionals', label: 'Devotionals' },
     { path: '/events', label: 'Events' },
     { path: '/giving', label: 'Giving' },
     { path: '/about', label: 'About' },
     { path: '/gallery', label: 'Gallery' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/contact', label: 'Contact' },
+    { path: '/feedback', label: 'Feedback' }
   ];
 
   const isActive = (path: string) => location.pathname === path;

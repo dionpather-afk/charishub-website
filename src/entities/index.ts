@@ -25,6 +25,27 @@ export interface ContactSubmissions {
 
 
 /**
+ * Collection ID: devotionals
+ * Interface for Devotionals
+ */
+export interface Devotionals {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  content?: string;
+  /** @wixFieldType date */
+  publishDate?: Date | string;
+  /** @wixFieldType text */
+  author?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  featuredImage?: string;
+}
+
+
+/**
  * Collection ID: events
  * Interface for Events
  */
@@ -46,6 +67,27 @@ export interface Events {
   eventImage?: string;
   /** @wixFieldType url */
   registrationUrl?: string;
+}
+
+
+/**
+ * Collection ID: feedback
+ * Interface for Feedback
+ */
+export interface Feedback {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  name?: string;
+  /** @wixFieldType text */
+  email?: string;
+  /** @wixFieldType text */
+  feedbackType?: string;
+  /** @wixFieldType text */
+  message?: string;
+  /** @wixFieldType datetime */
+  submissionDate?: Date | string;
 }
 
 
