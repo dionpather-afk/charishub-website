@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-slate text-off-white">
+    <footer className="bg-royal-blue text-off-white">
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* About */}

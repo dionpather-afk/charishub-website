@@ -23,19 +23,16 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-charcoal-light border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
+    <header className="bg-royal-blue border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0 gap-3">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <Image
               src="https://static.wixstatic.com/media/dd740b_411d0e0557674c7a861459e7e5688d49~mv2.png"
               alt="RCA Charisma logo"
-              className="h-44 w-44 object-contain"
+              className="h-20 w-20 object-contain"
             />
-            <span className="font-heading text-3xl md:text-5xl text-muted-gold tracking-tight leading-none">
-              RCA Charisma
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,7 +44,7 @@ export default function Header() {
                 className={`font-paragraph text-sm transition-colors duration-300 relative group ${
                   isActive(link.path)
                     ? 'text-muted-gold font-semibold'
-                    : 'text-muted-gold/70 hover:text-muted-gold'
+                    : 'text-off-white hover:text-muted-gold'
                 }`}
               >
                 {link.label}
@@ -61,7 +58,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-muted-gold p-2 hover:bg-off-white/10 rounded transition-colors"
+            className="lg:hidden text-off-white p-2 hover:bg-off-white/10 rounded transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,7 +84,7 @@ export default function Header() {
                     className={`block font-paragraph text-base py-3 px-4 rounded transition-colors duration-300 ${
                       isActive(link.path)
                         ? 'text-muted-gold font-semibold bg-off-white/10'
-                        : 'text-muted-gold/70 hover:text-muted-gold hover:bg-off-white/5'
+                        : 'text-off-white hover:text-muted-gold hover:bg-off-white/5'
                     }`}
                   >
                     {link.label}
