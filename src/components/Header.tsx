@@ -25,15 +25,23 @@ export default function Header() {
   return (
     <header className="bg-dark-slate border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
-        <div className="flex items-center justify-between py-5">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 gap-3">
-            <Image src="https://static.wixstatic.com/media/dd740b_d982717fe72342049a6af021afdc5c43~mv2.png" alt="RCA Charisma logo" className="h-[132px] w-[132px] object-contain" />
-
+            <div className="bg-off-white rounded-full p-1.5 shadow-sm">
+              <Image
+                src="https://static.wixstatic.com/media/dd740b_d982717fe72342049a6af021afdc5c43~mv2.png"
+                alt="RCA Charisma logo"
+                className="h-11 w-11 object-contain"
+              />
+            </div>
+            <span className="font-heading text-xl md:text-2xl text-off-white tracking-tight leading-none">
+              RCA Charisma
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-12">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
