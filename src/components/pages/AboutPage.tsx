@@ -63,7 +63,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-8 font-paragraph text-lg text-dark-slate/80 leading-relaxed">
               <p>
-                RCA Charisma is a Reformed Evangelical church committed to the authority of Scripture alone (Sola Scriptura), 
+                RCA Charisma is a congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture alone (Sola Scriptura), 
                 the glory of God alone (Soli Deo Gloria), and the proclamation of the Gospel of Jesus Christ.
               </p>
               <p>

@@ -90,7 +90,7 @@ export default function HomePage() {
             className="flex flex-col items-center"
           >
             <span className="text-muted-gold tracking-[0.2em] uppercase text-sm md:text-base font-semibold mb-6 block">
-              Reformed Evangelical Church
+              Reformed Church in Africa
             </span>
             <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] text-off-white mb-8 tracking-tight">
               Welcome to <br/>

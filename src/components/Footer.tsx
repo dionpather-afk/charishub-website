@@ -13,7 +13,7 @@ export default function Footer() {
             <Image src="https://static.wixstatic.com/media/dd740b_411d0e0557674c7a861459e7e5688d49~mv2.png" alt="RCA Charisma logo" className="h-11 w-11 object-contain mb-4" />
             <h3 className="font-heading text-2xl text-muted-gold mb-6">RCA Charisma</h3>
             <p className="font-paragraph text-base text-off-white/80 leading-relaxed">
-              A Reformed Evangelical church committed to the authority of Scripture, 
+              A congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture, 
               the glory of God, and the proclamation of the Gospel.
             </p>
           </div>
