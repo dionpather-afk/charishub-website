@@ -32,17 +32,17 @@ export default function GivingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-royal-blue py-20">
-        <div className="max-w-[100rem] mx-auto px-8 text-center">
+      <section className="w-full bg-royal-blue py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary-foreground mb-6">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6">
               Faithful Giving
             </h1>
-            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Your generous support enables us to continue proclaiming the Gospel, 
               serving our community, and advancing God's kingdom.
             </p>
@@ -51,8 +51,8 @@ export default function GivingPage() {
       </section>
 
       {/* Scripture Section */}
-      <section className="w-full py-16 bg-white">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32 bg-off-white">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -72,19 +72,19 @@ export default function GivingPage() {
       </section>
 
       {/* Giving Methods Section */}
-      <section className="w-full py-16">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-4">
+            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-6">
               Ways to Give
             </h2>
-            <p className="font-paragraph text-lg text-dark-slate max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-lg text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
               We offer several convenient methods for you to support the ministry of RCA Charisma.
             </p>
           </motion.div>
@@ -97,17 +97,17 @@ export default function GivingPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {givingMethods.map((method, index) => (
                   <motion.div
                     key={method._id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-lg border border-slate-gray/20 overflow-hidden hover:border-muted-gold transition-all duration-300"
+                    className="bg-white rounded-lg border border-slate-gray/20 overflow-hidden hover:border-muted-gold hover:shadow-md transition-all duration-300"
                   >
                     {method.qrCodeImage && (
-                      <div className="bg-off-white p-8 flex items-center justify-center">
+                      <div className="bg-off-white p-10 flex items-center justify-center">
                         <Image
                           src={method.qrCodeImage}
                           alt={`${method.methodName} QR Code`}
@@ -116,24 +116,24 @@ export default function GivingPage() {
                         />
                       </div>
                     )}
-                    <div className="p-8">
-                      <h3 className="font-heading text-2xl text-royal-blue mb-3">
+                    <div className="p-8 md:p-10">
+                      <h3 className="font-heading text-2xl text-royal-blue mb-4">
                         {method.methodName}
                       </h3>
                       {method.shortDescription && (
-                        <p className="font-paragraph text-base text-dark-slate mb-4 leading-relaxed">
+                        <p className="font-paragraph text-base text-dark-slate/80 mb-6 leading-relaxed">
                           {method.shortDescription}
                         </p>
                       )}
                       {method.instructions && (
-                        <div className="bg-off-white rounded p-4 mb-6">
-                          <div className="flex items-start gap-2 mb-2">
+                        <div className="bg-off-white rounded-lg p-5 mb-8">
+                          <div className="flex items-start gap-2 mb-3">
                             <Info className="w-5 h-5 text-muted-gold flex-shrink-0 mt-0.5" />
                             <p className="font-paragraph text-sm font-semibold text-royal-blue">
                               Instructions:
                             </p>
                           </div>
-                          <p className="font-paragraph text-sm text-dark-slate leading-relaxed whitespace-pre-line">
+                          <p className="font-paragraph text-sm text-dark-slate/80 leading-relaxed whitespace-pre-line">
                             {method.instructions}
                           </p>
                         </div>
@@ -159,21 +159,21 @@ export default function GivingPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="w-full py-16 bg-white">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32 bg-off-white">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-6">
+            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-8">
               Your Impact
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             {[
               {
                 title: 'Ministry Support',
@@ -199,7 +199,7 @@ export default function GivingPage() {
                 <h3 className="font-heading text-2xl text-royal-blue mb-4">
                   {item.title}
                 </h3>
-                <p className="font-paragraph text-base text-dark-slate leading-relaxed">
+                <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>

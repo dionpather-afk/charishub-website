@@ -37,17 +37,17 @@ export default function EventsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-royal-blue py-20">
-        <div className="max-w-[100rem] mx-auto px-8 text-center">
+      <section className="w-full bg-royal-blue py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary-foreground mb-6">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6">
               Upcoming Events
             </h1>
-            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Join us for fellowship, worship, and community gatherings throughout the year.
             </p>
           </motion.div>
@@ -55,8 +55,8 @@ export default function EventsPage() {
       </section>
 
       {/* Events Section */}
-      <section className="w-full py-16">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <div className="min-h-[600px]">
             {isLoading ? null : events.length === 0 ? (
               <div className="text-center py-20">
@@ -65,14 +65,14 @@ export default function EventsPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-12">
                 {events.map((event, index) => (
                   <motion.div
                     key={event._id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold transition-all duration-300"
+                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold hover:shadow-md transition-all duration-300"
                   >
                     {event.eventImage && (
                       <div className="aspect-video overflow-hidden">
@@ -84,12 +84,12 @@ export default function EventsPage() {
                         />
                       </div>
                     )}
-                    <div className="p-8">
-                      <h2 className="font-heading text-3xl text-royal-blue mb-4">
+                    <div className="p-8 md:p-10">
+                      <h2 className="font-heading text-2xl md:text-3xl text-royal-blue mb-6">
                         {event.eventTitle}
                       </h2>
                       
-                      <div className="space-y-3 mb-6 font-paragraph text-base text-dark-slate">
+                      <div className="space-y-4 mb-8 font-paragraph text-base text-dark-slate">
                         {event.eventDate && (
                           <div className="flex items-center gap-3">
                             <Calendar className="w-5 h-5 text-muted-gold flex-shrink-0" />
@@ -111,7 +111,7 @@ export default function EventsPage() {
                       </div>
 
                       {event.eventDescription && (
-                        <p className="font-paragraph text-base text-dark-slate leading-relaxed mb-6">
+                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-8">
                           {event.eventDescription}
                         </p>
                       )}
@@ -121,7 +121,7 @@ export default function EventsPage() {
                           href={event.registrationUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-royal-blue text-primary-foreground px-6 py-3 rounded font-paragraph font-semibold transition-all duration-300 hover:bg-opacity-90"
+                          className="inline-flex items-center gap-2 bg-royal-blue text-primary-foreground px-8 py-3 rounded-sm font-paragraph font-semibold transition-all duration-300 hover:bg-opacity-90 hover:shadow-md"
                         >
                           Register Now
                           <ExternalLink className="w-4 h-4" />

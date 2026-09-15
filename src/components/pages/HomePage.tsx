@@ -150,7 +150,7 @@ export default function HomePage() {
 
       {/* --- SERVICE TIMES: The Rhythm of Worship (Sticky Layout) --- */}
       <section ref={serviceRef} className="w-full py-32 md:py-48 bg-off-white relative z-20">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             
             {/* Sticky Left Column */}
@@ -248,11 +248,11 @@ export default function HomePage() {
       </section>
 
       {/* --- SOLA SCRIPTURA: Our Foundation (Architectural Grid) --- */}
-      <section ref={foundationRef} className="w-full py-32 md:py-48 bg-white relative">
+      <section ref={foundationRef} className="w-full py-32 md:py-48 bg-off-white relative">
         {/* Decorative background element */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-gray/20 to-transparent" />
         
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -318,13 +318,13 @@ export default function HomePage() {
         {/* Subtle background texture/pattern */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#F5F5DC 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         
-        <div className="max-w-[80rem] mx-auto px-6 text-center relative z-10">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center text-center"
           >
             <div className="w-16 h-[1px] bg-muted-gold mb-8" />
             <h2 className="font-heading text-5xl md:text-7xl text-off-white mb-8 leading-tight">

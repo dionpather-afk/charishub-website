@@ -31,17 +31,17 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-royal-blue py-20">
-        <div className="max-w-[100rem] mx-auto px-8 text-center">
+      <section className="w-full bg-royal-blue py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary-foreground mb-6">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6">
               About Us
             </h1>
-            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Meet the shepherds and servants called to lead and care for our congregation.
             </p>
           </motion.div>
@@ -49,8 +49,8 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="w-full py-16 bg-white">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32 bg-off-white">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +58,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-8 text-center">
+            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-12 text-center">
               Our Mission
             </h2>
-            <div className="space-y-6 font-paragraph text-lg text-dark-slate leading-relaxed">
+            <div className="space-y-8 font-paragraph text-lg text-dark-slate/80 leading-relaxed">
               <p>
                 RCA Charisma is a Reformed Evangelical church committed to the authority of Scripture alone (Sola Scriptura), 
                 the glory of God alone (Soli Deo Gloria), and the proclamation of the Gospel of Jesus Christ.
@@ -81,21 +81,21 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values Section */}
-      <section className="w-full py-16">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-4">
+            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-6">
               Our Core Values
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {[
               {
                 title: 'Scripture Alone',
@@ -128,12 +128,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg border border-slate-gray/20 p-8"
+                className="bg-white rounded-lg border border-slate-gray/20 p-8 hover:border-muted-gold hover:shadow-md transition-all duration-300"
               >
                 <h3 className="font-heading text-2xl text-royal-blue mb-4">
                   {value.title}
                 </h3>
-                <p className="font-paragraph text-base text-dark-slate leading-relaxed">
+                <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -143,19 +143,19 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team Section */}
-      <section className="w-full py-16 bg-white">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32 bg-off-white">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-4">
+            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-6">
               Our Leadership Team
             </h2>
-            <p className="font-paragraph text-lg text-dark-slate max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-lg text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
               Shepherds called to serve, teach, and care for the flock of God.
             </p>
           </motion.div>
@@ -168,14 +168,14 @@ export default function AboutPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {teamMembers.map((member, index) => (
                   <motion.div
                     key={member._id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-off-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold transition-all duration-300"
+                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold hover:shadow-md transition-all duration-300"
                   >
                     {member.profilePhoto && (
                       <div className="aspect-square overflow-hidden">
@@ -187,7 +187,7 @@ export default function AboutPage() {
                         />
                       </div>
                     )}
-                    <div className="p-8">
+                    <div className="p-8 md:p-10">
                       <h3 className="font-heading text-2xl text-royal-blue mb-2">
                         {member.leaderName}
                       </h3>
@@ -202,7 +202,7 @@ export default function AboutPage() {
                         </p>
                       )}
                       {member.biography && (
-                        <p className="font-paragraph text-base text-dark-slate leading-relaxed mb-4">
+                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-6">
                           {member.biography}
                         </p>
                       )}

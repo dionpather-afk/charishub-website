@@ -46,17 +46,17 @@ export default function SermonsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-royal-blue py-20">
-        <div className="max-w-[100rem] mx-auto px-8 text-center">
+      <section className="w-full bg-royal-blue py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary-foreground mb-6">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6">
               Sermon Library
             </h1>
-            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Faithful exposition of God's Word, preached with clarity and conviction.
             </p>
           </motion.div>
@@ -64,8 +64,8 @@ export default function SermonsPage() {
       </section>
 
       {/* Content Section */}
-      <section className="w-full py-16">
-        <div className="max-w-[100rem] mx-auto px-8">
+      <section className="w-full py-24 md:py-32">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
           <div className="min-h-[600px]">
             {isLoading ? null : sermons.length === 0 ? (
               <div className="text-center py-20">
@@ -74,7 +74,7 @@ export default function SermonsPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid lg:grid-cols-3 gap-8">
+              <div className="grid lg:grid-cols-3 gap-12">
                 {/* Video Player */}
                 <div className="lg:col-span-2">
                   {selectedSermon && (
@@ -83,7 +83,7 @@ export default function SermonsPage() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5 }}
-                      className="bg-white rounded-lg overflow-hidden border border-slate-gray/20"
+                      className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm"
                     >
                       <div className="aspect-video">
                         {selectedSermon.youtubeUrl && (
@@ -96,26 +96,26 @@ export default function SermonsPage() {
                           />
                         )}
                       </div>
-                      <div className="p-8">
-                        <h2 className="font-heading text-3xl md:text-4xl text-royal-blue mb-4">
+                      <div className="p-8 md:p-12">
+                        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-blue mb-6">
                           {selectedSermon.title}
                         </h2>
-                        <div className="flex flex-wrap gap-6 mb-6 font-paragraph text-base text-dark-slate">
+                        <div className="flex flex-wrap gap-8 mb-8 font-paragraph text-base text-dark-slate">
                           {selectedSermon.speakerName && (
                             <div className="flex items-center gap-2">
-                              <User className="w-5 h-5 text-muted-gold" />
+                              <User className="w-5 h-5 text-muted-gold flex-shrink-0" />
                               <span>{selectedSermon.speakerName}</span>
                             </div>
                           )}
                           {selectedSermon.sermonDate && (
                             <div className="flex items-center gap-2">
-                              <Calendar className="w-5 h-5 text-muted-gold" />
+                              <Calendar className="w-5 h-5 text-muted-gold flex-shrink-0" />
                               <span>{format(new Date(selectedSermon.sermonDate), 'MMMM d, yyyy')}</span>
                             </div>
                           )}
                         </div>
                         {selectedSermon.description && (
-                          <p className="font-paragraph text-base text-dark-slate leading-relaxed">
+                          <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">
                             {selectedSermon.description}
                           </p>
                         )}
@@ -126,8 +126,8 @@ export default function SermonsPage() {
 
                 {/* Sermon List */}
                 <div className="lg:col-span-1">
-                  <h3 className="font-heading text-2xl text-royal-blue mb-6">Recent Sermons</h3>
-                  <div className="space-y-4 max-h-[800px] overflow-y-auto pr-2">
+                  <h3 className="font-heading text-2xl text-royal-blue mb-8">Recent Sermons</h3>
+                  <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2">
                     {sermons.map((sermon, index) => (
                       <motion.button
                         key={sermon._id}
@@ -135,13 +135,13 @@ export default function SermonsPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.05 }}
                         onClick={() => setSelectedSermon(sermon)}
-                        className={`w-full text-left p-6 rounded-lg border transition-all duration-300 ${
+                        className={`w-full text-left p-5 rounded-lg border transition-all duration-300 ${
                           selectedSermon?._id === sermon._id
-                            ? 'bg-royal-blue border-royal-blue text-primary-foreground'
-                            : 'bg-white border-slate-gray/20 hover:border-muted-gold'
+                            ? 'bg-royal-blue border-royal-blue text-primary-foreground shadow-md'
+                            : 'bg-white border-slate-gray/20 hover:border-muted-gold hover:shadow-sm'
                         }`}
                       >
-                        <h4 className={`font-heading text-lg mb-3 ${
+                        <h4 className={`font-heading text-lg mb-2 ${
                           selectedSermon?._id === sermon._id ? 'text-primary-foreground' : 'text-royal-blue'
                         }`}>
                           {sermon.title}

@@ -22,29 +22,32 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white border-b border-slate-gray/20 sticky top-0 z-50">
-      <div className="max-w-[100rem] mx-auto px-8">
-        <div className="flex items-center justify-between py-6">
+    <header className="bg-white border-b border-slate-gray/10 sticky top-0 z-50 shadow-sm">
+      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div className="flex items-center justify-between py-5">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <h1 className="font-heading text-3xl md:text-4xl text-royal-blue">
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <h1 className="font-heading text-2xl md:text-3xl text-royal-blue tracking-tight">
               RCA Charisma
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-base transition-colors duration-300 ${
+                className={`font-paragraph text-sm transition-colors duration-300 relative group ${
                   isActive(link.path)
                     ? 'text-muted-gold font-semibold'
                     : 'text-dark-slate hover:text-muted-gold'
                 }`}
               >
                 {link.label}
+                {isActive(link.path) && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-muted-gold" />
+                )}
               </Link>
             ))}
           </nav>
@@ -52,10 +55,10 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-royal-blue p-2"
+            className="lg:hidden text-royal-blue p-2 hover:bg-off-white rounded transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
@@ -67,18 +70,18 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden"
+              className="lg:hidden overflow-hidden border-t border-slate-gray/10"
             >
-              <div className="py-6 space-y-4">
+              <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block font-paragraph text-lg py-2 transition-colors duration-300 ${
+                    className={`block font-paragraph text-base py-3 px-4 rounded transition-colors duration-300 ${
                       isActive(link.path)
-                        ? 'text-muted-gold font-semibold'
-                        : 'text-dark-slate hover:text-muted-gold'
+                        ? 'text-muted-gold font-semibold bg-off-white'
+                        : 'text-dark-slate hover:text-muted-gold hover:bg-off-white/50'
                     }`}
                   >
                     {link.label}

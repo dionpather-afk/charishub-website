@@ -4,8 +4,8 @@ import { MapPin, Phone, Mail, Facebook, Youtube, Instagram } from 'lucide-react'
 export default function Footer() {
   return (
     <footer className="bg-dark-slate text-off-white">
-      <div className="max-w-[100rem] mx-auto px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* About */}
           <div>
             <h3 className="font-heading text-2xl text-muted-gold mb-6">RCA Charisma</h3>
@@ -80,8 +80,8 @@ export default function Footer() {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="pt-8 border-t border-off-white/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-12 border-t border-off-white/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <p className="font-paragraph text-sm text-off-white/60">
               © {new Date().getFullYear()} RCA Charisma. All rights reserved.
             </p>
