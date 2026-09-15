@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* About */}
           <div>
-            <Image src="https://static.wixstatic.com/media/dd740b_2235fc1c584b40ea9b387432e0bd3ec9~mv2.png" alt="RCA Charisma logo" className="h-14 w-14 object-contain mb-4" />
+            <Image src="https://static.wixstatic.com/media/dd740b_d982717fe72342049a6af021afdc5c43~mv2.png" alt="RCA Charisma logo" className="h-14 w-14 object-contain mb-4" />
             <h3 className="font-heading text-2xl text-muted-gold mb-6">RCA Charisma</h3>
             <p className="font-paragraph text-base text-off-white/80 leading-relaxed">
               A Reformed Evangelical church committed to the authority of Scripture, 
