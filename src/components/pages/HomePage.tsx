@@ -247,9 +247,12 @@ export default function HomePage() {
             className="text-center mb-24"
           >
             <span className="text-muted-gold tracking-widest uppercase text-sm font-semibold mb-4 block">Our Foundation</span>
-            <h2 className="font-heading text-6xl md:text-8xl text-royal-blue mb-8">
-              Sola Scriptura
+            <h2 className="font-heading text-6xl md:text-8xl text-royal-blue mb-2">
+              God's Word Alone
             </h2>
+            <p className="font-paragraph text-base text-dark-slate/60 italic mb-8">
+              (Sola Scriptura)
+            </p>
             <p className="font-paragraph text-xl text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
               We are a community grounded in the absolute authority of God's Word, 
               committed to the historic Reformed tradition, and passionate about proclaiming the Gospel.
