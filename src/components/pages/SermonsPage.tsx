@@ -62,7 +62,7 @@ export default function SermonsPage() {
             </p>
             <div className="mt-10 max-w-xs mx-auto rounded-2xl overflow-hidden border-4 border-off-white/20">
               <Image
-                src="https://static.wixstatic.com/media/dd740b_3baa8776540549479e076af81e81c9c3~mv2.jpg"
+                src="https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg"
                 alt="Our Pastor"
                 className="w-full h-auto object-cover"
               />
