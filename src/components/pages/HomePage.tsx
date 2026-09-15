@@ -213,7 +213,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
           style={{ y: breatherY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg" alt="RCA Charisma church exterior" className="w-full h-full object-cover" />
+          <Image src="https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg" alt="Inside RCA Charisma church" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-royal-blue/80 mix-blend-multiply" />
         </motion.div>
         
