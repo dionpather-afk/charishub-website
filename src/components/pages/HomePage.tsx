@@ -9,10 +9,8 @@ import { Image } from '@/components/ui/image';
 
 // --- Canonical Data Sources ---
 const serviceTimes = [
-  { title: "Sunday Morning Service", time: "9:00 AM - 11:00 AM", desc: "Our primary gathering for corporate worship, prayer, and expository preaching." },
-  { title: "Sunday Evening Service", time: "5:00 PM - 6:30 PM", desc: "A time of deeper theological reflection and evening prayer." },
-  { title: "Wednesday Bible Study", time: "7:00 PM - 8:30 PM", desc: "Mid-week gathering for intensive study of the Scriptures." },
-  { title: "Friday Youth Service", time: "6:00 PM - 8:00 PM", desc: "Fellowship and biblical teaching tailored for our younger generation." }
+  { title: "Sunday Worship", time: "9:00 AM", desc: "Our primary gathering for corporate worship, prayer, and expository preaching." },
+  { title: "Tuesday Prayer", time: "7:00 PM", desc: "A time of corporate prayer and intercession for the church and community." }
 ];
 
 const foundations = [

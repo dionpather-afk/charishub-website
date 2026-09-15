@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -109,9 +110,8 @@ export default function ContactPage() {
                       Our Location
                     </h3>
                     <p className="font-paragraph text-base text-dark-slate leading-relaxed">
-                      123 Church Street<br />
-                      Cape Town, 8001<br />
-                      South Africa
+                      {SITE_CONFIG.addressLine1}<br />
+                      {SITE_CONFIG.addressLine2}
                     </p>
                   </div>
                 </div>
@@ -125,10 +125,17 @@ export default function ContactPage() {
                       Phone
                     </h3>
                     <a
-                      href="tel:+27211234567"
+                      href={SITE_CONFIG.phoneHref}
                       className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
                     >
-                      +27 21 123 4567
+                      {SITE_CONFIG.phoneDisplay}
+                    </a>
+                    <br />
+                    <a
+                      href={SITE_CONFIG.cellHref}
+                      className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
+                    >
+                      {SITE_CONFIG.cellDisplay}
                     </a>
                   </div>
                 </div>
@@ -142,10 +149,10 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <a
-                      href="mailto:info@rcacharisma.org"
+                      href={`mailto:${SITE_CONFIG.email}`}
                       className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
                     >
-                      info@rcacharisma.org
+                      {SITE_CONFIG.email}
                     </a>
                   </div>
                 </div>
@@ -159,10 +166,8 @@ export default function ContactPage() {
                       Service Times
                     </h3>
                     <div className="font-paragraph text-base text-dark-slate space-y-2">
-                      <p><span className="font-semibold">Sunday Morning:</span> 9:00 AM - 11:00 AM</p>
-                      <p><span className="font-semibold">Sunday Evening:</span> 5:00 PM - 6:30 PM</p>
-                      <p><span className="font-semibold">Wednesday Bible Study:</span> 7:00 PM - 8:30 PM</p>
-                      <p><span className="font-semibold">Friday Youth Service:</span> 6:00 PM - 8:00 PM</p>
+                      <p><span className="font-semibold">Sunday Worship:</span> 9:00 AM</p>
+                      <p><span className="font-semibold">Tuesday Prayer:</span> 7:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -279,7 +284,7 @@ export default function ContactPage() {
             </h2>
             <div className="aspect-video rounded-lg overflow-hidden border border-slate-gray/20">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.6087!2d18.4241!3d-33.9249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU1JzI5LjYiUyAxOMKwMjUnMjYuOCJF!5e0!3m2!1sen!2sza!4v1234567890"
+                src={SITE_CONFIG.mapsEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Youtube, Instagram } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
   return (
@@ -44,18 +45,18 @@ export default function Footer() {
             <div className="space-y-4 font-paragraph text-base text-off-white/80">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-muted-gold mt-1 flex-shrink-0" />
-                <p>123 Church Street<br />Cape Town, 8001<br />South Africa</p>
+                <p>{SITE_CONFIG.addressLine1}<br />{SITE_CONFIG.addressLine2}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-muted-gold flex-shrink-0" />
-                <a href="tel:+27211234567" className="hover:text-muted-gold transition-colors duration-300">
-                  +27 21 123 4567
+                <a href={SITE_CONFIG.phoneHref} className="hover:text-muted-gold transition-colors duration-300">
+                  {SITE_CONFIG.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-muted-gold flex-shrink-0" />
-                <a href="mailto:info@rcacharisma.org" className="hover:text-muted-gold transition-colors duration-300">
-                  info@rcacharisma.org
+                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-muted-gold transition-colors duration-300">
+                  {SITE_CONFIG.email}
                 </a>
               </div>
             </div>
@@ -66,16 +67,12 @@ export default function Footer() {
             <h4 className="font-heading text-xl text-muted-gold mb-6">Service Times</h4>
             <div className="space-y-3 font-paragraph text-base text-off-white/80">
               <div>
-                <p className="font-semibold text-off-white">Sunday Morning</p>
-                <p>9:00 AM - 11:00 AM</p>
+                <p className="font-semibold text-off-white">Sunday Worship</p>
+                <p>9:00 AM</p>
               </div>
               <div>
-                <p className="font-semibold text-off-white">Sunday Evening</p>
-                <p>5:00 PM - 6:30 PM</p>
-              </div>
-              <div>
-                <p className="font-semibold text-off-white">Wednesday</p>
-                <p>7:00 PM - 8:30 PM</p>
+                <p className="font-semibold text-off-white">Tuesday Prayer</p>
+                <p>7:00 PM</p>
               </div>
             </div>
           </div>
