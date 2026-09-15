@@ -6,6 +6,8 @@ import { Calendar, BookOpen, Heart, Users, ArrowRight, Clock, MapPin } from 'luc
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Image } from '@/components/ui/image';
+import heroPhoto from '@/assets/photos/rca-photo-1.jpg';
+import breatherPhoto from '@/assets/photos/rca-outreach.jpg';
 
 // --- Canonical Data Sources ---
 const serviceTimes = [
@@ -77,7 +79,7 @@ export default function HomePage() {
           style={{ y: heroY }}
         >
           <Image
-            src="https://static.wixstatic.com/media/dd740b_aa40f1c9462d47c1bd3e591ed775bcca~mv2.png?originWidth=1920&originHeight=1024"
+            src={heroPhoto}
             alt="RCA Charisma Church sanctuary architecture"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
             width={1920}
@@ -221,7 +223,7 @@ export default function HomePage() {
           style={{ y: breatherY }}
         >
           <Image
-            src="https://static.wixstatic.com/media/dd740b_4db2ea0961e54dd0a70286088e7b6980~mv2.png?originWidth=1920&originHeight=704"
+            src={breatherPhoto}
             alt="Church architectural details"
             className="w-full h-full object-cover"
             width={1920}
