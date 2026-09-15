@@ -42,6 +42,8 @@ export default function SermonsPage() {
     return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
   };
 
+  const isDirectVideoFile = (url?: string) => !!url && !getYouTubeEmbedUrl(url) && (url.includes('video.wixstatic.com') || /\.(mp4|webm|mov)$/i.test(url));
+
   return (
     <div className="min-h-screen bg-off-white">
       <Header />
@@ -94,7 +96,15 @@ export default function SermonsPage() {
                       className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm"
                     >
                       <div className="aspect-video">
-                        {selectedSermon.youtubeUrl && (
+                        {selectedSermon.youtubeUrl && isDirectVideoFile(selectedSermon.youtubeUrl) ? (
+                          <video
+                            src={selectedSermon.youtubeUrl}
+                            title={selectedSermon.title}
+                            className="w-full h-full"
+                            controls
+                            playsInline
+                          />
+                        ) : selectedSermon.youtubeUrl && getYouTubeEmbedUrl(selectedSermon.youtubeUrl) && (
                           <iframe
                             src={getYouTubeEmbedUrl(selectedSermon.youtubeUrl)}
                             title={selectedSermon.title}
