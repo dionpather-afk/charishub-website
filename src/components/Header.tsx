@@ -28,7 +28,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-5">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 gap-3">
-            <Image src="https://static.wixstatic.com/media/dd740b_2235fc1c584b40ea9b387432e0bd3ec9~mv2.png" alt="RCA Charisma logo" className="h-[67px] w-[67px] object-contain" />
+            <Image src="https://static.wixstatic.com/media/dd740b_2235fc1c584b40ea9b387432e0bd3ec9~mv2.png" alt="RCA Charisma logo" className="h-[94px] w-[94px] object-contain" />
             <h1 className="font-heading text-2xl text-royal-blue tracking-tight md:text-sm">
               RCA Charisma
             </h1>
