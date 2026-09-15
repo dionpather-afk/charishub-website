@@ -6,8 +6,6 @@ import { Calendar, BookOpen, Heart, Users, ArrowRight, Clock, MapPin } from 'luc
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Image } from '@/components/ui/image';
-import heroPhoto from '@/assets/photos/rca-photo-1.jpg';
-import breatherPhoto from '@/assets/photos/rca-outreach.jpg';
 
 // --- Canonical Data Sources ---
 const serviceTimes = [
@@ -78,12 +76,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{ y: heroY }}
         >
-          <Image
-            src={heroPhoto}
-            alt="RCA Charisma Church sanctuary architecture"
-            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
-            width={1920}
-          />
+          <Image src="/rca-photo-1.jpg" alt="RCA Charisma Church sanctuary architecture" className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
           {/* Gradient overlay for text legibility and mood */}
           <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/80 via-royal-blue/50 to-royal-blue/90" />
         </motion.div>
@@ -222,12 +215,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
           style={{ y: breatherY }}
         >
-          <Image
-            src={breatherPhoto}
-            alt="Church architectural details"
-            className="w-full h-full object-cover"
-            width={1920}
-          />
+          <Image src="/rca-outreach.jpg" alt="Church architectural details" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-royal-blue/80 mix-blend-multiply" />
         </motion.div>
         
