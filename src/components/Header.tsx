@@ -23,13 +23,13 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white border-b border-slate-gray/10 sticky top-0 z-50 shadow-sm">
+    <header className="bg-dark-slate border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex items-center justify-between py-5">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 gap-3">
             <Image src="https://static.wixstatic.com/media/dd740b_2235fc1c584b40ea9b387432e0bd3ec9~mv2.png" alt="RCA Charisma logo" className="h-[132px] w-[132px] object-contain" />
-            <h1 className="font-heading text-2xl text-royal-blue tracking-tight md:text-sm">
+            <h1 className="font-heading text-2xl text-off-white tracking-tight md:text-sm">
               RCA Charisma
             </h1>
           </Link>
@@ -43,7 +43,7 @@ export default function Header() {
                 className={`font-paragraph text-sm transition-colors duration-300 relative group ${
                   isActive(link.path)
                     ? 'text-muted-gold font-semibold'
-                    : 'text-dark-slate hover:text-muted-gold'
+                    : 'text-off-white/80 hover:text-muted-gold'
                 }`}
               >
                 {link.label}
@@ -57,7 +57,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-royal-blue p-2 hover:bg-off-white rounded transition-colors"
+            className="lg:hidden text-off-white p-2 hover:bg-off-white/10 rounded transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -72,7 +72,7 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden border-t border-slate-gray/10"
+              className="lg:hidden overflow-hidden border-t border-off-white/10"
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
@@ -82,8 +82,8 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                     className={`block font-paragraph text-base py-3 px-4 rounded transition-colors duration-300 ${
                       isActive(link.path)
-                        ? 'text-muted-gold font-semibold bg-off-white'
-                        : 'text-dark-slate hover:text-muted-gold hover:bg-off-white/50'
+                        ? 'text-muted-gold font-semibold bg-off-white/10'
+                        : 'text-off-white/80 hover:text-muted-gold hover:bg-off-white/5'
                     }`}
                   >
                     {link.label}
