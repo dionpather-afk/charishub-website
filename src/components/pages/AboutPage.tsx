@@ -48,6 +48,72 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Declaration of Laudium */}
+      <section className="w-full py-24 md:py-32 bg-white border-b border-slate-gray/10">
+        <div className="max-w-[100rem] mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm"
+            >
+              <Image
+                src="https://static.wixstatic.com/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg"
+                alt="The Declaration of Laudium"
+                className="w-full h-auto object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-4">
+                The Declaration of Laudium
+              </h2>
+              <p className="font-paragraph text-sm text-muted-gold font-semibold uppercase tracking-wide mb-6">
+                Adopted at the Sixth Synod of the Reformed Church in Africa, October 1990
+              </p>
+
+              <ul className="space-y-4 mb-8">
+                {[
+                  { title: 'The Biblical Gospel', desc: 'Every person is born in sin and lost without Christ, and salvation is found in no other name.' },
+                  { title: "The Holy Spirit's Witness", desc: 'Evangelism bears no fruit apart from the Spirit, and a holy life gives that witness its credibility.' },
+                  { title: 'Evangelistic Witness & Compassionate Service', desc: 'The whole Gospel is proclaimed to the whole world, with real care for the poor and those in need.' },
+                  { title: 'Unity', desc: 'Unity is affirmed with all born-again believers, and racism within the church is named a denial of the Gospel.' },
+                  { title: 'Prophetic Witness', desc: "The church speaks against injustice and oppression, while remaining free from any political ideology or movement." },
+                ].map((point) => (
+                  <li key={point.title} className="flex gap-3">
+                    <span className="text-muted-gold font-bold mt-1">•</span>
+                    <div>
+                      <span className="font-heading text-lg text-royal-blue">{point.title}</span>
+                      <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">{point.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bg-off-white border-l-4 border-muted-gold p-6 rounded">
+                <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-3">
+                  This declaration is more than history — it's a promise our church stands on. It was
+                  personally presented to RCA Charisma on 25 April 2004, and it still shapes how we
+                  read Scripture, love our neighbours, and stand for truth today. Every ministry on
+                  this page flows from these same convictions.
+                </p>
+                <p className="font-paragraph text-sm text-dark-slate/60 italic">
+                  Presented to the Reformed Church in Africa, Charisma Congregation, 25 April 2004 —
+                  Rev PJP de Beer, Moderator.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="w-full py-24 md:py-32 bg-off-white">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
