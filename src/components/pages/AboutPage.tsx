@@ -234,57 +234,85 @@ export default function AboutPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {teamMembers.map((member, index) => (
+              <>
+                {/* Featured leader (Reverend) with full bio */}
+                {teamMembers.filter((m) => m.biography && m.biography !== 'Bio TBA — full details coming soon.').map((member) => (
                   <motion.div
                     key={member._id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold hover:shadow-md transition-all duration-300"
+                    transition={{ duration: 0.6 }}
+                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm mb-16"
                   >
-                    {member.profilePhoto && (
-                      <div className="aspect-square overflow-hidden">
-                        <Image
-                          src={member.profilePhoto}
-                          alt={member.leaderName || 'Team member'}
-                          className="w-full h-full object-cover object-top"
-                          width={400}
-                        />
-                      </div>
-                    )}
-                    <div className="p-8 md:p-10">
-                      <h3 className="font-heading text-2xl text-royal-blue mb-2">
-                        {member.leaderName}
-                      </h3>
-                      {member.role && (
-                        <p className="font-paragraph text-base text-muted-gold font-semibold mb-4">
-                          {member.role}
-                        </p>
+                    <div className="grid md:grid-cols-[350px_1fr] gap-0">
+                      {member.profilePhoto && (
+                        <div className="aspect-square md:aspect-auto overflow-hidden">
+                          <Image
+                            src={member.profilePhoto}
+                            alt={member.leaderName || 'Team member'}
+                            className="w-full h-full object-cover object-top"
+                            width={500}
+                          />
+                        </div>
                       )}
-                      {member.ministry && (
-                        <p className="font-paragraph text-sm text-dark-slate/70 mb-4">
-                          {member.ministry}
-                        </p>
-                      )}
-                      {member.biography && (
-                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-6 whitespace-pre-line">
+                      <div className="p-10 md:p-14 flex flex-col justify-center">
+                        <h3 className="font-heading text-3xl md:text-4xl text-royal-blue mb-2">
+                          {member.leaderName}
+                        </h3>
+                        {member.role && (
+                          <p className="font-paragraph text-lg text-muted-gold font-semibold mb-6">
+                            {member.role}
+                          </p>
+                        )}
+                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed whitespace-pre-line">
                           {member.biography}
                         </p>
-                      )}
-                      {member.email && (
-                        <a
-                          href={`mailto:${member.email}`}
-                          className="inline-flex items-center gap-2 text-muted-gold font-paragraph text-sm font-semibold hover:text-royal-blue transition-colors duration-300"
-                        >
-                          <Mail className="w-4 h-4" />
-                          Contact
-                        </a>
-                      )}
+                        {member.email && (
+                          <a
+                            href={`mailto:${member.email}`}
+                            className="inline-flex items-center gap-2 mt-6 text-muted-gold font-paragraph text-sm font-semibold hover:text-royal-blue transition-colors duration-300 w-fit"
+                          >
+                            <Mail className="w-4 h-4" />
+                            Contact
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 ))}
-              </div>
+
+                {/* Elders — simple grid, name and title only */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                  {teamMembers.filter((m) => !m.biography || m.biography === 'Bio TBA — full details coming soon.').map((member, index) => (
+                    <motion.div
+                      key={member._id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.08 }}
+                      className="text-center"
+                    >
+                      {member.profilePhoto && (
+                        <div className="aspect-square overflow-hidden rounded-full border-2 border-muted-gold/30 mb-4 mx-auto max-w-[180px]">
+                          <Image
+                            src={member.profilePhoto}
+                            alt={member.leaderName || 'Team member'}
+                            className="w-full h-full object-cover object-top"
+                            width={300}
+                          />
+                        </div>
+                      )}
+                      <h3 className="font-heading text-lg text-royal-blue">
+                        {member.leaderName}
+                      </h3>
+                      {member.role && (
+                        <p className="font-paragraph text-sm text-muted-gold font-semibold">
+                          {member.role}
+                        </p>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </>
             )}
           </div>
         </div>
