@@ -143,23 +143,16 @@ export default function GalleryPage() {
                           />
                         </div>
                       )}
-                      {(photo.title || photo.eventName || photo.dateTaken) && (
+                      {photo.description && (
                         <div className="p-6">
                           {photo.title && (
                             <h3 className="font-heading text-xl text-royal-blue mb-2">
                               {photo.title}
                             </h3>
                           )}
-                          {photo.eventName && (
-                            <p className="font-paragraph text-sm text-muted-gold font-semibold mb-2">
-                              {getCategoryLabel(photo.eventName)}
-                            </p>
-                          )}
-                          {photo.dateTaken && (
-                            <p className="font-paragraph text-sm text-dark-slate/70">
-                              {format(new Date(photo.dateTaken), 'MMMM d, yyyy')}
-                            </p>
-                          )}
+                          <p className="font-paragraph text-sm text-dark-slate/80 leading-relaxed">
+                            {photo.description}
+                          </p>
                         </div>
                       )}
                     </button>
@@ -210,19 +203,13 @@ export default function GalleryPage() {
               )}
               
               <div className="bg-white rounded-lg p-8">
-                {selectedPhoto.title && (
+                {selectedPhoto.description && selectedPhoto.title && (
                   <h2 className="font-heading text-3xl text-royal-blue mb-4">
                     {selectedPhoto.title}
                   </h2>
                 )}
                 
                 <div className="flex flex-wrap gap-6 mb-4 font-paragraph text-base text-dark-slate">
-                  {selectedPhoto.eventName && (
-                    <div className="flex items-center gap-2">
-                      <span className="text-muted-gold font-semibold">Category:</span>
-                      <span>{getCategoryLabel(selectedPhoto.eventName)}</span>
-                    </div>
-                  )}
                   {selectedPhoto.dateTaken && (
                     <div className="flex items-center gap-2">
                       <Calendar className="w-5 h-5 text-muted-gold" />
