@@ -248,7 +248,7 @@ export default function AboutPage() {
                         <Image
                           src={member.profilePhoto}
                           alt={member.leaderName || 'Team member'}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top"
                           width={400}
                         />
                       </div>
