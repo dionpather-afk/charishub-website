@@ -56,8 +56,18 @@ export default function GalleryPage() {
   }, [photos]);
 
   const visiblePhotos = useMemo(() => {
-    if (activeTab === 'All') return photos;
-    return photos.filter((p) => getCategoryLabel(p.eventName) === activeTab);
+    const filtered = activeTab === 'All' ? photos : photos.filter((p) => getCategoryLabel(p.eventName) === activeTab);
+
+    // History is a timeline of ministers/events, so it reads oldest-to-newest
+    // rather than the newest-first order used for everything else.
+    if (activeTab === 'History') {
+      return [...filtered].sort((a, b) => {
+        const dateA = a.dateTaken ? new Date(a.dateTaken).getTime() : 0;
+        const dateB = b.dateTaken ? new Date(b.dateTaken).getTime() : 0;
+        return dateA - dateB;
+      });
+    }
+    return filtered;
   }, [photos, activeTab]);
 
   return (
