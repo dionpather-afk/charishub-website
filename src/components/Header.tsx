@@ -24,14 +24,14 @@ export default function Header() {
 
   return (
     <header className="bg-royal-blue border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-[100rem] mx-auto px-6 md:px-10 lg:px-16">
+      <div className="max-w-[85rem] mx-auto px-6 md:px-10 lg:px-16">
         <div className="flex items-center justify-between py-5">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
               src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
               alt="RCA Charisma logo"
-              className="h-24 w-24 md:h-28 md:w-28 object-contain"
+              className="h-[125px] w-[125px] md:h-[146px] md:w-[146px] object-contain"
             />
           </Link>
 
@@ -41,7 +41,7 @@ export default function Header() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-heading text-lg xl:text-xl tracking-wide transition-colors duration-300 relative group ${
+                className={`font-heading text-[23px] xl:text-[26px] tracking-wide transition-colors duration-300 relative group ${
                   isActive(link.path)
                     ? 'text-muted-gold'
                     : 'text-off-white hover:text-muted-gold'
