@@ -31,7 +31,7 @@ export default function Header() {
             <Image
               src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
               alt="RCA Charisma logo"
-              className="h-[160px] w-[160px] md:h-[200px] md:w-[200px] object-contain -my-12 md:-my-[60px]"
+              className="h-[160px] w-[160px] md:h-[200px] md:w-[200px] object-contain"
             />
           </Link>
 
@@ -41,7 +41,7 @@ export default function Header() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-heading text-[23px] xl:text-[26px] tracking-wide transition-colors duration-300 relative group ${
+                className={`font-heading text-[22px] xl:text-[25px] tracking-wide transition-colors duration-300 relative group ${
                   isActive(link.path)
                     ? 'text-muted-gold'
                     : 'text-off-white hover:text-muted-gold'
