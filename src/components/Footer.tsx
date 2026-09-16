@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* About */}
           <div>
-            <Image src="https://static.wixstatic.com/media/dd740b_3111fd7664ff4f0ab3f79ac0add2b912~mv2.jpg" alt="RCA Charisma logo" className="h-11 w-11 object-contain mb-4" />
+            <Image src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png" alt="RCA Charisma logo" className="h-11 w-11 object-contain mb-4" />
             <h3 className="font-heading text-2xl text-muted-gold mb-6">RCA Charisma</h3>
             <p className="font-paragraph text-base text-off-white/80 leading-relaxed">
               A congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture, 

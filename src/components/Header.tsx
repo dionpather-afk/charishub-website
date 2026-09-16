@@ -29,7 +29,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
-              src="https://static.wixstatic.com/media/dd740b_3111fd7664ff4f0ab3f79ac0add2b912~mv2.jpg"
+              src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
               alt="RCA Charisma logo"
               className="h-[120px] w-[120px] object-contain"
             />
