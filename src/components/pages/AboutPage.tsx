@@ -282,7 +282,7 @@ export default function AboutPage() {
                 ))}
 
                 {/* Elders — simple grid, name and title only */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                   {teamMembers.filter((m) => !m.biography || m.biography === 'Bio TBA — full details coming soon.').map((member, index) => (
                     <motion.div
                       key={member._id}
