@@ -20,3 +20,4 @@ export const SITE_CONFIG = {
   mapsEmbedUrl:
     'https://www.google.com/maps?q=261+Jewel+Street,+Laudium,+Pretoria,+0037,+South+Africa&output=embed',
 };
+// Force rebuild trigger 2026-09-16T20:55:57Z
