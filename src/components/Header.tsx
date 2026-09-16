@@ -31,7 +31,7 @@ export default function Header() {
             <Image
               src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
               alt="RCA Charisma logo"
-              className="h-16 w-16 md:h-20 md:w-20 object-contain"
+              className="h-[160px] w-[160px] md:h-[200px] md:w-[200px] object-contain -my-12 md:-my-[60px]"
             />
           </Link>
 
