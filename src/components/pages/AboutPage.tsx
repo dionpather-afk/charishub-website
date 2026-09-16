@@ -268,7 +268,7 @@ export default function AboutPage() {
                         </p>
                       )}
                       {member.biography && (
-                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-6">
+                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-6 whitespace-pre-line">
                           {member.biography}
                         </p>
                       )}
