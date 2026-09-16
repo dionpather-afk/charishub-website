@@ -24,32 +24,32 @@ export default function Header() {
 
   return (
     <header className="bg-royal-blue border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
-        <div className="flex items-center justify-between py-4">
+      <div className="max-w-[100rem] mx-auto px-6 md:px-10 lg:px-16">
+        <div className="flex items-center justify-between py-5">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
               src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
               alt="RCA Charisma logo"
-              className="h-[240px] w-[240px] object-contain"
+              className="h-24 w-24 md:h-28 md:w-28 object-contain"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-sm transition-colors duration-300 relative group ${
+                className={`font-heading text-lg xl:text-xl tracking-wide transition-colors duration-300 relative group ${
                   isActive(link.path)
-                    ? 'text-muted-gold font-semibold'
+                    ? 'text-muted-gold'
                     : 'text-off-white hover:text-muted-gold'
                 }`}
               >
                 {link.label}
                 {isActive(link.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-muted-gold" />
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-muted-gold" />
                 )}
               </Link>
             ))}
@@ -61,7 +61,7 @@ export default function Header() {
             className="lg:hidden text-off-white p-2 hover:bg-off-white/10 rounded transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
@@ -81,9 +81,9 @@ export default function Header() {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block font-paragraph text-base py-3 px-4 rounded transition-colors duration-300 ${
+                    className={`block font-heading text-lg py-3 px-4 rounded transition-colors duration-300 ${
                       isActive(link.path)
-                        ? 'text-muted-gold font-semibold bg-off-white/10'
+                        ? 'text-muted-gold bg-off-white/10'
                         : 'text-off-white hover:text-muted-gold hover:bg-off-white/5'
                     }`}
                   >
