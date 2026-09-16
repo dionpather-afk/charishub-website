@@ -25,13 +25,13 @@ export default function Header() {
   return (
     <header className="bg-royal-blue border-b border-off-white/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-[85rem] mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-5">
+        <div className="flex items-center justify-between py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
               src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
               alt="RCA Charisma logo"
-              className="h-[188px] w-[188px] md:h-[219px] md:w-[219px] object-contain"
+              className="h-16 w-16 md:h-20 md:w-20 object-contain"
             />
           </Link>
 
