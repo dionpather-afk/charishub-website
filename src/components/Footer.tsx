@@ -6,11 +6,19 @@ import { SITE_CONFIG } from '@/lib/site-config';
 export default function Footer() {
   return (
     <footer className="bg-royal-blue text-off-white">
-      <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
+      <div className="max-w-[85rem] mx-auto px-6 md:px-10 lg:px-16 py-20">
+        <div className="grid md:grid-cols-[auto_1fr_1fr_1fr_1fr] gap-16 mb-16">
+          {/* Logo — standalone, own column */}
+          <div className="flex items-start justify-start">
+            <Image
+              src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
+              alt="RCA Charisma logo"
+              className="h-[125px] w-[125px] object-contain"
+            />
+          </div>
+
           {/* About */}
           <div>
-            <Image src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png" alt="RCA Charisma logo" className="h-11 w-11 object-contain mb-4" />
             <h3 className="font-heading text-2xl text-muted-gold mb-6">RCA Charisma</h3>
             <p className="font-paragraph text-base text-off-white/80 leading-relaxed">
               A congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture, 
