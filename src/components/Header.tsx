@@ -17,7 +17,7 @@ export default function Header() {
     { path: '/about', label: 'About' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' },
-    { path: '/feedback', label: 'Feedback' }
+    { path: '/ministries', label: 'Ministries' }
   ];
 
   const isActive = (path: string) => location.pathname === path;

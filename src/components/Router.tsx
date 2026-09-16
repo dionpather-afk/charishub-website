@@ -10,7 +10,7 @@ import AboutPage from '@/components/pages/AboutPage';
 import GalleryPage from '@/components/pages/GalleryPage';
 import ContactPage from '@/components/pages/ContactPage';
 import DevotionalsPage from '@/components/pages/DevotionalsPage';
-import FeedbackPage from '@/components/pages/FeedbackPage';
+import MinistriesPage from '@/components/pages/MinistriesPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -85,10 +85,10 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "feedback",
-        element: <FeedbackPage />,
+        path: "ministries",
+        element: <MinistriesPage />,
         routeMetadata: {
-          pageIdentifier: 'feedback',
+          pageIdentifier: 'ministries',
         },
       },
       {

@@ -57,7 +57,7 @@ export default function ContactPage() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -220,18 +220,22 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="subject" className="block font-paragraph text-base font-semibold text-dark-slate mb-2">
-                      Subject
+                      What's this about?
                     </label>
-                    <Input
+                    <select
                       id="subject"
                       name="subject"
-                      type="text"
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full"
-                      placeholder="How can we help you?"
-                    />
+                      className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-base font-paragraph"
+                    >
+                      <option value="" disabled>Select an option</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Prayer Request">Prayer Request</option>
+                      <option value="Suggestion / Feedback">Suggestion / Feedback</option>
+                      <option value="Praise Report">Praise Report</option>
+                    </select>
                   </div>
 
                   <div>
