@@ -16,10 +16,18 @@ interface Devotional {
   featuredImage?: string;
 }
 
+interface ReadingPlanDay {
+  _id: string;
+  day?: string;
+  reading?: string;
+  sortOrder?: number;
+}
+
 export default function DevotionalsPage() {
   const [devotionals, setDevotionals] = useState<Devotional[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedDevotional, setSelectedDevotional] = useState<Devotional | null>(null);
+  const [readingPlan, setReadingPlan] = useState<ReadingPlanDay[]>([]);
 
   useEffect(() => {
     const loadDevotionals = async () => {
@@ -39,7 +47,18 @@ export default function DevotionalsPage() {
       }
     };
 
+    const loadReadingPlan = async () => {
+      try {
+        const result = await BaseCrudService.getAll<ReadingPlanDay>('biblereadingplan', {}, { limit: 20 });
+        const sorted = (result.items || []).sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+        setReadingPlan(sorted);
+      } catch (error) {
+        console.error('Error loading reading plan:', error);
+      }
+    };
+
     loadDevotionals();
+    loadReadingPlan();
   }, []);
 
   return (
@@ -99,25 +118,23 @@ export default function DevotionalsPage() {
             </motion.div>
 
             <div className="max-w-3xl mx-auto bg-off-white rounded-lg border border-slate-gray/20 overflow-hidden">
-              {[
-                { day: 'Monday', reading: 'Psalm 1 – 5' },
-                { day: 'Tuesday', reading: 'Proverbs 1 – 3' },
-                { day: 'Wednesday', reading: 'Matthew 1 – 4' },
-                { day: 'Thursday', reading: 'Genesis 1 – 3' },
-                { day: 'Friday', reading: 'John 1 – 3' },
-                { day: 'Saturday', reading: 'Romans 1 – 3' },
-                { day: 'Sunday', reading: 'Psalm 100; 103; 150 (Day of rest & worship)' },
-              ].map((item, index) => (
-                <div
-                  key={item.day}
-                  className={`flex items-center justify-between px-8 py-5 ${
-                    index !== 6 ? 'border-b border-slate-gray/10' : ''
-                  }`}
-                >
-                  <span className="font-heading text-lg text-royal-blue">{item.day}</span>
-                  <span className="font-paragraph text-base text-dark-slate/80">{item.reading}</span>
-                </div>
-              ))}
+              {readingPlan.length === 0 ? (
+                <p className="font-paragraph text-base text-dark-slate/60 text-center py-8">
+                  This week's reading plan will be posted here soon.
+                </p>
+              ) : (
+                readingPlan.map((item, index) => (
+                  <div
+                    key={item._id}
+                    className={`flex items-center justify-between px-8 py-5 ${
+                      index !== readingPlan.length - 1 ? 'border-b border-slate-gray/10' : ''
+                    }`}
+                  >
+                    <span className="font-heading text-lg text-royal-blue">{item.day}</span>
+                    <span className="font-paragraph text-base text-dark-slate/80">{item.reading}</span>
+                  </div>
+                ))
+              )}
             </div>
 
             <p className="font-paragraph text-base text-dark-slate/60 text-center max-w-2xl mx-auto mt-8">
