@@ -5,7 +5,7 @@ import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
   return (
-    <footer className="bg-royal-blue text-off-white">
+    <footer className="bg-deep-burgundy text-off-white">
       <div className="max-w-[85rem] mx-auto px-6 md:px-10 lg:px-16 py-20">
         <div className="grid md:grid-cols-[auto_1fr_1fr_1fr_1fr] gap-16 mb-16">
           {/* Logo — standalone, own column */}
@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <h3 className="font-heading text-2xl text-muted-gold mb-6">RCA Charisma</h3>
             <p className="font-paragraph text-base text-off-white/80 leading-relaxed">
-              A congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture, 
+              A congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture,
               the glory of God, and the proclamation of the Gospel.
             </p>
           </div>
@@ -73,14 +73,30 @@ export default function Footer() {
           {/* Service Times */}
           <div>
             <h4 className="font-heading text-xl text-muted-gold mb-6">Service Times</h4>
-            <div className="space-y-3 font-paragraph text-base text-off-white/80">
+            <div className="space-y-3 font-paragraph text-sm text-off-white/80">
               <div>
-                <p className="font-semibold text-off-white">Sunday Worship</p>
+                <p className="font-semibold text-off-white">Sunday Service</p>
                 <p>9:00 AM</p>
               </div>
               <div>
-                <p className="font-semibold text-off-white">Tuesday Prayer</p>
+                <p className="font-semibold text-off-white">Sunday School</p>
+                <p>10:30 AM</p>
+              </div>
+              <div>
+                <p className="font-semibold text-off-white">Prayer Meeting (Tue)</p>
                 <p>7:00 PM</p>
+              </div>
+              <div>
+                <p className="font-semibold text-off-white">Home Fellowship (Thu)</p>
+                <p>7:00 PM</p>
+              </div>
+              <div>
+                <p className="font-semibold text-off-white">Youth Meeting (Fri)</p>
+                <p>7:30 PM</p>
+              </div>
+              <div>
+                <p className="font-semibold text-off-white">Laudium Outreach (Mon)</p>
+                <p>6:30 PM</p>
               </div>
             </div>
           </div>
@@ -92,7 +108,7 @@ export default function Footer() {
             <p className="font-paragraph text-sm text-off-white/60">
               © {new Date().getFullYear()} RCA Charisma. All rights reserved.
             </p>
-            
+
             <div className="flex items-center gap-6">
               <a
                 href="https://facebook.com"

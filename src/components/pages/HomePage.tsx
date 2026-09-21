@@ -9,8 +9,12 @@ import { Image } from '@/components/ui/image';
 
 // --- Canonical Data Sources ---
 const serviceTimes = [
-  { title: "Sunday Worship", time: "9:00 AM", desc: "Our primary gathering for corporate worship, prayer, and expository preaching." },
-  { title: "Tuesday Prayer", time: "7:00 PM", desc: "A time of corporate prayer and intercession for the church and community." }
+  { title: "Sunday Service", time: "9:00 AM", desc: "Our primary gathering for corporate worship, prayer, and expository preaching." },
+  { title: "Sunday School", time: "10:30 AM", desc: "Bible-based teaching and discipleship for every age group, straight after the Sunday service." },
+  { title: "Prayer Meeting", time: "Tuesdays, 7:00 PM", desc: "A time of corporate prayer and intercession for the church and community." },
+  { title: "Home Fellowship", time: "Thursdays, 7:00 PM", desc: "Small group Bible study and fellowship, meeting in homes across the community." },
+  { title: "Youth Meeting", time: "Fridays, 7:30 PM", desc: "A gathering for our young people to grow together in faith, fellowship, and service." },
+  { title: "Laudium Outreach", time: "Mondays, 6:30 PM", desc: "Carrying the Gospel and practical care directly into the Laudium community." }
 ];
 
 const foundations = [
@@ -67,10 +71,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-off-white text-dark-slate selection:bg-muted-gold selection:text-white font-paragraph">
       <Header />
-      
+
       {/* --- HERO SECTION: The Grand Entrance --- */}
       <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] overflow-clip bg-royal-blue flex items-center justify-center">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{ y: heroY }}
         >
@@ -79,7 +83,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/80 via-royal-blue/50 to-royal-blue/90" />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center text-center mt-20"
           style={{ opacity: heroOpacity }}
         >
@@ -96,10 +100,13 @@ export default function HomePage() {
               Welcome to <br/>
               <span className="italic text-muted-gold">RCA Charisma</span>
             </h1>
-            <p className="font-paragraph text-lg md:text-2xl text-off-white/80 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+            <p className="font-paragraph text-lg md:text-2xl text-off-white/80 max-w-3xl mx-auto mb-4 leading-relaxed font-light">
               A community rooted in Scripture, devoted to reverent worship, and committed to serving God with grace and truth in South Africa.
             </p>
-            
+            <p className="font-heading italic text-muted-gold text-lg md:text-xl mb-12">
+              "Using God's Gifts to Serve Our Community"
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 to="/contact"
@@ -122,7 +129,7 @@ export default function HomePage() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -130,7 +137,7 @@ export default function HomePage() {
         >
           <span className="text-off-white/50 text-xs tracking-widest uppercase">Scroll</span>
           <div className="w-[1px] h-16 bg-off-white/20 relative overflow-hidden">
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 w-full h-1/2 bg-muted-gold"
               animate={{ y: ["-100%", "200%"] }}
               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
@@ -143,7 +150,7 @@ export default function HomePage() {
       <section ref={serviceRef} className="w-full py-32 md:py-48 bg-off-white relative z-20">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-            
+
             {/* Sticky Left Column */}
             <div className="lg:col-span-5 relative">
               <div className="lg:sticky lg:top-40">
@@ -209,14 +216,14 @@ export default function HomePage() {
 
       {/* --- VISUAL BREATHER: Parallax Transition --- */}
       <section ref={breatherRef} className="w-full h-[60vh] min-h-[500px] relative overflow-clip flex items-center justify-center">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
           style={{ y: breatherY }}
         >
           <Image src="https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg" alt="Inside RCA Charisma church" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-royal-blue/80 mix-blend-multiply" />
         </motion.div>
-        
+
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -237,7 +244,7 @@ export default function HomePage() {
       <section ref={foundationRef} className="w-full py-32 md:py-48 bg-off-white relative">
         {/* Decorative background element */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-gray/20 to-transparent" />
-        
+
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -254,7 +261,7 @@ export default function HomePage() {
               (Sola Scriptura)
             </p>
             <p className="font-paragraph text-xl text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
-              We are a community grounded in the absolute authority of God's Word, 
+              We are a community grounded in the absolute authority of God's Word,
               committed to the historic Reformed tradition, and passionate about proclaiming the Gospel.
             </p>
           </motion.div>
@@ -306,7 +313,7 @@ export default function HomePage() {
       <section className="w-full py-32 md:py-40 bg-royal-blue relative overflow-hidden">
         {/* Subtle background texture/pattern */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#F5F5DC 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-        
+
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -320,7 +327,7 @@ export default function HomePage() {
               Join Us This Sunday
             </h2>
             <p className="font-paragraph text-xl text-off-white/80 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-              Whether you are seeking a church home, exploring the Christian faith, or visiting the area, 
+              Whether you are seeking a church home, exploring the Christian faith, or visiting the area,
               we welcome you to worship with us and experience the grace of our Lord Jesus Christ.
             </p>
             <Link
