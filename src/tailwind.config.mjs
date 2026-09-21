@@ -31,6 +31,7 @@ export default {
                 'charcoal-light': '#747474',
                 'soft-sky-blue': '#E4EDF7',
                 'deep-burgundy': '#4E1B2A',
+                'warm-beige': '#D9C9A3',
                 destructive: '#D32F2F',
                 'destructive-foreground': '#FFFFFF',
                 background: '#F7F3E8',
