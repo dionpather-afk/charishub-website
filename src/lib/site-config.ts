@@ -20,11 +20,6 @@ export const SITE_CONFIG = {
   mapsQuery: '261 Jewel Street, Laudium, Pretoria, 0037, South Africa',
   mapsEmbedUrl:
     'https://www.google.com/maps?q=261+Jewel+Street,+Laudium,+Pretoria,+0037,+South+Africa&output=embed',
-  // Direct line for the Minister, from the church's community flyer.
-  // Kept separate from cellDisplay above (a different number) rather than
-  // overwriting it — flag to Dion if one of the two turns out to be outdated.
   ministerName: 'Dr Victor Pillay',
-  ministerPhoneDisplay: '083 232 1303',
-  ministerPhoneHref: 'tel:+27832321303',
 };
 // Force rebuild trigger 2026-09-16T20:55:57Z

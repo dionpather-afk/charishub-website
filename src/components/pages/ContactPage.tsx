@@ -137,13 +137,6 @@ export default function ContactPage() {
                     >
                       {SITE_CONFIG.cellDisplay}
                     </a>
-                    <br />
-                    <a
-                      href={SITE_CONFIG.ministerPhoneHref}
-                      className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
-                    >
-                      {SITE_CONFIG.ministerPhoneDisplay} <span className="text-slate-gray text-sm">({SITE_CONFIG.ministerName})</span>
-                    </a>
                   </div>
                 </div>
 
