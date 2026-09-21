@@ -30,19 +30,19 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
-              src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
+              src="https://static.wixstatic.com/media/dd740b_411d0e0557674c7a861459e7e5688d49~mv2.png"
               alt="RCA Charisma logo"
               className="h-[160px] w-[160px] md:h-[200px] md:w-[200px] object-contain"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-heading text-[22px] xl:text-[25px] tracking-wide transition-colors duration-300 relative group ${
+                className={`font-heading text-[19px] xl:text-[21px] whitespace-nowrap tracking-wide transition-colors duration-300 relative group ${
                   isActive(link.path)
                     ? 'text-muted-gold'
                     : 'text-dark-slate hover:text-muted-gold'
