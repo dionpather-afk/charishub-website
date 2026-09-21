@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo — standalone, own column */}
           <div className="flex items-start justify-start">
             <Image
-              src="https://static.wixstatic.com/media/dd740b_9132e2e60a68473c89eb8f379f750255~mv2.png"
+              src="https://static.wixstatic.com/media/dd740b_411d0e0557674c7a861459e7e5688d49~mv2.png"
               alt="RCA Charisma logo"
               className="h-[125px] w-[125px] object-contain"
             />
