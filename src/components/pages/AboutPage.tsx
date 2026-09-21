@@ -51,6 +51,116 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Leadership Team Section */}
+      <section className="w-full py-24 md:py-32 bg-white">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-6">
+              Our Leadership Team
+            </h2>
+            <p className="font-paragraph text-lg text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
+              Shepherds called to serve, teach, and care for the flock of God.
+            </p>
+          </motion.div>
+
+          <div className="min-h-[400px]">
+            {isLoading ? null : teamMembers.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="font-paragraph text-xl text-dark-slate">
+                  Leadership information will be available soon.
+                </p>
+              </div>
+            ) : (
+              <>
+                {/* Featured leader (Reverend) with full bio */}
+                {teamMembers.filter((m) => m.biography && m.biography !== 'Bio TBA — full details coming soon.').map((member) => (
+                  <motion.div
+                    key={member._id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-off-white rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm mb-16"
+                  >
+                    <div className="grid md:grid-cols-[350px_1fr] gap-0">
+                      {member.profilePhoto && (
+                        <div className="aspect-square md:aspect-auto overflow-hidden">
+                          <Image
+                            src={member.profilePhoto}
+                            alt={member.leaderName || 'Team member'}
+                            className="w-full h-full object-cover object-top"
+                            width={500}
+                          />
+                        </div>
+                      )}
+                      <div className="p-10 md:p-14 flex flex-col justify-center">
+                        <h3 className="font-heading text-3xl md:text-4xl text-royal-blue mb-2">
+                          {member.leaderName}
+                        </h3>
+                        {member.role && (
+                          <p className="font-paragraph text-lg text-muted-gold font-semibold mb-6">
+                            {member.role}
+                          </p>
+                        )}
+                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed whitespace-pre-line">
+                          {member.biography}
+                        </p>
+                        {member.email && (
+                          <a
+                            href={`mailto:${member.email}`}
+                            className="inline-flex items-center gap-2 mt-6 text-muted-gold font-paragraph text-sm font-semibold hover:text-royal-blue transition-colors duration-300 w-fit"
+                          >
+                            <Mail className="w-4 h-4" />
+                            Contact
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+
+                {/* Elders — simple grid, name and title only */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                  {teamMembers.filter((m) => !m.biography || m.biography === 'Bio TBA — full details coming soon.').map((member, index) => (
+                    <motion.div
+                      key={member._id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.08 }}
+                      className="text-center"
+                    >
+                      {member.profilePhoto && (
+                        <div className="aspect-square overflow-hidden rounded-full border-2 border-muted-gold/30 mb-4 mx-auto max-w-[180px]">
+                          <Image
+                            src={member.profilePhoto}
+                            alt={member.leaderName || 'Team member'}
+                            className="w-full h-full object-cover object-top"
+                            width={300}
+                          />
+                        </div>
+                      )}
+                      <h3 className="font-heading text-lg text-royal-blue">
+                        {member.leaderName}
+                      </h3>
+                      {member.role && (
+                        <p className="font-paragraph text-sm text-muted-gold font-semibold">
+                          {member.role}
+                        </p>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="w-full py-24 md:py-32 bg-off-white">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
@@ -187,116 +297,6 @@ export default function AboutPage() {
                 </p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team Section */}
-      <section className="w-full py-24 md:py-32 bg-off-white">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-6">
-              Our Leadership Team
-            </h2>
-            <p className="font-paragraph text-lg text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
-              Shepherds called to serve, teach, and care for the flock of God.
-            </p>
-          </motion.div>
-
-          <div className="min-h-[400px]">
-            {isLoading ? null : teamMembers.length === 0 ? (
-              <div className="text-center py-20">
-                <p className="font-paragraph text-xl text-dark-slate">
-                  Leadership information will be available soon.
-                </p>
-              </div>
-            ) : (
-              <>
-                {/* Featured leader (Reverend) with full bio */}
-                {teamMembers.filter((m) => m.biography && m.biography !== 'Bio TBA — full details coming soon.').map((member) => (
-                  <motion.div
-                    key={member._id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm mb-16"
-                  >
-                    <div className="grid md:grid-cols-[350px_1fr] gap-0">
-                      {member.profilePhoto && (
-                        <div className="aspect-square md:aspect-auto overflow-hidden">
-                          <Image
-                            src={member.profilePhoto}
-                            alt={member.leaderName || 'Team member'}
-                            className="w-full h-full object-cover object-top"
-                            width={500}
-                          />
-                        </div>
-                      )}
-                      <div className="p-10 md:p-14 flex flex-col justify-center">
-                        <h3 className="font-heading text-3xl md:text-4xl text-royal-blue mb-2">
-                          {member.leaderName}
-                        </h3>
-                        {member.role && (
-                          <p className="font-paragraph text-lg text-muted-gold font-semibold mb-6">
-                            {member.role}
-                          </p>
-                        )}
-                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed whitespace-pre-line">
-                          {member.biography}
-                        </p>
-                        {member.email && (
-                          <a
-                            href={`mailto:${member.email}`}
-                            className="inline-flex items-center gap-2 mt-6 text-muted-gold font-paragraph text-sm font-semibold hover:text-royal-blue transition-colors duration-300 w-fit"
-                          >
-                            <Mail className="w-4 h-4" />
-                            Contact
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-
-                {/* Elders — simple grid, name and title only */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-                  {teamMembers.filter((m) => !m.biography || m.biography === 'Bio TBA — full details coming soon.').map((member, index) => (
-                    <motion.div
-                      key={member._id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.08 }}
-                      className="text-center"
-                    >
-                      {member.profilePhoto && (
-                        <div className="aspect-square overflow-hidden rounded-full border-2 border-muted-gold/30 mb-4 mx-auto max-w-[180px]">
-                          <Image
-                            src={member.profilePhoto}
-                            alt={member.leaderName || 'Team member'}
-                            className="w-full h-full object-cover object-top"
-                            width={300}
-                          />
-                        </div>
-                      )}
-                      <h3 className="font-heading text-lg text-royal-blue">
-                        {member.leaderName}
-                      </h3>
-                      {member.role && (
-                        <p className="font-paragraph text-sm text-muted-gold font-semibold">
-                          {member.role}
-                        </p>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-              </>
-            )}
           </div>
         </div>
       </section>
