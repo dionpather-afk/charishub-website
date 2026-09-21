@@ -11,6 +11,7 @@ import GalleryPage from '@/components/pages/GalleryPage';
 import ContactPage from '@/components/pages/ContactPage';
 import DevotionalsPage from '@/components/pages/DevotionalsPage';
 import MinistriesPage from '@/components/pages/MinistriesPage';
+import HistoryPage from '@/components/pages/HistoryPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -61,6 +62,13 @@ const router = createBrowserRouter([
         element: <AboutPage />,
         routeMetadata: {
           pageIdentifier: 'about',
+        },
+      },
+      {
+        path: "history",
+        element: <HistoryPage />,
+        routeMetadata: {
+          pageIdentifier: 'history',
         },
       },
       {

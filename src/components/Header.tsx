@@ -16,6 +16,7 @@ export default function Header() {
     { path: '/giving', label: 'Giving' },
     { path: '/about', label: 'About' },
     { path: '/ministries', label: 'Ministries' },
+    { path: '/history', label: 'History' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' }
   ];
