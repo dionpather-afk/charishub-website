@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Youtube, Instagram } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import logoGold from '@/assets/rca-charisma-logo-gold.png?url';
 import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
           {/* Logo — standalone, own column */}
           <div className="flex items-start justify-start">
             <Image
-              src="https://static.wixstatic.com/media/dd740b_411d0e0557674c7a861459e7e5688d49~mv2.png"
+              src={logoGold}
               alt="RCA Charisma logo"
               className="h-[125px] w-[125px] object-contain"
             />
