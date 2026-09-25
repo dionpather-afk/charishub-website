@@ -3,6 +3,17 @@ import { SEO } from '@wix/seo/components';
 import { loadSEOTagsServiceConfig } from '@wix/seo/services';
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
+import {
+  SITE_NAME,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_ALT,
+  SITE_URL,
+  getPageSeo,
+  getCanonicalUrl,
+  buildChurchJsonLd,
+  toJsonLd,
+} from "@/lib/seo";
+import goldLogo from "@/assets/rca-charisma-logo-gold.png?url";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
@@ -13,12 +24,55 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
     pageName: 'Home',
   },
 });
+
+// Our own title, description, canonical link and share-preview tags for this
+// page, always on the main domain. Every other tag Wix resolves
+// (robots/noindex, ...) is rendered exactly as Wix sends it.
+const basePath = (import.meta.env.BASE_NAME || '').replace(/\/+$/, '');
+const pagePath = basePath && Astro.url.pathname.startsWith(basePath)
+  ? Astro.url.pathname.slice(basePath.length)
+  : Astro.url.pathname;
+const pageSeo = getPageSeo(pagePath);
+const OWN_META = new Set([
+  'description',
+  'og:title', 'og:description', 'og:type', 'og:url', 'og:site_name',
+  'og:image', 'og:image:width', 'og:image:height', 'og:image:alt',
+  'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image', 'twitter:image:alt',
+]);
+const wixSeoTags = {
+  ...seoTagsServiceConfig,
+  tags: seoTagsServiceConfig.tags.filter((tag) =>
+    tag.type !== 'title' &&
+    !(tag.type === 'link' && tag.props?.rel === 'canonical') &&
+    !(tag.type === 'meta' && OWN_META.has(tag.props?.name ?? tag.props?.property))
+  ),
+};
+const pageUrl = getCanonicalUrl(pagePath);
+const churchJsonLd = toJsonLd(buildChurchJsonLd(SITE_URL, new URL(goldLogo, SITE_URL).href));
 ---
 
 <html lang="en" class="w-full h-full">
   <head>
     <Head />
-    <SEO.Tags seoTagsServiceConfig={seoTagsServiceConfig} slot="seo-tags" />
+    <title>{pageSeo.title}</title>
+    <meta name="description" content={pageSeo.description} />
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:title" content={pageSeo.title} />
+    <meta property="og:description" content={pageSeo.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={DEFAULT_OG_IMAGE_ALT} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageSeo.title} />
+    <meta name="twitter:description" content={pageSeo.description} />
+    <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+    <meta name="twitter:image:alt" content={DEFAULT_OG_IMAGE_ALT} />
+    <script type="application/ld+json" is:inline set:html={churchJsonLd} />
+    <SEO.Tags seoTagsServiceConfig={wixSeoTags} slot="seo-tags" />
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">

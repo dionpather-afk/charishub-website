@@ -21,6 +21,12 @@ const CATEGORY_LABELS: Record<string, string> = {
 // Photos with no category have no tab of their own; they still show under "All".
 const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || undefined;
 
+// Descriptive alt text from the photo's title and category.
+const getPhotoAlt = (p: PhotoGallery) => {
+  const label = getCategoryLabel(p.eventName);
+  return `${p.title || 'Photo'}${label ? ` (${label})` : ''} – RCA Charisma, Laudium`;
+};
+
 // Gallery items that are re-uploads of a photo already in the gallery (same
 // picture, different file). Hidden here rather than deleted from the CMS so
 // the change is reviewable and easy to undo. Kept copy noted on each line.
@@ -166,7 +172,7 @@ export default function GalleryPage() {
                         <div className="overflow-hidden">
                           <Image
                             src={photo.image}
-                            alt={photo.title || 'Gallery photo'}
+                            alt={getPhotoAlt(photo)}
                             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                             width={600}
                           />
@@ -175,9 +181,9 @@ export default function GalleryPage() {
                       {photo.description && (
                         <div className="p-6">
                           {photo.title && (
-                            <h3 className="font-heading text-xl text-royal-blue mb-2">
+                            <h2 className="font-heading text-xl text-royal-blue mb-2">
                               {photo.title}
-                            </h3>
+                            </h2>
                           )}
                           <p className="font-paragraph text-sm text-dark-slate/80 leading-relaxed">
                             {photo.description}
@@ -224,7 +230,7 @@ export default function GalleryPage() {
                 <div className="mb-6">
                   <Image
                     src={selectedPhoto.image}
-                    alt={selectedPhoto.title || 'Gallery photo'}
+                    alt={getPhotoAlt(selectedPhoto)}
                     className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
                     width={1200}
                   />

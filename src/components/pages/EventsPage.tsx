@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { Events } from '@/entities';
 import { Image } from '@/components/ui/image';
+import { CHURCH_ADDRESS, SITE_NAME, toJsonLd } from '@/lib/seo';
 
 // All event dates are church (South African) calendar days. Wix date fields
 // arrive as "YYYY-MM-DD"; read them as plain days so no browser time zone can
@@ -36,6 +37,26 @@ const formatEventDates = (start: string, end: string) => {
   if (a.getMonth() !== b.getMonth()) return `${format(a, 'd MMM')} – ${format(b, 'd MMM yyyy')}`;
   return `${format(a, 'd')} – ${format(b, 'd MMM yyyy')}`;
 };
+
+// schema.org Event data for search engines, one entry per dated CMS event.
+const buildEventsJsonLd = (events: Events[]) => ({
+  '@context': 'https://schema.org',
+  '@graph': events
+    .filter((e) => e.eventTitle && dayOf(e.eventDate))
+    .map((e) => ({
+      '@type': 'Event',
+      name: e.eventTitle,
+      startDate: dayOf(e.eventDate),
+      ...(dayOf(e.eventEndDate) && { endDate: dayOf(e.eventEndDate) }),
+      ...(e.eventDescription && { description: e.eventDescription }),
+      ...(e.eventImage?.startsWith('http') && { image: e.eventImage }),
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      location: e.location
+        ? { '@type': 'Place', name: e.location, address: e.location }
+        : { '@type': 'Place', name: SITE_NAME, address: CHURCH_ADDRESS },
+      organizer: { '@type': 'Organization', name: SITE_NAME },
+    })),
+});
 
 export default function EventsPage() {
   const [events, setEvents] = useState<Events[]>([]);
@@ -176,6 +197,13 @@ export default function EventsPage() {
       </section>
 
       <Footer />
+
+      {events.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: toJsonLd(buildEventsJsonLd(events)) }}
+        />
+      )}
     </div>
   );
 }

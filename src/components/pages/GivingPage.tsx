@@ -50,7 +50,7 @@ export default function GivingPage() {
             <div className="mt-12 max-w-5xl mx-auto rounded-2xl overflow-hidden border-4 border-off-white/20">
               <Image
                 src="https://static.wixstatic.com/media/dd740b_9a679137889e40c49e6cbb1e7afa93d4~mv2.jpeg"
-                alt="Our Pastor and his wife"
+                alt="Our Pastor and his wife, RCA Charisma"
                 className="w-full h-auto object-contain"
               />
             </div>

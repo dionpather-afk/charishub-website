@@ -88,9 +88,9 @@ export default function MinistriesPage() {
                     )}
                   </div>
                   <div className="p-8">
-                    <h3 className="font-heading text-2xl text-royal-blue mb-3">
+                    <h2 className="font-heading text-2xl text-royal-blue mb-3">
                       {ministry.name}
-                    </h3>
+                    </h2>
                     <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">
                       {ministry.description}
                     </p>
