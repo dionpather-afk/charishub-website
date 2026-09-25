@@ -1,6 +1,8 @@
 import { MemberProvider } from '@/integrations';
-import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
+import { getPageSeo } from '@/lib/seo';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import SermonsPage from '@/components/pages/SermonsPage';
@@ -14,11 +16,24 @@ import MinistriesPage from '@/components/pages/MinistriesPage';
 import HistoryPage from '@/components/pages/HistoryPage';
 import LeadershipPage from '@/components/pages/LeadershipPage';
 
+// Keeps the tab title and description right when moving between pages
+// in the browser (the server sets them on the first page load).
+function PageSeoSync() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const { title, description } = getPageSeo(pathname);
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description);
+  }, [pathname]);
+  return null;
+}
+
 // Layout component that includes ScrollToTop
 function Layout() {
   return (
     <>
       <ScrollToTop />
+      <PageSeoSync />
       <Outlet />
     </>
   );

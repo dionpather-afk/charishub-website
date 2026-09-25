@@ -3,6 +3,7 @@ import { SEO } from '@wix/seo/components';
 import { loadSEOTagsServiceConfig } from '@wix/seo/services';
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
+import { getPageSeo } from "@/lib/seo";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
@@ -13,12 +14,30 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
     pageName: 'Home',
   },
 });
+
+// Our own title and description for this page. Every other tag Wix resolves
+// (canonical link, robots/noindex, ...) is rendered exactly as Wix sends it.
+const basePath = (import.meta.env.BASE_NAME || '').replace(/\/+$/, '');
+const pagePath = basePath && Astro.url.pathname.startsWith(basePath)
+  ? Astro.url.pathname.slice(basePath.length)
+  : Astro.url.pathname;
+const pageSeo = getPageSeo(pagePath);
+const OWN_META = new Set(['description']);
+const wixSeoTags = {
+  ...seoTagsServiceConfig,
+  tags: seoTagsServiceConfig.tags.filter((tag) =>
+    tag.type !== 'title' &&
+    !(tag.type === 'meta' && OWN_META.has(tag.props?.name ?? tag.props?.property))
+  ),
+};
 ---
 
 <html lang="en" class="w-full h-full">
   <head>
     <Head />
-    <SEO.Tags seoTagsServiceConfig={seoTagsServiceConfig} slot="seo-tags" />
+    <title>{pageSeo.title}</title>
+    <meta name="description" content={pageSeo.description} />
+    <SEO.Tags seoTagsServiceConfig={wixSeoTags} slot="seo-tags" />
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">
