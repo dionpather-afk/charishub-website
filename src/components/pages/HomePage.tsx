@@ -74,11 +74,15 @@ export default function HomePage() {
 
       {/* --- HERO SECTION: The Grand Entrance --- */}
       <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] overflow-clip bg-royal-blue flex items-center justify-center">
+        {/* Blurred, darkened copy of the photo fills any space around the full photo */}
+        <div className="absolute inset-0" aria-hidden="true">
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="" className="w-full h-full object-cover scale-110 blur-2xl brightness-75" />
+        </div>
         <motion.div
-          className="absolute inset-0 w-full h-[120%] -top-[10%]"
+          className="absolute inset-0 w-full h-full"
           style={{ y: heroY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-cover brightness-110 contrast-[1.05] saturate-[1.2]" />
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-contain object-center brightness-110 contrast-[1.05] saturate-[1.2]" />
         </motion.div>
 
         <motion.div
