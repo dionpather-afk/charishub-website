@@ -67,7 +67,7 @@ export default function DevotionalsPage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-royal-blue to-royal-blue/90 text-off-white py-16 md:py-24">
+        <section className="bg-[linear-gradient(135deg,#FFF0B0_0%,#DCAC53_55%,#A8782E_100%)] text-[#102B4E] py-16 md:py-24">
           <div className="max-w-[100rem] mx-auto px-8">
             <div className="max-w-3xl mx-auto text-center">
               <motion.div
@@ -76,7 +76,7 @@ export default function DevotionalsPage() {
                 transition={{ duration: 0.6 }}
               >
                 <h1 className="font-heading text-5xl md:text-6xl mb-6">Weekly Devotionals</h1>
-                <p className="font-paragraph text-lg md:text-xl text-off-white/90 max-w-2xl mx-auto">
+                <p className="font-paragraph text-lg md:text-xl text-[#061426] max-w-2xl mx-auto">
                   Reflections and spiritual insights from our pastoral team to nourish your faith journey.
                 </p>
               </motion.div>
