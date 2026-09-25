@@ -8,13 +8,14 @@ import Footer from '@/components/Footer';
 import { Image } from '@/components/ui/image';
 
 // --- Canonical Data Sources ---
+const ICON_BASE = "https://static.wixstatic.com/shapes/";
 const serviceTimes = [
-  { title: "Sunday Service", time: "9:00 AM", desc: "Our primary gathering for corporate worship, prayer, and expository preaching." },
-  { title: "Sunday School", time: "10:30 AM", desc: "Bible-based teaching and discipleship for every age group, straight after the Sunday service." },
-  { title: "Prayer Meeting", time: "Tuesdays, 7:00 PM", desc: "A time of corporate prayer and intercession for the church and community." },
-  { title: "Home Fellowship", time: "Thursdays, 7:00 PM", desc: "Small group Bible study and fellowship, meeting in homes across the community." },
-  { title: "Youth Meeting", time: "Fridays, 7:30 PM", desc: "A gathering for our young people to grow together in faith, fellowship, and service." },
-  { title: "Laudium Outreach", time: "Mondays, 6:30 PM", desc: "Carrying the Gospel and practical care directly into the Laudium community." }
+  { title: "Sunday Service", time: "Sunday · 9:00 AM", icon: ICON_BASE + "dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg", desc: "Come worship the Lord with us through prayer, praise, and the faithful preaching of His Word." },
+  { title: "Sunday School", time: "Sunday · 10:30 AM", icon: ICON_BASE + "dd740b_158537e800a14a77946916f12eae3e34.svg", desc: "Grow in the knowledge of Christ through Bible teaching and discipleship for every age, straight after the service." },
+  { title: "Prayer Meeting", time: "Tuesday · 7:00 PM", icon: ICON_BASE + "dd740b_afa6d6b9af86411aa4f1a694e13bf4e2.svg", desc: "Join us as we seek God together and lift up our church, our neighbours, and our community in prayer." },
+  { title: "Home Fellowship", time: "Thursday · 7:00 PM", icon: ICON_BASE + "dd740b_80d409b327ff4f3d8b579e818b52423f.svg", desc: "Share life and Scripture in homes across the community, encouraging one another to walk faithfully with Christ." },
+  { title: "Youth Meeting", time: "Friday · 7:30 PM", icon: ICON_BASE + "dd740b_0e168e5ff5954381b001bb35371705bb.svg", desc: "A welcoming place for young people to deepen their faith, build lasting friendships, and discover the joy of serving God." },
+  { title: "Laudium Outreach", time: "Monday · 6:30 PM", icon: ICON_BASE + "dd740b_c21cb2fb61ff43558cbe8d90b0c3b9a4.svg", desc: "Carry the love of Christ into Laudium through the Gospel, compassionate service, and practical care." }
 ];
 
 const foundations = [
@@ -184,7 +185,7 @@ export default function HomePage() {
 
             {/* Scrolling Right Column */}
             <div className="lg:col-span-7">
-              <div className="flex flex-col">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {serviceTimes.map((service, index) => (
                   <motion.div
                     key={index}
@@ -192,23 +193,21 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group border-t border-slate-gray/20 py-10 first:border-t-0 lg:first:pt-0"
+                    className="group bg-white rounded-lg border border-slate-gray/20 p-8 hover:border-muted-gold hover:shadow-md transition-all duration-300"
                   >
-                    <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-4">
-                      <h3 className="font-heading text-3xl md:text-4xl text-royal-blue group-hover:text-muted-gold transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-slate-gray font-semibold tracking-wide">
-                        <Clock className="w-4 h-4 text-muted-gold" />
-                        {service.time}
-                      </div>
+                    <img src={service.icon} alt="" aria-hidden="true" className="w-14 h-14 mb-6" loading="lazy" />
+                    <h3 className="font-heading text-3xl text-royal-blue group-hover:text-muted-gold transition-colors duration-300 mb-2">
+                      {service.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-slate-gray font-semibold tracking-wide mb-4">
+                      <Clock className="w-4 h-4 text-muted-gold" />
+                      {service.time}
                     </div>
-                    <p className="text-dark-slate/70 max-w-2xl leading-relaxed">
+                    <p className="text-dark-slate/70 leading-relaxed">
                       {service.desc}
                     </p>
                   </motion.div>
                 ))}
-                <div className="border-t border-slate-gray/20 pt-10" />
               </div>
             </div>
 
