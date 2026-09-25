@@ -65,7 +65,7 @@ export default function SermonsPage() {
             <div className="mt-10 max-w-xs mx-auto rounded-2xl overflow-hidden border-4 border-off-white/20">
               <Image
                 src="https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg"
-                alt="Our Pastor"
+                alt="Our Pastor at RCA Charisma"
                 className="w-full h-auto object-cover"
               />
             </div>

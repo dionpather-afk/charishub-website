@@ -87,7 +87,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-full"
           style={{ y: heroY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-contain object-center brightness-110 contrast-[1.05] saturate-[1.2]" />
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building in Laudium" className="w-full h-full object-contain object-center brightness-110 contrast-[1.05] saturate-[1.2]" />
         </motion.div>
 
         <motion.div
@@ -158,7 +158,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <Image
             src="https://static.wixstatic.com/media/dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg"
-            alt="RCA Synod 2026"
+            alt="RCA National Synod 2026, hosted by RCA Charisma, 29 September – 4 October 2026"
             className="w-full h-auto object-contain rounded-lg border border-slate-gray/20 shadow-sm"
           />
         </div>
@@ -196,7 +196,7 @@ export default function HomePage() {
                   </Link>
                   <Image
                     src="https://static.wixstatic.com/media/dd740b_24288f64270b43fe9eca2514f4c0ee1f~mv2.jpeg"
-                    alt="Matthew 11:28"
+                    alt="Bible verse: Matthew 11:28"
                     className="w-full max-w-xs h-auto object-contain rounded-lg border border-slate-gray/20 shadow-sm mt-10"
                   />
                 </motion.div>
@@ -241,7 +241,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
           style={{ y: breatherY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg" alt="Inside RCA Charisma church" className="w-full h-full object-cover" />
+          <Image src="https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-royal-blue/80 mix-blend-multiply" />
         </motion.div>
 
