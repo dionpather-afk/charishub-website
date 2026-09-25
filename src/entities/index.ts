@@ -57,6 +57,8 @@ export interface Events {
   eventTitle?: string;
   /** @wixFieldType date */
   eventDate?: Date | string;
+  /** @wixFieldType date */
+  eventEndDate?: Date | string;
   /** @wixFieldType time */
   eventTime?: any;
   /** @wixFieldType text */
