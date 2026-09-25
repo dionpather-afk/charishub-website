@@ -1,5 +1,5 @@
 /**
- * Search and share-preview metadata for every page.
+ * Search, share-preview and structured-data metadata for every page.
  *
  * Titles and descriptions are rendered on the server (see
  * src/pages/[...slug].astro) so WhatsApp, Facebook and search engines see
@@ -89,3 +89,71 @@ export const getPageSeo = (pathname: string): PageSeo => {
   const path = pathname.replace(/\/+$/, '') || '/';
   return PAGE_SEO[path] ?? PAGE_SEO['/'];
 };
+
+// Weekly gatherings, as listed on the home page.
+export const WEEKLY_GATHERINGS = [
+  { name: 'Sunday Service', day: 'Sunday', startTime: '09:00' },
+  { name: 'Sunday School', day: 'Sunday', startTime: '10:30' },
+  { name: 'Laudium Outreach', day: 'Monday', startTime: '18:30' },
+  { name: 'Prayer Meeting', day: 'Tuesday', startTime: '19:00' },
+  { name: 'Home Fellowship', day: 'Thursday', startTime: '19:00' },
+  { name: 'Youth Meeting', day: 'Friday', startTime: '19:30' },
+];
+
+export const CHURCH_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: SITE_CONFIG.addressLine1,
+  addressLocality: 'Laudium, Pretoria',
+  addressRegion: 'Gauteng',
+  postalCode: '0037',
+  addressCountry: 'ZA',
+};
+
+/** Site-wide structured data: the congregation and its church building. */
+export const buildChurchJsonLd = (origin: string, logoUrl: string) => {
+  const orgId = `${origin}/#organization`;
+  const churchId = `${origin}/#church`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': orgId,
+        name: SITE_NAME,
+        url: `${origin}/`,
+        logo: logoUrl,
+        email: SITE_CONFIG.email,
+        telephone: SITE_CONFIG.phoneHref.replace('tel:', ''),
+        address: CHURCH_ADDRESS,
+        parentOrganization: { '@type': 'Organization', name: 'Reformed Church in Africa' },
+        location: { '@id': churchId },
+      },
+      {
+        '@type': 'Church',
+        '@id': churchId,
+        name: SITE_NAME,
+        url: `${origin}/`,
+        image: DEFAULT_OG_IMAGE,
+        telephone: SITE_CONFIG.phoneHref.replace('tel:', ''),
+        address: CHURCH_ADDRESS,
+        event: WEEKLY_GATHERINGS.map((g) => ({
+          '@type': 'Event',
+          name: g.name,
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          eventSchedule: {
+            '@type': 'Schedule',
+            byDay: `https://schema.org/${g.day}`,
+            startTime: g.startTime,
+            repeatFrequency: 'P1W',
+            scheduleTimezone: 'Africa/Johannesburg',
+          },
+          location: { '@id': churchId },
+          organizer: { '@id': orgId },
+        })),
+      },
+    ],
+  };
+};
+
+/** JSON for a <script type="application/ld+json">, safe to inline in HTML. */
+export const toJsonLd = (data: unknown) => JSON.stringify(data).replace(/</g, '\\u003c');

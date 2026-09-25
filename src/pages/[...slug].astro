@@ -3,7 +3,15 @@ import { SEO } from '@wix/seo/components';
 import { loadSEOTagsServiceConfig } from '@wix/seo/services';
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
-import { SITE_NAME, DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_ALT, getPageSeo } from "@/lib/seo";
+import {
+  SITE_NAME,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_ALT,
+  getPageSeo,
+  buildChurchJsonLd,
+  toJsonLd,
+} from "@/lib/seo";
+import goldLogo from "@/assets/rca-charisma-logo-gold.png?url";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
@@ -40,6 +48,8 @@ const canonicalHref = seoTagsServiceConfig.tags.find(
   (tag) => tag.type === 'link' && tag.props?.rel === 'canonical'
 )?.props?.href;
 const pageUrl = canonicalHref || Astro.url.href;
+const siteOrigin = new URL(pageUrl).origin;
+const churchJsonLd = toJsonLd(buildChurchJsonLd(siteOrigin, new URL(goldLogo, siteOrigin).href));
 ---
 
 <html lang="en" class="w-full h-full">
@@ -61,6 +71,7 @@ const pageUrl = canonicalHref || Astro.url.href;
     <meta name="twitter:description" content={pageSeo.description} />
     <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
     <meta name="twitter:image:alt" content={DEFAULT_OG_IMAGE_ALT} />
+    <script type="application/ld+json" is:inline set:html={churchJsonLd} />
     <SEO.Tags seoTagsServiceConfig={wixSeoTags} slot="seo-tags" />
   </head>
   <body class="w-full h-full">
