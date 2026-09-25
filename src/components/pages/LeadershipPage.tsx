@@ -85,7 +85,7 @@ export default function LeadershipPage() {
               Our Leadership
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-[#061426] max-w-3xl mx-auto leading-relaxed">
-              Shepherds called to serve, teach, and care for the flock of God.
+              Called to serve, teach, and care for the flock of God.
             </p>
           </motion.div>
         </div>
