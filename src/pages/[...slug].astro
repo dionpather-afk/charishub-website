@@ -3,7 +3,7 @@ import { SEO } from '@wix/seo/components';
 import { loadSEOTagsServiceConfig } from '@wix/seo/services';
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
-import { getPageSeo } from "@/lib/seo";
+import { SITE_NAME, DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_ALT, getPageSeo } from "@/lib/seo";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
@@ -15,14 +15,19 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   },
 });
 
-// Our own title and description for this page. Every other tag Wix resolves
+// Our own title, description and share-preview tags for this page. Every other tag Wix resolves
 // (canonical link, robots/noindex, ...) is rendered exactly as Wix sends it.
 const basePath = (import.meta.env.BASE_NAME || '').replace(/\/+$/, '');
 const pagePath = basePath && Astro.url.pathname.startsWith(basePath)
   ? Astro.url.pathname.slice(basePath.length)
   : Astro.url.pathname;
 const pageSeo = getPageSeo(pagePath);
-const OWN_META = new Set(['description']);
+const OWN_META = new Set([
+  'description',
+  'og:title', 'og:description', 'og:type', 'og:url', 'og:site_name',
+  'og:image', 'og:image:width', 'og:image:height', 'og:image:alt',
+  'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image', 'twitter:image:alt',
+]);
 const wixSeoTags = {
   ...seoTagsServiceConfig,
   tags: seoTagsServiceConfig.tags.filter((tag) =>
@@ -30,6 +35,11 @@ const wixSeoTags = {
     !(tag.type === 'meta' && OWN_META.has(tag.props?.name ?? tag.props?.property))
   ),
 };
+// Share links use the canonical address Wix resolves for this page.
+const canonicalHref = seoTagsServiceConfig.tags.find(
+  (tag) => tag.type === 'link' && tag.props?.rel === 'canonical'
+)?.props?.href;
+const pageUrl = canonicalHref || Astro.url.href;
 ---
 
 <html lang="en" class="w-full h-full">
@@ -37,6 +47,20 @@ const wixSeoTags = {
     <Head />
     <title>{pageSeo.title}</title>
     <meta name="description" content={pageSeo.description} />
+    <meta property="og:title" content={pageSeo.title} />
+    <meta property="og:description" content={pageSeo.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={DEFAULT_OG_IMAGE_ALT} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageSeo.title} />
+    <meta name="twitter:description" content={pageSeo.description} />
+    <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+    <meta name="twitter:image:alt" content={DEFAULT_OG_IMAGE_ALT} />
     <SEO.Tags seoTagsServiceConfig={wixSeoTags} slot="seo-tags" />
   </head>
   <body class="w-full h-full">

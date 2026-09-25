@@ -1,5 +1,5 @@
 /**
- * Page titles and descriptions for every page.
+ * Search and share-preview metadata for every page.
  *
  * Titles and descriptions are rendered on the server (see
  * src/pages/[...slug].astro) so WhatsApp, Facebook and search engines see
@@ -9,6 +9,15 @@
  * Indexing (robots / noindex) is NOT set here: it stays under the Wix SEO
  * settings until launch.
  */
+import { SITE_CONFIG } from '@/lib/site-config';
+
+export const SITE_NAME = SITE_CONFIG.churchName;
+
+// Home page church photo, cropped by Wix to the 1200x630 share-preview size.
+export const DEFAULT_OG_IMAGE =
+  'https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
+export const DEFAULT_OG_IMAGE_ALT = 'RCA Charisma church building in Laudium, Pretoria';
+
 export interface PageSeo {
   title: string;
   description: string;
