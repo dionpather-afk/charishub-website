@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#102B4E] to-[#061426] border-t border-[#AD843D] text-[#F3E6C4]">
       <div className="max-w-[85rem] mx-auto px-6 md:px-10 lg:px-16 py-20">
-        <div className="grid md:grid-cols-[auto_1fr_1fr_1fr_1fr] gap-16 mb-16">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[auto_1fr_1fr_1fr_1fr] gap-16 mb-16">
           {/* Logo — standalone, own column */}
           <div className="flex items-start justify-start">
             <Image
