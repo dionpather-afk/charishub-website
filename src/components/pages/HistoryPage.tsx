@@ -172,11 +172,22 @@ export default function HistoryPage() {
           {/* Historic Reverends */}
           <section className="w-full pt-12 pb-4 bg-off-white">
             <div className="max-w-5xl mx-auto px-6 md:px-12">
-              <Image
-                src="https://static.wixstatic.com/media/dd740b_713aacf31f8d41d6a8aa7803e87be0fa~mv2.jpeg"
-                alt="Historic Reverends of RCA Charisma"
-                className="w-full h-auto object-contain rounded-lg border border-slate-gray/20"
-              />
+              <h2 className="font-heading text-4xl md:text-5xl text-muted-gold text-center mb-8">
+                Historic Reverends of RCA Charisma
+              </h2>
+              {/* The source image (1536x1024) has a misspelled title strip in its
+                  top ~8.5%. The frame is 91% of the image's height and anchored to
+                  the bottom, so the top 9% is always clipped at every width. */}
+              <div
+                className="w-full overflow-hidden rounded-lg border border-slate-gray/20"
+                style={{ aspectRatio: '1536 / 932' }}
+              >
+                <Image
+                  src="https://static.wixstatic.com/media/dd740b_713aacf31f8d41d6a8aa7803e87be0fa~mv2.jpeg"
+                  alt="Historic Reverends of RCA Charisma"
+                  className="w-full h-full object-cover object-bottom"
+                />
+              </div>
             </div>
           </section>
 
