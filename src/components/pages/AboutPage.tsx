@@ -22,7 +22,7 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-[#061426] max-w-3xl mx-auto leading-relaxed">
-              Meet the shepherds and servants called to lead and care for our congregation.
+              We Are Called To Serve The Church And The Community, Spreading The Gospel Message Of Salvation Found Only In Jesus Christ Alone.
             </p>
           </motion.div>
         </div>
