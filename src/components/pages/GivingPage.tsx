@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Info } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { GivingMethods } from '@/entities';
 import { Image } from '@/components/ui/image';
+import iconInfo from '@/assets/icons/icon-giving-info.svg?url';
+import iconExternalLink from '@/assets/icons/icon-giving-external-link.svg?url';
 
 export default function GivingPage() {
   const [givingMethods, setGivingMethods] = useState<GivingMethods[]>([]);
@@ -135,7 +136,7 @@ export default function GivingPage() {
                       {method.instructions && (
                         <div className="bg-off-white rounded-lg p-5 mb-8">
                           <div className="flex items-start gap-2 mb-3">
-                            <Info className="w-5 h-5 text-muted-gold flex-shrink-0 mt-0.5" />
+                            <img src={iconInfo} alt="" aria-hidden="true" className="w-7 h-7 flex-shrink-0 -mt-0.5" />
                             <p className="font-paragraph text-sm font-semibold text-royal-blue">
                               Instructions:
                             </p>
@@ -153,7 +154,7 @@ export default function GivingPage() {
                           className="inline-flex items-center gap-2 text-muted-gold font-paragraph font-semibold hover:text-royal-blue transition-colors duration-300"
                         >
                           Learn More
-                          <ExternalLink className="w-4 h-4" />
+                          <img src={iconExternalLink} alt="" aria-hidden="true" className="w-7 h-7" />
                         </a>
                       )}
                     </div>
