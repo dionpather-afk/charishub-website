@@ -69,17 +69,17 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-royal-blue py-20">
+      <section className="w-full bg-[linear-gradient(135deg,#FFF0B0_0%,#DCAC53_55%,#A8782E_100%)] py-20">
         <div className="max-w-[100rem] mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary-foreground mb-6">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-[#102B4E] mb-6">
               Contact Us
             </h1>
-            <p className="font-paragraph text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-paragraph text-xl text-[#061426] max-w-3xl mx-auto leading-relaxed">
               We would love to hear from you. Reach out with any questions or prayer requests.
             </p>
           </motion.div>
