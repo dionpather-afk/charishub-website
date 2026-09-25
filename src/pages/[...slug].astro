@@ -7,7 +7,9 @@ import {
   SITE_NAME,
   DEFAULT_OG_IMAGE,
   DEFAULT_OG_IMAGE_ALT,
+  SITE_URL,
   getPageSeo,
+  getCanonicalUrl,
   buildChurchJsonLd,
   toJsonLd,
 } from "@/lib/seo";
@@ -23,8 +25,9 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   },
 });
 
-// Our own title, description and share-preview tags for this page. Every other tag Wix resolves
-// (canonical link, robots/noindex, ...) is rendered exactly as Wix sends it.
+// Our own title, description, canonical link and share-preview tags for this
+// page, always on the main domain. Every other tag Wix resolves
+// (robots/noindex, ...) is rendered exactly as Wix sends it.
 const basePath = (import.meta.env.BASE_NAME || '').replace(/\/+$/, '');
 const pagePath = basePath && Astro.url.pathname.startsWith(basePath)
   ? Astro.url.pathname.slice(basePath.length)
@@ -40,16 +43,12 @@ const wixSeoTags = {
   ...seoTagsServiceConfig,
   tags: seoTagsServiceConfig.tags.filter((tag) =>
     tag.type !== 'title' &&
+    !(tag.type === 'link' && tag.props?.rel === 'canonical') &&
     !(tag.type === 'meta' && OWN_META.has(tag.props?.name ?? tag.props?.property))
   ),
 };
-// Share links use the canonical address Wix resolves for this page.
-const canonicalHref = seoTagsServiceConfig.tags.find(
-  (tag) => tag.type === 'link' && tag.props?.rel === 'canonical'
-)?.props?.href;
-const pageUrl = canonicalHref || Astro.url.href;
-const siteOrigin = new URL(pageUrl).origin;
-const churchJsonLd = toJsonLd(buildChurchJsonLd(siteOrigin, new URL(goldLogo, siteOrigin).href));
+const pageUrl = getCanonicalUrl(pagePath);
+const churchJsonLd = toJsonLd(buildChurchJsonLd(SITE_URL, new URL(goldLogo, SITE_URL).href));
 ---
 
 <html lang="en" class="w-full h-full">
@@ -57,6 +56,7 @@ const churchJsonLd = toJsonLd(buildChurchJsonLd(siteOrigin, new URL(goldLogo, si
     <Head />
     <title>{pageSeo.title}</title>
     <meta name="description" content={pageSeo.description} />
+    <link rel="canonical" href={pageUrl} />
     <meta property="og:title" content={pageSeo.title} />
     <meta property="og:description" content={pageSeo.description} />
     <meta property="og:type" content="website" />

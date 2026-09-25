@@ -13,6 +13,10 @@ import { SITE_CONFIG } from '@/lib/site-config';
 
 export const SITE_NAME = SITE_CONFIG.churchName;
 
+// The church's main public address, used for canonical links, share links,
+// structured data and llms.txt (whatever domain the page is served from).
+export const SITE_URL = 'https://www.rcacharisma.com';
+
 // Home page church photo, cropped by Wix to the 1200x630 share-preview size.
 export const DEFAULT_OG_IMAGE =
   'https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
@@ -84,11 +88,17 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   },
 };
 
-/** SEO for a path; unknown paths redirect home, so they share the home tags. */
-export const getPageSeo = (pathname: string): PageSeo => {
+// Unknown paths redirect home, so they share the home page's tags and URL.
+const knownPath = (pathname: string) => {
   const path = pathname.replace(/\/+$/, '') || '/';
-  return PAGE_SEO[path] ?? PAGE_SEO['/'];
+  return PAGE_SEO[path] ? path : '/';
 };
+
+/** SEO for a path. */
+export const getPageSeo = (pathname: string): PageSeo => PAGE_SEO[knownPath(pathname)];
+
+/** Canonical public URL for a path, on the main domain. */
+export const getCanonicalUrl = (pathname: string) => `${SITE_URL}${knownPath(pathname)}`;
 
 // Weekly gatherings, as listed on the home page.
 export const WEEKLY_GATHERINGS = [

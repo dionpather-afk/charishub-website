@@ -1,9 +1,9 @@
 import type { APIRoute } from 'astro';
 import { SITE_CONFIG } from '@/lib/site-config';
-import { WEEKLY_GATHERINGS } from '@/lib/seo';
+import { SITE_URL, WEEKLY_GATHERINGS } from '@/lib/seo';
 
 // Plain-English summary of the church for AI assistants (https://llmstxt.org).
-// Links use the address the site is served from, so they are right on any domain.
+// Links always use the church's main domain.
 const PAGES: [string, string, string][] = [
   ['About Us', '/about', 'who we are and what we believe'],
   ['Our Leadership', '/leadership', 'our pastor, elders and ministry leaders'],
@@ -22,9 +22,8 @@ const to12h = (time: string) => {
   return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`;
 };
 
-export const GET: APIRoute = ({ url }) => {
-  const base = (import.meta.env.BASE_NAME || '').replace(/\/+$/, '');
-  const link = (path: string) => `${url.origin}${base}${path}`;
+export const GET: APIRoute = () => {
+  const link = (path: string) => `${SITE_URL}${path}`;
 
   const body = [
     `# ${SITE_CONFIG.churchName}`,
