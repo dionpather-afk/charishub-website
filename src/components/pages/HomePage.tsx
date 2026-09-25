@@ -78,9 +78,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{ y: heroY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
-          {/* Gradient overlay for text legibility and mood */}
-          <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/80 via-royal-blue/50 to-royal-blue/90" />
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-cover brightness-110 contrast-[1.05] saturate-[1.2]" />
         </motion.div>
 
         <motion.div
@@ -96,7 +94,7 @@ export default function HomePage() {
             <span className="text-muted-gold tracking-[0.2em] uppercase text-sm md:text-base font-semibold mb-6 block">
               Reformed Church in Africa
             </span>
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] text-off-white mb-8 tracking-tight">
+            <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] text-muted-gold mb-8 tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
               Welcome to <br/>
               <span className="italic text-muted-gold">RCA Charisma</span>
             </h1>
