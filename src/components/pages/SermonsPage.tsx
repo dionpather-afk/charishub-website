@@ -144,7 +144,7 @@ export default function SermonsPage() {
 
                 {/* Sermon List */}
                 <div className="lg:col-span-1">
-                  <h3 className="font-heading text-2xl text-royal-blue mb-8">Recent Sermons</h3>
+                  <h2 className="font-heading text-2xl text-royal-blue mb-8">Recent Sermons</h2>
                   <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2">
                     {sermons.map((sermon, index) => (
                       <motion.button
@@ -159,11 +159,11 @@ export default function SermonsPage() {
                             : 'bg-white border-slate-gray/20 hover:border-muted-gold hover:shadow-sm'
                         }`}
                       >
-                        <h4 className={`font-heading text-lg mb-2 ${
+                        <h3 className={`font-heading text-lg mb-2 ${
                           selectedSermon?._id === sermon._id ? 'text-[#DCAC53] group-hover:text-[#FFF0B0] transition-colors' : 'text-royal-blue'
                         }`}>
                           {sermon.title}
-                        </h4>
+                        </h3>
                         <div className={`font-paragraph text-sm space-y-1 ${
                           selectedSermon?._id === sermon._id ? 'text-[#DCAC53]/80 group-hover:text-[#FFF0B0]/90 transition-colors' : 'text-dark-slate/70'
                         }`}>

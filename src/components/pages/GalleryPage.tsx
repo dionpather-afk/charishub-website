@@ -181,9 +181,9 @@ export default function GalleryPage() {
                       {photo.description && (
                         <div className="p-6">
                           {photo.title && (
-                            <h3 className="font-heading text-xl text-royal-blue mb-2">
+                            <h2 className="font-heading text-xl text-royal-blue mb-2">
                               {photo.title}
-                            </h3>
+                            </h2>
                           )}
                           <p className="font-paragraph text-sm text-dark-slate/80 leading-relaxed">
                             {photo.description}
