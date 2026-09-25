@@ -11,6 +11,7 @@ export default function Header() {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
+    { path: '/leadership', label: 'Leadership' },
     { path: '/ministries', label: 'Ministries' },
     { path: '/sermons', label: 'Sermons' },
     { path: '/events', label: 'Events' },
@@ -37,7 +38,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav className="hidden xl:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -59,7 +60,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-dark-slate p-2 hover:bg-dark-slate/10 rounded transition-colors"
+            className="xl:hidden text-dark-slate p-2 hover:bg-dark-slate/10 rounded transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -74,7 +75,7 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden border-t border-dark-slate/10"
+              className="xl:hidden overflow-hidden border-t border-dark-slate/10"
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (

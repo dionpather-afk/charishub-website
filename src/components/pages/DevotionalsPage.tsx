@@ -69,28 +69,16 @@ export default function DevotionalsPage() {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-royal-blue to-royal-blue/90 text-off-white py-16 md:py-24">
           <div className="max-w-[100rem] mx-auto px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <h1 className="font-heading text-5xl md:text-6xl mb-6">Weekly Devotionals</h1>
-                <p className="font-paragraph text-lg md:text-xl text-off-white/90 max-w-2xl">
+                <p className="font-paragraph text-lg md:text-xl text-off-white/90 max-w-2xl mx-auto">
                   Reflections and spiritual insights from our pastoral team to nourish your faith journey.
                 </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-2xl overflow-hidden border-4 border-off-white/20"
-              >
-                <Image
-                  src="https://static.wixstatic.com/media/dd740b_3baa8776540549479e076af81e81c9c3~mv2.jpg"
-                  alt="Our Pastor"
-                  className="w-full h-auto object-cover"
-                />
               </motion.div>
             </div>
           </div>
