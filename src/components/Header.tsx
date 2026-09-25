@@ -25,7 +25,7 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-warm-beige border-b border-dark-slate/10 sticky top-0 z-50 shadow-sm">
+    <header className="bg-gradient-to-br from-[#102B4E] to-[#061426] border-b border-[#AD843D] sticky top-0 z-50 shadow-sm">
       <div className="max-w-[85rem] mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           {/* Logo */}
@@ -38,21 +38,18 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-5">
+          <nav className="hidden xl:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-heading text-[19px] xl:text-[21px] whitespace-nowrap tracking-wide transition-colors duration-300 relative group ${
+                className={`font-heading text-[19px] xl:text-[21px] whitespace-nowrap tracking-wide px-2 py-0.5 rounded-full border transition-all duration-300 ${
                   isActive(link.path)
-                    ? 'text-muted-gold'
-                    : 'text-dark-slate hover:text-muted-gold'
+                    ? 'text-[#DCAC53] border-[#AD843D]'
+                    : 'text-[#DCAC53] border-transparent hover:text-[#FFF0B0] hover:[text-shadow:0_0_12px_rgba(255,240,176,0.55)]'
                 }`}
               >
                 {link.label}
-                {isActive(link.path) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-muted-gold" />
-                )}
               </Link>
             ))}
           </nav>
@@ -60,7 +57,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden text-dark-slate p-2 hover:bg-dark-slate/10 rounded transition-colors"
+            className="xl:hidden text-[#DCAC53] p-2 rounded-lg border border-[#AD843D] hover:text-[#FFF0B0] hover:bg-white/5 hover:shadow-[0_0_12px_rgba(255,240,176,0.25)] transition-all"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -75,7 +72,7 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="xl:hidden overflow-hidden border-t border-dark-slate/10"
+              className="xl:hidden overflow-hidden border-t border-[#AD843D]/50"
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
@@ -83,10 +80,10 @@ export default function Header() {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block font-heading text-lg py-3 px-4 rounded transition-colors duration-300 ${
+                    className={`block font-heading text-lg py-3 px-4 rounded-full border transition-all duration-300 ${
                       isActive(link.path)
-                        ? 'text-muted-gold bg-dark-slate/5'
-                        : 'text-dark-slate hover:text-muted-gold hover:bg-dark-slate/5'
+                        ? 'text-[#DCAC53] border-[#AD843D]'
+                        : 'text-[#DCAC53] border-transparent hover:text-[#FFF0B0] hover:bg-white/5 hover:[text-shadow:0_0_12px_rgba(255,240,176,0.55)]'
                     }`}
                   >
                     {link.label}

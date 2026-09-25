@@ -19,10 +19,22 @@ export default function EventsPage() {
   const loadEvents = async () => {
     try {
       const result = await BaseCrudService.getAll<Events>('events');
-      const sortedEvents = result.items.sort((a, b) => {
-        const dateA = a.eventDate ? new Date(a.eventDate).getTime() : 0;
-        const dateB = b.eventDate ? new Date(b.eventDate).getTime() : 0;
-        return dateB - dateA;
+      // Order: events with no date yet (announced, date TBA) first, then
+      // upcoming events soonest first, then past events most recent first.
+      // Dates are compared as calendar days (YYYY-MM-DD) against today's local
+      // date, so an event happening today still counts as upcoming.
+      const ymd = (d: Date) =>
+        `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      const today = ymd(new Date());
+      const dayOf = (e: Events) =>
+        !e.eventDate ? '' : e.eventDate instanceof Date ? ymd(e.eventDate) : String(e.eventDate).slice(0, 10);
+      const rank = (e: Events) => (!dayOf(e) ? 0 : dayOf(e) >= today ? 1 : 2);
+      const sortedEvents = [...result.items].sort((a, b) => {
+        const byGroup = rank(a) - rank(b);
+        if (byGroup !== 0) return byGroup;
+        if (rank(a) === 1) return dayOf(a).localeCompare(dayOf(b));
+        if (rank(a) === 2) return dayOf(b).localeCompare(dayOf(a));
+        return 0;
       });
       setEvents(sortedEvents);
     } catch (error) {
