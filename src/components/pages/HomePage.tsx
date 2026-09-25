@@ -190,6 +190,11 @@ export default function HomePage() {
                     <span>Get Directions</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
+                  <Image
+                    src="https://static.wixstatic.com/media/dd740b_24288f64270b43fe9eca2514f4c0ee1f~mv2.jpeg"
+                    alt="Matthew 11:28"
+                    className="w-full max-w-xs h-auto object-contain rounded-lg border border-slate-gray/20 shadow-sm mt-10"
+                  />
                 </motion.div>
               </div>
             </div>
