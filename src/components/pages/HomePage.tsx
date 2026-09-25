@@ -149,6 +149,17 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* --- FEATURED: RCA Synod 2026 banner --- */}
+      <section className="w-full py-16 md:py-24 bg-white relative z-20">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <Image
+            src="https://static.wixstatic.com/media/dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg"
+            alt="RCA Synod 2026"
+            className="w-full h-auto object-contain rounded-lg border border-slate-gray/20 shadow-sm"
+          />
+        </div>
+      </section>
+
       {/* --- SERVICE TIMES: The Rhythm of Worship (Sticky Layout) --- */}
       <section ref={serviceRef} className="w-full py-32 md:py-48 bg-off-white relative z-20">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 py-8">
