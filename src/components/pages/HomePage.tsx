@@ -331,7 +331,7 @@ export default function HomePage() {
       </section>
 
       {/* --- CALL TO ACTION: The Invitation --- */}
-      <section className="w-full py-32 md:py-40 bg-royal-blue relative overflow-hidden">
+      <section className="w-full py-32 md:py-40 bg-[linear-gradient(135deg,#FFF0B0_0%,#DCAC53_55%,#A8782E_100%)] relative overflow-hidden">
         {/* Subtle background texture/pattern */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#F5F5DC 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
@@ -343,17 +343,17 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="w-16 h-[1px] bg-muted-gold mb-8" />
-            <h2 className="font-heading text-5xl md:text-7xl text-off-white mb-8 leading-tight">
+            <div className="w-16 h-[1px] bg-[#102B4E] mb-8" />
+            <h2 className="font-heading text-5xl md:text-7xl text-[#102B4E] mb-8 leading-tight">
               Join Us This Sunday
             </h2>
-            <p className="font-paragraph text-xl text-off-white/80 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+            <p className="font-paragraph text-xl text-[#061426] max-w-2xl mx-auto mb-12 leading-relaxed font-light">
               Whether you are seeking a church home, exploring the Christian faith, or visiting the area,
               we welcome you to worship with us and experience the grace of our Lord Jesus Christ.
             </p>
             <Link
               to="/contact"
-              className="group relative overflow-hidden bg-muted-gold text-royal-blue px-12 py-5 rounded-sm font-paragraph font-semibold transition-all duration-500 hover:shadow-[0_0_30px_rgba(184,134,11,0.3)]"
+              className="group relative overflow-hidden bg-gradient-to-br from-[#102B4E] to-[#061426] text-[#DCAC53] hover:text-[#FFF0B0] px-12 py-5 rounded-sm font-paragraph font-semibold transition-all duration-500 hover:shadow-[0_0_30px_rgba(184,134,11,0.3)]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Plan Your Visit <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
