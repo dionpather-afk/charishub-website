@@ -18,7 +18,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   'Missions and random congregational pics': 'Missions & Outreach',
 };
 
-const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || 'General';
+// Photos with no category have no tab of their own; they still show under "All".
+const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || undefined;
 
 // Gallery items that are re-uploads of a photo already in the gallery (same
 // picture, different file). Hidden here rather than deleted from the CMS so
@@ -78,7 +79,7 @@ export default function GalleryPage() {
     const seen = new Map<string, string>();
     photos.forEach((p) => {
       const label = getCategoryLabel(p.eventName);
-      if (!seen.has(label)) seen.set(label, label);
+      if (label && !seen.has(label)) seen.set(label, label);
     });
     return ['All', ...Array.from(seen.keys())];
   }, [photos]);
