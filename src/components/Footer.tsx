@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
   return (
-    <footer className="bg-warm-beige text-dark-slate">
+    <footer className="bg-gradient-to-br from-[#102B4E] to-[#061426] border-t border-[#AD843D] text-[#F3E6C4]">
       <div className="max-w-[85rem] mx-auto px-6 md:px-10 lg:px-16 py-20">
         <div className="grid md:grid-cols-[auto_1fr_1fr_1fr_1fr] gap-16 mb-16">
           {/* Logo — standalone, own column */}
@@ -20,8 +20,8 @@ export default function Footer() {
 
           {/* About */}
           <div>
-            <h3 className="font-heading text-2xl text-royal-blue mb-6">RCA Charisma</h3>
-            <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">
+            <h3 className="font-heading text-2xl text-[#DCAC53] mb-6">RCA Charisma</h3>
+            <p className="font-paragraph text-base text-[#F3E6C4] leading-relaxed">
               A congregation of the Reformed Church in Africa (RCA), committed to the authority of Scripture,
               the glory of God, and the proclamation of the Gospel.
             </p>
@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-xl text-royal-blue mb-6">Quick Links</h4>
+            <h4 className="font-heading text-xl text-[#DCAC53] mb-6">Quick Links</h4>
             <nav className="space-y-3">
               {[
                 { path: '/sermons', label: 'Sermons' },
@@ -40,7 +40,7 @@ export default function Footer() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="block font-paragraph text-base text-dark-slate/80 hover:text-muted-gold transition-colors duration-300"
+                  className="block font-paragraph text-base text-[#F3E6C4] hover:text-[#FFF0B0] transition-colors duration-300"
                 >
                   {link.label}
                 </Link>
@@ -50,21 +50,21 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-heading text-xl text-royal-blue mb-6">Contact Us</h4>
-            <div className="space-y-4 font-paragraph text-base text-dark-slate/80">
+            <h4 className="font-heading text-xl text-[#DCAC53] mb-6">Contact Us</h4>
+            <div className="space-y-4 font-paragraph text-base text-[#F3E6C4]">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-muted-gold mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-[#DCAC53] mt-1 flex-shrink-0" />
                 <p>{SITE_CONFIG.addressLine1}<br />{SITE_CONFIG.addressLine2}</p>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-muted-gold flex-shrink-0" />
-                <a href={SITE_CONFIG.phoneHref} className="hover:text-muted-gold transition-colors duration-300">
+                <Phone className="w-5 h-5 text-[#DCAC53] flex-shrink-0" />
+                <a href={SITE_CONFIG.phoneHref} className="hover:text-[#FFF0B0] transition-colors duration-300">
                   {SITE_CONFIG.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-muted-gold flex-shrink-0" />
-                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-muted-gold transition-colors duration-300">
+                <Mail className="w-5 h-5 text-[#DCAC53] flex-shrink-0" />
+                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-[#FFF0B0] transition-colors duration-300">
                   {SITE_CONFIG.email}
                 </a>
               </div>
@@ -73,30 +73,30 @@ export default function Footer() {
 
           {/* Service Times */}
           <div>
-            <h4 className="font-heading text-xl text-royal-blue mb-6">Service Times</h4>
-            <div className="space-y-3 font-paragraph text-sm text-dark-slate/80">
+            <h4 className="font-heading text-xl text-[#DCAC53] mb-6">Service Times</h4>
+            <div className="space-y-3 font-paragraph text-sm text-[#F3E6C4]">
               <div>
-                <p className="font-semibold text-dark-slate">Sunday Service</p>
+                <p className="font-semibold text-[#F7F3E8]">Sunday Service</p>
                 <p>9:00 AM</p>
               </div>
               <div>
-                <p className="font-semibold text-dark-slate">Sunday School</p>
+                <p className="font-semibold text-[#F7F3E8]">Sunday School</p>
                 <p>10:30 AM</p>
               </div>
               <div>
-                <p className="font-semibold text-dark-slate">Prayer Meeting (Tue)</p>
+                <p className="font-semibold text-[#F7F3E8]">Prayer Meeting (Tue)</p>
                 <p>7:00 PM</p>
               </div>
               <div>
-                <p className="font-semibold text-dark-slate">Home Fellowship (Thu)</p>
+                <p className="font-semibold text-[#F7F3E8]">Home Fellowship (Thu)</p>
                 <p>7:00 PM</p>
               </div>
               <div>
-                <p className="font-semibold text-dark-slate">Youth Meeting (Fri)</p>
+                <p className="font-semibold text-[#F7F3E8]">Youth Meeting (Fri)</p>
                 <p>7:30 PM</p>
               </div>
               <div>
-                <p className="font-semibold text-dark-slate">Laudium Outreach (Mon)</p>
+                <p className="font-semibold text-[#F7F3E8]">Laudium Outreach (Mon)</p>
                 <p>6:30 PM</p>
               </div>
             </div>
@@ -104,9 +104,9 @@ export default function Footer() {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="pt-12 border-t border-dark-slate/20">
+        <div className="pt-12 border-t border-[#AD843D]/40">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="font-paragraph text-sm text-dark-slate/60">
+            <p className="font-paragraph text-sm text-[#F3E6C4]/80">
               © {new Date().getFullYear()} RCA Charisma. All rights reserved.
             </p>
 
@@ -115,7 +115,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-slate/70 hover:text-muted-gold transition-colors duration-300"
+                className="text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <Facebook className="w-6 h-6" />
@@ -124,7 +124,7 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-slate/70 hover:text-muted-gold transition-colors duration-300"
+                className="text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
                 aria-label="YouTube"
               >
                 <Youtube className="w-6 h-6" />
@@ -133,7 +133,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-slate/70 hover:text-muted-gold transition-colors duration-300"
+                className="text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-6 h-6" />
