@@ -98,7 +98,7 @@ export default function HomePage() {
               Welcome to <br/>
               <span className="italic text-muted-gold">RCA Charisma</span>
             </h1>
-            <p className="font-paragraph text-lg md:text-2xl text-off-white/80 max-w-3xl mx-auto mb-4 leading-relaxed font-light">
+            <p className="font-paragraph text-lg md:text-2xl text-off-white/80 max-w-3xl mx-auto mb-4 leading-relaxed font-light [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
               A community rooted in Scripture, devoted to reverent worship, and committed to serving God with grace and truth in South Africa.
             </p>
             <p className="font-heading italic text-muted-gold text-lg md:text-xl mb-12">
@@ -117,7 +117,7 @@ export default function HomePage() {
               </Link>
               <Link
                 to="/sermons"
-                className="group relative overflow-hidden bg-transparent text-off-white border border-off-white/30 px-10 py-5 rounded-sm font-paragraph font-semibold transition-all duration-500 hover:border-muted-gold hover:text-muted-gold min-w-[220px] text-center"
+                className="group relative overflow-hidden bg-royal-blue text-off-white border border-royal-blue px-10 py-5 rounded-sm font-paragraph font-semibold transition-all duration-500 hover:border-muted-gold hover:text-muted-gold min-w-[220px] text-center"
               >
                 <span className="relative z-10">Watch Sermons</span>
                 <div className="absolute inset-0 bg-royal-blue/50 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out -z-0" />
@@ -133,7 +133,7 @@ export default function HomePage() {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <span className="text-off-white/50 text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-off-white/50 text-xs tracking-widest uppercase [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">Scroll</span>
           <div className="w-[1px] h-16 bg-off-white/20 relative overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 w-full h-1/2 bg-muted-gold"
