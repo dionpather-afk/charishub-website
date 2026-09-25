@@ -78,9 +78,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{ y: heroY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
-          {/* Gradient overlay for text legibility and mood */}
-          <div className="absolute inset-0 bg-gradient-to-b from-royal-blue/80 via-royal-blue/50 to-royal-blue/90" />
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building" className="w-full h-full object-cover brightness-110 contrast-[1.05] saturate-[1.2]" />
         </motion.div>
 
         <motion.div
@@ -96,11 +94,11 @@ export default function HomePage() {
             <span className="text-muted-gold tracking-[0.2em] uppercase text-sm md:text-base font-semibold mb-6 block">
               Reformed Church in Africa
             </span>
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] text-off-white mb-8 tracking-tight">
+            <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] text-muted-gold mb-8 tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
               Welcome to <br/>
               <span className="italic text-muted-gold">RCA Charisma</span>
             </h1>
-            <p className="font-paragraph text-lg md:text-2xl text-off-white/80 max-w-3xl mx-auto mb-4 leading-relaxed font-light">
+            <p className="font-paragraph text-lg md:text-2xl text-off-white/80 max-w-3xl mx-auto mb-4 leading-relaxed font-light [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
               A community rooted in Scripture, devoted to reverent worship, and committed to serving God with grace and truth in South Africa.
             </p>
             <p className="font-heading italic text-muted-gold text-lg md:text-xl mb-12">
@@ -119,7 +117,7 @@ export default function HomePage() {
               </Link>
               <Link
                 to="/sermons"
-                className="group relative overflow-hidden bg-transparent text-off-white border border-off-white/30 px-10 py-5 rounded-sm font-paragraph font-semibold transition-all duration-500 hover:border-muted-gold hover:text-muted-gold min-w-[220px] text-center"
+                className="group relative overflow-hidden bg-royal-blue text-off-white border border-royal-blue px-10 py-5 rounded-sm font-paragraph font-semibold transition-all duration-500 hover:border-muted-gold hover:text-muted-gold min-w-[220px] text-center"
               >
                 <span className="relative z-10">Watch Sermons</span>
                 <div className="absolute inset-0 bg-royal-blue/50 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out -z-0" />
@@ -135,7 +133,7 @@ export default function HomePage() {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <span className="text-off-white/50 text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-off-white/50 text-xs tracking-widest uppercase [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">Scroll</span>
           <div className="w-[1px] h-16 bg-off-white/20 relative overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 w-full h-1/2 bg-muted-gold"
