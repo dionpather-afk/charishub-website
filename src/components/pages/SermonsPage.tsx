@@ -153,19 +153,19 @@ export default function SermonsPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.05 }}
                         onClick={() => setSelectedSermon(sermon)}
-                        className={`w-full text-left p-5 rounded-lg border transition-all duration-300 ${
+                        className={`group w-full text-left p-5 rounded-lg border transition-all duration-300 ${
                           selectedSermon?._id === sermon._id
-                            ? 'bg-royal-blue border-royal-blue text-primary-foreground shadow-md'
+                            ? 'bg-gradient-to-br from-[#102B4E] to-[#061426] border-[#102B4E] text-[#DCAC53] shadow-md'
                             : 'bg-white border-slate-gray/20 hover:border-muted-gold hover:shadow-sm'
                         }`}
                       >
                         <h4 className={`font-heading text-lg mb-2 ${
-                          selectedSermon?._id === sermon._id ? 'text-primary-foreground' : 'text-royal-blue'
+                          selectedSermon?._id === sermon._id ? 'text-[#DCAC53] group-hover:text-[#FFF0B0] transition-colors' : 'text-royal-blue'
                         }`}>
                           {sermon.title}
                         </h4>
                         <div className={`font-paragraph text-sm space-y-1 ${
-                          selectedSermon?._id === sermon._id ? 'text-primary-foreground/80' : 'text-dark-slate/70'
+                          selectedSermon?._id === sermon._id ? 'text-[#DCAC53]/80 group-hover:text-[#FFF0B0]/90 transition-colors' : 'text-dark-slate/70'
                         }`}>
                           {sermon.speakerName && <p>{sermon.speakerName}</p>}
                           {sermon.sermonDate && (

@@ -1,11 +1,8 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function AboutPage() {
-
   return (
     <div className="min-h-screen bg-off-white">
       <Header />
@@ -28,35 +25,6 @@ export default function AboutPage() {
               Meet the shepherds and servants called to lead and care for our congregation.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Leadership Team Section */}
-      <section className="w-full py-24 md:py-32 bg-white">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-6">
-              Our Leadership Team
-            </h2>
-            <p className="font-paragraph text-lg text-dark-slate/80 max-w-3xl mx-auto leading-relaxed">
-              Shepherds called to serve, teach, and care for the flock of God.
-            </p>
-          </motion.div>
-
-          <div className="text-center">
-            <Link
-              to="/leadership"
-              className="inline-flex items-center gap-2 bg-royal-blue text-off-white px-10 py-5 rounded-sm font-paragraph font-semibold transition-all duration-300 hover:bg-muted-gold hover:text-royal-blue"
-            >
-              Meet Our Leadership <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </div>
       </section>
 

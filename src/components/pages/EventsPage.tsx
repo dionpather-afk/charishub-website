@@ -8,6 +8,35 @@ import { BaseCrudService } from '@/integrations';
 import { Events } from '@/entities';
 import { Image } from '@/components/ui/image';
 
+// All event dates are church (South African) calendar days. Wix date fields
+// arrive as "YYYY-MM-DD"; read them as plain days so no browser time zone can
+// shift them, and compare against today's date in South Africa.
+const SA_TIME_ZONE = 'Africa/Johannesburg';
+
+const dayOf = (value?: Date | string): string => {
+  if (!value) return '';
+  if (value instanceof Date) {
+    return new Intl.DateTimeFormat('en-CA', { timeZone: SA_TIME_ZONE }).format(value);
+  }
+  return String(value).slice(0, 10);
+};
+
+// Local-midnight Date for a "YYYY-MM-DD" day, safe to pass to date-fns format.
+const toLocalDate = (day: string) => {
+  const [y, m, d] = day.split('-').map(Number);
+  return new Date(y, m - 1, d);
+};
+
+// "Sunday, October 4, 2026" for one day; "29 Sep – 4 Oct 2026" for a range.
+const formatEventDates = (start: string, end: string) => {
+  if (!end || end <= start) return format(toLocalDate(start), 'EEEE, MMMM d, yyyy');
+  const a = toLocalDate(start);
+  const b = toLocalDate(end);
+  if (a.getFullYear() !== b.getFullYear()) return `${format(a, 'd MMM yyyy')} – ${format(b, 'd MMM yyyy')}`;
+  if (a.getMonth() !== b.getMonth()) return `${format(a, 'd MMM')} – ${format(b, 'd MMM yyyy')}`;
+  return `${format(a, 'd')} – ${format(b, 'd MMM yyyy')}`;
+};
+
 export default function EventsPage() {
   const [events, setEvents] = useState<Events[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -21,19 +50,17 @@ export default function EventsPage() {
       const result = await BaseCrudService.getAll<Events>('events');
       // Order: events with no date yet (announced, date TBA) first, then
       // upcoming events soonest first, then past events most recent first.
-      // Dates are compared as calendar days (YYYY-MM-DD) against today's local
-      // date, so an event happening today still counts as upcoming.
-      const ymd = (d: Date) =>
-        `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-      const today = ymd(new Date());
-      const dayOf = (e: Events) =>
-        !e.eventDate ? '' : e.eventDate instanceof Date ? ymd(e.eventDate) : String(e.eventDate).slice(0, 10);
-      const rank = (e: Events) => (!dayOf(e) ? 0 : dayOf(e) >= today ? 1 : 2);
+      // An event stays upcoming until its last day (eventEndDate if set,
+      // otherwise eventDate) has passed in South Africa.
+      const today = dayOf(new Date());
+      const start = (e: Events) => dayOf(e.eventDate);
+      const last = (e: Events) => dayOf(e.eventEndDate) || start(e);
+      const rank = (e: Events) => (!start(e) ? 0 : last(e) >= today ? 1 : 2);
       const sortedEvents = [...result.items].sort((a, b) => {
         const byGroup = rank(a) - rank(b);
         if (byGroup !== 0) return byGroup;
-        if (rank(a) === 1) return dayOf(a).localeCompare(dayOf(b));
-        if (rank(a) === 2) return dayOf(b).localeCompare(dayOf(a));
+        if (rank(a) === 1) return start(a).localeCompare(start(b));
+        if (rank(a) === 2) return last(b).localeCompare(last(a));
         return 0;
       });
       setEvents(sortedEvents);
@@ -105,7 +132,7 @@ export default function EventsPage() {
                         {event.eventDate && (
                           <div className="flex items-center gap-3">
                             <Calendar className="w-5 h-5 text-muted-gold flex-shrink-0" />
-                            <span>{format(new Date(event.eventDate), 'EEEE, MMMM d, yyyy')}</span>
+                            <span>{formatEventDates(dayOf(event.eventDate), dayOf(event.eventEndDate))}</span>
                           </div>
                         )}
                         {event.eventTime && (
@@ -123,7 +150,7 @@ export default function EventsPage() {
                       </div>
 
                       {event.eventDescription && (
-                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-8">
+                        <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed mb-8 whitespace-pre-line">
                           {event.eventDescription}
                         </p>
                       )}
