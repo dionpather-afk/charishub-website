@@ -20,6 +20,17 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || 'General';
 
+// Gallery items that are re-uploads of a photo already in the gallery (same
+// picture, different file). Hidden here rather than deleted from the CMS so
+// the change is reviewable and easy to undo. Kept copy noted on each line.
+const DUPLICATE_PHOTO_IDS = new Set([
+  '79d908c5-b387-44d5-a4cf-f0a5710fe300', // congregation formal 6  (same as formal 1)
+  '64b97adc-ac1a-472e-8bcc-08b7e42ecb89', // congregation formal 10 (same as formal 1)
+  '4b58a28e-295a-483e-9384-038bf98dffb2', // congregation formal 18 (same as formal 1)
+  '2cf3f2d6-d388-4b65-8738-c31c263cbfba', // congregation formal 26 (same as formal 2)
+  'f458ef0b-cdf5-4f11-b6da-79044ce8bd2e', // congregation formal 23 (same as formal 20)
+]);
+
 export default function GalleryPage() {
   const [photos, setPhotos] = useState<PhotoGallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +44,15 @@ export default function GalleryPage() {
   const loadPhotos = async () => {
     try {
       const result = await BaseCrudService.getAll<PhotoGallery>('photogallery');
-      const sortedPhotos = result.items.sort((a, b) => {
+      const seenImages = new Set<string>();
+      const uniquePhotos = result.items.filter((p) => {
+        if (DUPLICATE_PHOTO_IDS.has(p._id)) return false;
+        if (!p.image) return true;
+        if (seenImages.has(p.image)) return false;
+        seenImages.add(p.image);
+        return true;
+      });
+      const sortedPhotos = uniquePhotos.sort((a, b) => {
         const dateA = a.dateTaken ? new Date(a.dateTaken).getTime() : 0;
         const dateB = b.dateTaken ? new Date(b.dateTaken).getTime() : 0;
         return dateB - dateA;
