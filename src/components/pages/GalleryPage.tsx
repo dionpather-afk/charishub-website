@@ -18,7 +18,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   'Missions and random congregational pics': 'Missions & Outreach',
 };
 
-const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || 'General';
+// Photos with no category have no tab of their own; they still show under "All".
+const getCategoryLabel = (raw?: string) => (raw && CATEGORY_LABELS[raw]) || raw || undefined;
 
 // Gallery items that are re-uploads of a photo already in the gallery (same
 // picture, different file). Hidden here rather than deleted from the CMS so
@@ -30,6 +31,14 @@ const DUPLICATE_PHOTO_IDS = new Set([
   '2cf3f2d6-d388-4b65-8738-c31c263cbfba', // congregation formal 26 (same as formal 2)
   'f458ef0b-cdf5-4f11-b6da-79044ce8bd2e', // congregation formal 23 (same as formal 20)
 ]);
+
+// The same Wix file can be stored as "wix:image://v1/<file>/name.jpg#..." or
+// "https://static.wixstatic.com/media/<file>". Compare by the file itself so a
+// photo added twice in different formats only shows once.
+const getImageKey = (image: string) => {
+  const match = image.match(/^wix:image:\/\/v1\/([^/#]+)/) || image.match(/static\.wixstatic\.com\/media\/([^/?#]+)/);
+  return match ? match[1] : image;
+};
 
 export default function GalleryPage() {
   const [photos, setPhotos] = useState<PhotoGallery[]>([]);
@@ -48,8 +57,9 @@ export default function GalleryPage() {
       const uniquePhotos = result.items.filter((p) => {
         if (DUPLICATE_PHOTO_IDS.has(p._id)) return false;
         if (!p.image) return true;
-        if (seenImages.has(p.image)) return false;
-        seenImages.add(p.image);
+        const key = getImageKey(p.image);
+        if (seenImages.has(key)) return false;
+        seenImages.add(key);
         return true;
       });
       const sortedPhotos = uniquePhotos.sort((a, b) => {
@@ -69,7 +79,7 @@ export default function GalleryPage() {
     const seen = new Map<string, string>();
     photos.forEach((p) => {
       const label = getCategoryLabel(p.eventName);
-      if (!seen.has(label)) seen.set(label, label);
+      if (label && !seen.has(label)) seen.set(label, label);
     });
     return ['All', ...Array.from(seen.keys())];
   }, [photos]);
