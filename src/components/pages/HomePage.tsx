@@ -2,10 +2,14 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Calendar, BookOpen, Heart, Users, ArrowRight, Clock, MapPin } from 'lucide-react';
+import { BookOpen, ArrowRight, Clock, MapPin } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Image } from '@/components/ui/image';
+import iconBiblicalTeaching from '@/assets/icons/icon-biblical-teaching.svg?url';
+import iconCommunityEvents from '@/assets/icons/icon-community-events.svg?url';
+import iconFaithfulGiving from '@/assets/icons/icon-faithful-giving.svg?url';
+import iconLeadership from '@/assets/icons/icon-leadership.svg?url';
 
 // --- Canonical Data Sources ---
 const ICON_BASE = "https://static.wixstatic.com/shapes/";
@@ -20,28 +24,28 @@ const serviceTimes = [
 
 const foundations = [
   {
-    icon: BookOpen,
+    icon: iconBiblicalTeaching,
     title: 'Biblical Teaching',
     description: 'Expository preaching that honors the truth and absolute authority of Scripture in all matters of faith and life.',
     link: '/sermons',
     number: '01'
   },
   {
-    icon: Calendar,
+    icon: iconCommunityEvents,
     title: 'Community Events',
     description: 'Intentional gatherings that strengthen our fellowship, encourage one another, and facilitate our outreach ministry.',
     link: '/events',
     number: '02'
   },
   {
-    icon: Heart,
+    icon: iconFaithfulGiving,
     title: 'Faithful Giving',
     description: 'Supporting God\'s work through generous, joyful stewardship and service to our local community.',
     link: '/giving',
     number: '03'
   },
   {
-    icon: Users,
+    icon: iconLeadership,
     title: 'Our Leadership',
     description: 'Qualified shepherds called to serve, teach, and care for the congregation with biblical fidelity and grace.',
     link: '/about',
@@ -299,7 +303,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex justify-between items-start mb-8">
-                  <item.icon className="w-10 h-10 text-royal-blue group-hover:text-muted-gold transition-colors duration-500" strokeWidth={1} />
+                  <img src={item.icon} alt="" aria-hidden="true" className="w-14 h-14" loading="lazy" />
                   <span className="font-heading text-4xl text-slate-gray/30 group-hover:text-muted-gold/50 transition-colors duration-500">
                     {item.number}
                   </span>
