@@ -79,15 +79,16 @@ export default function HomePage() {
 
       {/* --- HERO SECTION: The Grand Entrance --- */}
       <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] overflow-clip bg-royal-blue flex items-center justify-center">
-        {/* Blurred, darkened copy of the photo fills any space around the full photo */}
-        <div className="absolute inset-0" aria-hidden="true">
+        {/* Blurred, darkened copy of the photo fills any space around the full photo
+            (tablet/desktop only; on phones the photo itself fills the hero) */}
+        <div className="absolute inset-0 hidden md:block" aria-hidden="true">
           <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="" className="w-full h-full object-cover scale-110 blur-2xl brightness-75" />
         </div>
         <motion.div
           className="absolute inset-0 w-full h-full"
           style={{ y: heroY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building in Laudium" className="w-full h-full object-contain object-center brightness-110 contrast-[1.05] saturate-[1.2]" />
+          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building in Laudium" className="w-full h-full object-cover object-[center_30%] md:object-contain md:object-center brightness-110 contrast-[1.05] saturate-[1.2]" />
         </motion.div>
 
         <motion.div
@@ -98,8 +99,15 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center"
+            className="relative flex flex-col items-center"
           >
+            {/* Phones: soft navy shade behind the text so the white paragraph
+                reads clearly over the bright sky (clear at the top, ~55% navy
+                from the paragraph down). */}
+            <div
+              aria-hidden="true"
+              className="md:hidden absolute -inset-x-6 -top-8 -bottom-8 -z-10 pointer-events-none bg-[linear-gradient(to_bottom,rgba(6,20,38,0)_0%,rgba(6,20,38,0.55)_50%,rgba(6,20,38,0.55)_100%)]"
+            />
             <span className="text-muted-gold tracking-[0.2em] uppercase text-sm md:text-base font-semibold mb-6 block">
               Reformed Church in Africa
             </span>
