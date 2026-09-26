@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,7 +7,22 @@ import logoGold from '@/assets/rca-charisma-logo-gold.png?url';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [barHeight, setBarHeight] = useState(0);
+  const barRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // While the phone menu is open: stop the page behind it scrolling, and
+  // remember how tall the header bar is so the menu can fill the rest of
+  // the visible screen (less the 1px gold border) and scroll inside itself.
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    setBarHeight(barRef.current?.getBoundingClientRect().height ?? 0);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [isMenuOpen]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -28,7 +43,7 @@ export default function Header() {
   return (
     <header className="bg-gradient-to-br from-[#102B4E] to-[#061426] border-b border-[#AD843D] sticky top-0 z-50 shadow-sm">
       <div className="max-w-[85rem] mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3">
+        <div ref={barRef} className="flex items-center justify-between py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
@@ -73,7 +88,8 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="xl:hidden overflow-hidden border-t border-[#AD843D]/50"
+              className="xl:hidden overflow-y-auto overscroll-contain border-t border-[#AD843D]/50"
+              style={{ maxHeight: `calc(100dvh - ${barHeight + 1}px)` }}
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
