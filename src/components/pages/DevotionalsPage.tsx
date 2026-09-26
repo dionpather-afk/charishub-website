@@ -245,7 +245,7 @@ export default function DevotionalsPage() {
                               <p className="font-paragraph text-dark-slate line-clamp-3">
                                 {devotional.content}
                               </p>
-                              <div className="mt-4 text-muted-gold font-paragraph font-semibold">
+                              <div className="mt-4 text-[#7A5A14] font-paragraph font-semibold">
                                 Read more →
                               </div>
                             </div>

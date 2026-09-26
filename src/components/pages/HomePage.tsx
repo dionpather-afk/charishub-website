@@ -180,7 +180,7 @@ export default function HomePage() {
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-[1px] bg-muted-gold" />
-                    <span className="text-muted-gold tracking-widest uppercase text-sm font-semibold">Gatherings</span>
+                    <span className="text-[#7A5A14] tracking-widest uppercase text-sm font-semibold">Gatherings</span>
                   </div>
                   <h2 className="font-heading text-5xl md:text-7xl text-royal-blue mb-8 leading-tight">
                     The Rhythm <br/>
@@ -274,7 +274,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-24"
           >
-            <span className="text-muted-gold tracking-widest uppercase text-sm font-semibold mb-4 block">Our Foundation</span>
+            <span className="text-[#7A5A14] tracking-widest uppercase text-sm font-semibold mb-4 block">Our Foundation</span>
             <h2 className="font-heading text-6xl md:text-8xl text-royal-blue mb-2">
               God's Word Alone
             </h2>
@@ -320,7 +320,7 @@ export default function HomePage() {
                 >
                   <span className="relative overflow-hidden">
                     <span className="block transition-transform duration-300 group-hover/link:-translate-y-full">Explore</span>
-                    <span className="absolute inset-0 text-muted-gold transition-transform duration-300 translate-y-full group-hover/link:translate-y-0">Explore</span>
+                    <span className="absolute inset-0 text-[#7A5A14] transition-transform duration-300 translate-y-full group-hover/link:translate-y-0">Explore</span>
                   </span>
                   <ArrowRight className="w-4 h-4 text-muted-gold transform group-hover/link:translate-x-1 transition-transform duration-300" />
                 </Link>

@@ -38,7 +38,7 @@ function PersonCard({ member, index, subtitle }: { member: TeamBios; index: numb
         {member.leaderName}
       </h3>
       {subtitle && (
-        <p className="font-paragraph text-sm text-muted-gold font-semibold">
+        <p className="font-paragraph text-sm text-[#7A5A14] font-semibold">
           {subtitle}
         </p>
       )}
@@ -157,7 +157,7 @@ export default function LeadershipPage() {
                       {member.leaderName}
                     </h3>
                     {member.role && (
-                      <p className="font-paragraph text-lg text-muted-gold font-semibold mb-6">
+                      <p className="font-paragraph text-lg text-[#7A5A14] font-semibold mb-6">
                         {member.role}
                       </p>
                     )}
@@ -167,7 +167,7 @@ export default function LeadershipPage() {
                     {member.email && (
                       <a
                         href={`mailto:${member.email}`}
-                        className="inline-flex items-center gap-2 mt-6 text-muted-gold font-paragraph text-sm font-semibold hover:text-royal-blue transition-colors duration-300 w-fit"
+                        className="inline-flex items-center gap-2 mt-6 text-[#7A5A14] font-paragraph text-sm font-semibold hover:text-royal-blue transition-colors duration-300 w-fit"
                       >
                         <Mail className="w-4 h-4" />
                         Contact
