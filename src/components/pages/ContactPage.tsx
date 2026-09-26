@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
@@ -8,7 +8,6 @@ import { ContactSubmissions } from '@/entities';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function ContactPage() {
@@ -19,11 +18,22 @@ export default function ContactPage() {
     messageContent: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  // Result of the last send, shown on the page (not as a pop-up).
+  const [sendStatus, setSendStatus] = useState<'idle' | 'sent' | 'error'>('idle');
+  const statusRef = useRef<HTMLDivElement>(null);
+
+  // Bring the thank-you / error message into view so it is seen on phones.
+  useEffect(() => {
+    if (sendStatus !== 'idle') {
+      statusRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [sendStatus]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
+    setSendStatus('idle');
 
     try {
       await BaseCrudService.create<ContactSubmissions>('contactsubmissions', {
@@ -35,10 +45,7 @@ export default function ContactPage() {
         submissionDate: new Date().toISOString()
       });
 
-      toast({
-        title: 'Message Sent',
-        description: 'Thank you for contacting us. We will respond to you soon.',
-      });
+      setSendStatus('sent');
 
       setFormData({
         senderName: '',
@@ -47,11 +54,8 @@ export default function ContactPage() {
         messageContent: ''
       });
     } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again.',
-        variant: 'destructive',
-      });
+      // Keep what they typed so "Try again" resends it.
+      setSendStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -189,6 +193,29 @@ export default function ContactPage() {
                   Send Us a Message
                 </h2>
 
+                {sendStatus === 'sent' ? (
+                  <div
+                    ref={statusRef}
+                    role="status"
+                    aria-live="polite"
+                    className="rounded-lg bg-gradient-to-br from-[#102B4E] to-[#061426] border border-[#AD843D] p-8 text-center"
+                  >
+                    <CheckCircle2 className="w-12 h-12 text-[#DCAC53] mx-auto mb-4" aria-hidden="true" />
+                    <p className="font-heading text-2xl md:text-3xl text-[#DCAC53] mb-3">
+                      Thank you – your message has been sent
+                    </p>
+                    <p className="font-paragraph text-base text-[#F7F3E8] mb-6">
+                      We will respond to you soon.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSendStatus('idle')}
+                      className="font-paragraph font-semibold text-[#DCAC53] hover:text-[#FFF0B0] border border-[#AD843D] rounded-full px-6 min-h-[44px] transition-colors"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="senderName" className="block font-paragraph text-base font-semibold text-dark-slate mb-2">
@@ -271,7 +298,33 @@ export default function ContactPage() {
                       </>
                     )}
                   </Button>
+
+                  {sendStatus === 'error' && (
+                    <div
+                      ref={statusRef}
+                      role="alert"
+                      className="rounded-lg border-2 border-[#B42318] bg-[#FEF3F2] p-5 flex gap-3"
+                    >
+                      <AlertCircle className="w-6 h-6 text-[#B42318] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <p className="font-paragraph font-semibold text-[#7A1A12]">
+                          Sorry – your message could not be sent.
+                        </p>
+                        <p className="font-paragraph text-sm text-[#7A1A12] mt-1 mb-3">
+                          Please check your connection and try again. Your message has been kept.
+                        </p>
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="font-paragraph font-semibold text-[#DCAC53] bg-gradient-to-br from-[#102B4E] to-[#061426] hover:text-[#FFF0B0] rounded-full px-6 min-h-[44px] disabled:opacity-60 transition-colors"
+                        >
+                          {isSubmitting ? 'Sending...' : 'Try again'}
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </form>
+                )}
               </div>
             </motion.div>
           </div>
