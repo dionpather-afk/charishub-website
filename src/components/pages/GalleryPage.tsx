@@ -46,6 +46,34 @@ const getImageKey = (image: string) => {
   return match ? match[1] : image;
 };
 
+// Grid thumbnails: ask Wix's image service for a ~600px-wide copy instead of
+// the full original (the full image is only loaded when a photo is opened).
+const getThumbnailUrl = (image: string) => {
+  const key = getImageKey(image);
+  if (key === image) return image; // not a Wix media file; use as is
+  return `https://static.wixstatic.com/media/${key}/v1/fit/w_600,h_900,q_80,enc_auto/${key}`;
+};
+
+// A grid photo that only downloads when it nears the screen. Until then it
+// keeps a placeholder height, so off-screen photos don't all count as
+// "visible" and load at once.
+function GalleryThumb({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className={`overflow-hidden ${loaded ? '' : 'min-h-[220px] bg-slate-gray/10'}`}>
+      <Image
+        src={getThumbnailUrl(src)}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+        width={600}
+      />
+    </div>
+  );
+}
+
 export default function GalleryPage() {
   const [photos, setPhotos] = useState<PhotoGallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -169,14 +197,7 @@ export default function GalleryPage() {
                       className="w-full bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold hover:shadow-md transition-all duration-300 group"
                     >
                       {photo.image && (
-                        <div className="overflow-hidden">
-                          <Image
-                            src={photo.image}
-                            alt={getPhotoAlt(photo)}
-                            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                            width={600}
-                          />
-                        </div>
+                        <GalleryThumb src={photo.image} alt={getPhotoAlt(photo)} />
                       )}
                       {photo.description && (
                         <div className="p-6">
