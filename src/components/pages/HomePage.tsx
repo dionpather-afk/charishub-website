@@ -189,7 +189,7 @@ export default function HomePage() {
                   <p className="text-lg text-dark-slate/80 leading-relaxed mb-10 max-w-md">
                     We gather to hear God's Word, offer our prayers, and encourage one another. You are warmly invited to join us in reverent and joyful worship.
                   </p>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-royal-blue font-semibold hover:text-muted-gold transition-colors group">
+                  <Link to="/contact" className="relative after:absolute after:content-[''] after:-inset-x-1 after:-inset-y-3 inline-flex items-center gap-2 text-royal-blue font-semibold hover:text-muted-gold transition-colors group">
                     <MapPin className="w-5 h-5" />
                     <span>Get Directions</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -316,7 +316,7 @@ export default function HomePage() {
 
                 <Link
                   to={item.link}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-royal-blue uppercase tracking-wider group/link mt-auto"
+                  className="relative after:absolute after:content-[''] after:-inset-x-1 after:-inset-y-3.5 inline-flex items-center gap-2 text-sm font-semibold text-royal-blue uppercase tracking-wider group/link mt-auto"
                 >
                   <span className="relative overflow-hidden">
                     <span className="block transition-transform duration-300 group-hover/link:-translate-y-full">Explore</span>
