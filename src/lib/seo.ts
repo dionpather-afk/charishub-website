@@ -17,10 +17,16 @@ export const SITE_NAME = SITE_CONFIG.churchName;
 // structured data and llms.txt (whatever domain the page is served from).
 export const SITE_URL = 'https://www.rcacharisma.com';
 
-// Home page church photo, cropped by Wix to the 1200x630 share-preview size.
-export const DEFAULT_OG_IMAGE =
+// Home page church photo (portrait), used as the church's picture in the
+// structured data.
+export const CHURCH_IMAGE =
   'https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
-export const DEFAULT_OG_IMAGE_ALT = 'RCA Charisma church building in Laudium, Pretoria';
+
+// Share-preview picture: the landscape "congregation in church" gallery photo
+// (1280x853), cropped by Wix to the 1200x630 share size.
+export const DEFAULT_OG_IMAGE =
+  'https://static.wixstatic.com/media/dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-congregation.jpg';
+export const DEFAULT_OG_IMAGE_ALT = 'RCA Charisma congregation in church in Laudium, Pretoria';
 
 export interface PageSeo {
   title: string;
@@ -143,7 +149,7 @@ export const buildChurchJsonLd = (origin: string, logoUrl: string) => {
         '@id': churchId,
         name: SITE_NAME,
         url: `${origin}/`,
-        image: DEFAULT_OG_IMAGE,
+        image: CHURCH_IMAGE,
         telephone: SITE_CONFIG.phoneHref.replace('tel:', ''),
         address: CHURCH_ADDRESS,
         event: WEEKLY_GATHERINGS.map((g) => ({
