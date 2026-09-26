@@ -130,14 +130,14 @@ export default function ContactPage() {
                     </h3>
                     <a
                       href={SITE_CONFIG.phoneHref}
-                      className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
+                      className="inline-block py-2.5 font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
                     >
                       {SITE_CONFIG.phoneDisplay}
                     </a>
                     <br />
                     <a
                       href={SITE_CONFIG.cellHref}
-                      className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
+                      className="inline-block py-2.5 font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
                     >
                       {SITE_CONFIG.cellDisplay}
                     </a>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     </h3>
                     <a
                       href={`mailto:${SITE_CONFIG.email}`}
-                      className="font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
+                      className="inline-block py-2.5 font-paragraph text-base text-dark-slate hover:text-muted-gold transition-colors duration-300"
                     >
                       {SITE_CONFIG.email}
                     </a>
