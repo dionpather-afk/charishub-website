@@ -84,6 +84,21 @@ export default function GalleryPage() {
     loadPhotos();
   }, []);
 
+  // While a photo is open: Escape closes it and the page behind stays still.
+  useEffect(() => {
+    if (!selectedPhoto) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedPhoto(null);
+    };
+    window.addEventListener('keydown', onKey);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previous;
+    };
+  }, [selectedPhoto]);
+
   const loadPhotos = async () => {
     try {
       const result = await BaseCrudService.getAll<PhotoGallery>('photogallery');
@@ -228,37 +243,41 @@ export default function GalleryPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-dark-slate/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-dark-slate/95 overflow-y-auto overscroll-contain"
             onClick={() => setSelectedPhoto(null)}
+            role="dialog"
+            aria-modal="true"
           >
             <button
               onClick={() => setSelectedPhoto(null)}
-              className="absolute top-6 right-6 text-off-white hover:text-muted-gold transition-colors duration-300"
+              className="fixed top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-[#102B4E] border border-[#AD843D] text-[#DCAC53] shadow-lg hover:text-[#FFF0B0] transition-colors duration-300"
               aria-label="Close"
             >
-              <X className="w-8 h-8" />
+              <X className="w-7 h-7" />
             </button>
 
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="max-w-6xl w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
+            {/* Tapping anywhere outside the photo or caption closes the pop-up. */}
+            <div className="min-h-full flex items-center justify-center px-4 py-16">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="max-w-6xl w-full"
+              >
               {selectedPhoto.image && (
                 <div className="mb-6">
                   <Image
                     src={selectedPhoto.image}
                     alt={getPhotoAlt(selectedPhoto)}
-                    className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+                    className="block mx-auto w-auto max-w-full h-auto max-h-[90vh] object-contain rounded-lg"
                     width={1200}
+                    onClick={(e) => e.stopPropagation()}
                   />
                 </div>
               )}
               
-              <div className="bg-white rounded-lg p-8">
+              <div className="bg-white rounded-lg p-8" onClick={(e) => e.stopPropagation()}>
                 {selectedPhoto.description && selectedPhoto.title && (
                   <h2 className="font-heading text-3xl text-royal-blue mb-4">
                     {selectedPhoto.title}
@@ -286,7 +305,8 @@ export default function GalleryPage() {
                   </p>
                 )}
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
