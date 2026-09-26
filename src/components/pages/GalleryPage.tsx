@@ -46,6 +46,34 @@ const getImageKey = (image: string) => {
   return match ? match[1] : image;
 };
 
+// Grid thumbnails: ask Wix's image service for a ~600px-wide copy instead of
+// the full original (the full image is only loaded when a photo is opened).
+const getThumbnailUrl = (image: string) => {
+  const key = getImageKey(image);
+  if (key === image) return image; // not a Wix media file; use as is
+  return `https://static.wixstatic.com/media/${key}/v1/fit/w_600,h_900,q_80,enc_auto/${key}`;
+};
+
+// A grid photo that only downloads when it nears the screen. Until then it
+// keeps a placeholder height, so off-screen photos don't all count as
+// "visible" and load at once.
+function GalleryThumb({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className={`overflow-hidden ${loaded ? '' : 'min-h-[220px] bg-slate-gray/10'}`}>
+      <Image
+        src={getThumbnailUrl(src)}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+        width={600}
+      />
+    </div>
+  );
+}
+
 export default function GalleryPage() {
   const [photos, setPhotos] = useState<PhotoGallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -55,6 +83,21 @@ export default function GalleryPage() {
   useEffect(() => {
     loadPhotos();
   }, []);
+
+  // While a photo is open: Escape closes it and the page behind stays still.
+  useEffect(() => {
+    if (!selectedPhoto) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedPhoto(null);
+    };
+    window.addEventListener('keydown', onKey);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previous;
+    };
+  }, [selectedPhoto]);
 
   const loadPhotos = async () => {
     try {
@@ -169,14 +212,7 @@ export default function GalleryPage() {
                       className="w-full bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold hover:shadow-md transition-all duration-300 group"
                     >
                       {photo.image && (
-                        <div className="overflow-hidden">
-                          <Image
-                            src={photo.image}
-                            alt={getPhotoAlt(photo)}
-                            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                            width={600}
-                          />
-                        </div>
+                        <GalleryThumb src={photo.image} alt={getPhotoAlt(photo)} />
                       )}
                       {photo.description && (
                         <div className="p-6">
@@ -207,37 +243,41 @@ export default function GalleryPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-dark-slate/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-dark-slate/95 overflow-y-auto overscroll-contain"
             onClick={() => setSelectedPhoto(null)}
+            role="dialog"
+            aria-modal="true"
           >
             <button
               onClick={() => setSelectedPhoto(null)}
-              className="absolute top-6 right-6 text-off-white hover:text-muted-gold transition-colors duration-300"
+              className="fixed top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-[#102B4E] border border-[#AD843D] text-[#DCAC53] shadow-lg hover:text-[#FFF0B0] transition-colors duration-300"
               aria-label="Close"
             >
-              <X className="w-8 h-8" />
+              <X className="w-7 h-7" />
             </button>
 
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="max-w-6xl w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
+            {/* Tapping anywhere outside the photo or caption closes the pop-up. */}
+            <div className="min-h-full flex items-center justify-center px-4 py-16">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="max-w-6xl w-full"
+              >
               {selectedPhoto.image && (
                 <div className="mb-6">
                   <Image
                     src={selectedPhoto.image}
                     alt={getPhotoAlt(selectedPhoto)}
-                    className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+                    className="block mx-auto w-auto max-w-full h-auto max-h-[90vh] object-contain rounded-lg"
                     width={1200}
+                    onClick={(e) => e.stopPropagation()}
                   />
                 </div>
               )}
               
-              <div className="bg-white rounded-lg p-8">
+              <div className="bg-white rounded-lg p-8" onClick={(e) => e.stopPropagation()}>
                 {selectedPhoto.description && selectedPhoto.title && (
                   <h2 className="font-heading text-3xl text-royal-blue mb-4">
                     {selectedPhoto.title}
@@ -265,7 +305,8 @@ export default function GalleryPage() {
                   </p>
                 )}
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

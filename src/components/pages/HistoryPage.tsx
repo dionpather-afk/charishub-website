@@ -127,7 +127,7 @@ export default function HistoryPage() {
                   <h2 className="font-heading text-4xl md:text-5xl text-royal-blue mb-4">
                     The Declaration of Laudium
                   </h2>
-                  <p className="font-paragraph text-sm text-muted-gold font-semibold uppercase tracking-wide mb-6">
+                  <p className="font-paragraph text-sm text-[#7A5A14] font-semibold uppercase tracking-wide mb-6">
                     Adopted at the Sixth Synod of the Reformed Church in Africa, October 1990
                   </p>
 
@@ -140,7 +140,7 @@ export default function HistoryPage() {
                       { title: 'Prophetic Witness', desc: "The church speaks against injustice and oppression, while remaining free from any political ideology or movement." },
                     ].map((point) => (
                       <li key={point.title} className="flex gap-3">
-                        <span className="text-muted-gold font-bold mt-1">•</span>
+                        <span className="text-[#7A5A14] font-bold mt-1">•</span>
                         <div>
                           <span className="font-heading text-lg text-royal-blue">{point.title}</span>
                           <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed">{point.desc}</p>
@@ -172,7 +172,7 @@ export default function HistoryPage() {
           {/* Historic Reverends */}
           <section className="w-full pt-12 pb-4 bg-off-white">
             <div className="max-w-5xl mx-auto px-6 md:px-12">
-              <h2 className="font-heading text-4xl md:text-5xl text-muted-gold text-center mb-8">
+              <h2 className="font-heading text-4xl md:text-5xl text-[#7A5A14] text-center mb-8">
                 Historic Reverends of RCA Charisma
               </h2>
               {/* The source image (1536x1024) has a misspelled title strip in its

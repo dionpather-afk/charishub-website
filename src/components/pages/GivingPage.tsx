@@ -151,7 +151,7 @@ export default function GivingPage() {
                           href={method.methodLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-muted-gold font-paragraph font-semibold hover:text-royal-blue transition-colors duration-300"
+                          className="inline-flex items-center gap-2 text-[#7A5A14] font-paragraph font-semibold hover:text-royal-blue transition-colors duration-300"
                         >
                           Learn More
                           <img src={iconExternalLink} alt="" aria-hidden="true" className="w-7 h-7" />

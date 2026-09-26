@@ -135,11 +135,20 @@ export default function EventsPage() {
                     className="bg-white rounded-lg overflow-hidden border border-slate-gray/20 hover:border-muted-gold hover:shadow-md transition-all duration-300"
                   >
                     {event.eventImage && (
-                      <div className="aspect-video overflow-hidden">
+                      // Whole photo shown (portrait ones too), with a blurred
+                      // copy of it filling the rest of the card.
+                      <div className="aspect-video overflow-hidden relative">
+                        <Image
+                          src={event.eventImage}
+                          alt=""
+                          aria-hidden="true"
+                          className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl brightness-75"
+                          width={800}
+                        />
                         <Image
                           src={event.eventImage}
                           alt={event.eventTitle || 'Event image'}
-                          className="w-full h-full object-cover"
+                          className="relative w-full h-full object-contain"
                           width={800}
                         />
                       </div>

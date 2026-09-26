@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-heading text-xl text-[#DCAC53] mb-6">Quick Links</h4>
-            <nav className="space-y-3">
+            <nav>
               {[
                 { path: '/sermons', label: 'Sermons' },
                 { path: '/events', label: 'Events' },
@@ -40,7 +40,7 @@ export default function Footer() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="block font-paragraph text-base text-[#F3E6C4] hover:text-[#FFF0B0] transition-colors duration-300"
+                  className="block py-2.5 font-paragraph text-base text-[#F3E6C4] hover:text-[#FFF0B0] transition-colors duration-300"
                 >
                   {link.label}
                 </Link>
@@ -51,20 +51,20 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="font-heading text-xl text-[#DCAC53] mb-6">Contact Us</h4>
-            <div className="space-y-4 font-paragraph text-base text-[#F3E6C4]">
+            <div className="space-y-5 font-paragraph text-base text-[#F3E6C4]">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#DCAC53] mt-1 flex-shrink-0" />
                 <p>{SITE_CONFIG.addressLine1}<br />{SITE_CONFIG.addressLine2}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#DCAC53] flex-shrink-0" />
-                <a href={SITE_CONFIG.phoneHref} className="hover:text-[#FFF0B0] transition-colors duration-300">
+                <a href={SITE_CONFIG.phoneHref} className="relative after:absolute after:content-[''] after:-inset-x-1 after:-inset-y-3 hover:text-[#FFF0B0] transition-colors duration-300">
                   {SITE_CONFIG.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#DCAC53] flex-shrink-0" />
-                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-[#FFF0B0] transition-colors duration-300">
+                <a href={`mailto:${SITE_CONFIG.email}`} className="relative after:absolute after:content-[''] after:-inset-x-1 after:-inset-y-3 hover:text-[#FFF0B0] transition-colors duration-300">
                   {SITE_CONFIG.email}
                 </a>
               </div>
@@ -115,7 +115,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
+                className="relative after:absolute after:content-[''] after:-inset-2.5 text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <Facebook className="w-6 h-6" />
@@ -124,7 +124,7 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
+                className="relative after:absolute after:content-[''] after:-inset-2.5 text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
                 aria-label="YouTube"
               >
                 <Youtube className="w-6 h-6" />
@@ -133,7 +133,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
+                className="relative after:absolute after:content-[''] after:-inset-2.5 text-[#DCAC53] hover:text-[#FFF0B0] transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-6 h-6" />
