@@ -43,13 +43,13 @@ export default function Header() {
   return (
     <header className="bg-gradient-to-br from-[#102B4E] to-[#061426] border-b border-[#AD843D] sticky top-0 z-50 shadow-sm">
       <div className="max-w-[85rem] mx-auto px-4 md:px-6 lg:px-8">
-        <div ref={barRef} className="flex items-center justify-between py-3">
+        <div ref={barRef} className="flex items-center justify-between py-2 md:py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
               src={logoGold}
               alt="RCA Charisma logo"
-              className="h-[160px] w-[160px] md:h-[200px] md:w-[200px] object-contain"
+              className="h-14 w-14 md:h-[200px] md:w-[200px] object-contain"
             />
           </Link>
 
