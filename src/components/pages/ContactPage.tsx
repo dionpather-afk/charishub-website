@@ -170,12 +170,12 @@ export default function ContactPage() {
                       Service Times
                     </h3>
                     <div className="font-paragraph text-base text-dark-slate space-y-2">
-                      <p><span className="font-semibold">Sunday Service:</span> 9:00 AM</p>
-                      <p><span className="font-semibold">Sunday School:</span> 10:30 AM</p>
-                      <p><span className="font-semibold">Prayer Meeting (Tue):</span> 7:00 PM</p>
-                      <p><span className="font-semibold">Home Fellowship (Thu):</span> 7:00 PM</p>
-                      <p><span className="font-semibold">Youth Meeting (Fri):</span> 7:30 PM</p>
-                      <p><span className="font-semibold">Laudium Outreach (Mon):</span> 6:30 PM</p>
+                      <p><span className="font-semibold">Sunday Service:</span> <span className="whitespace-nowrap">9:00 – 10:30 AM</span></p>
+                      <p><span className="font-semibold">Sunday School:</span> <span className="whitespace-nowrap">9:30 – 10:30 AM</span></p>
+                      <p><span className="font-semibold">Prayer Meeting (Tue):</span> <span className="whitespace-nowrap">7:00 – 8:00 PM</span></p>
+                      <p><span className="font-semibold">Home Fellowship (Thu):</span> <span className="whitespace-nowrap">7:00 – 8:00 PM</span></p>
+                      <p><span className="font-semibold">Youth Meeting (Fri):</span> <span className="whitespace-nowrap">7:30 – 9:30 PM</span></p>
+                      <p><span className="font-semibold">Laudium Outreach (Mon):</span> <span className="whitespace-nowrap">6:30 – 7:30 PM</span></p>
                     </div>
                   </div>
                 </div>

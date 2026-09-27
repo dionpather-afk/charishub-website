@@ -77,27 +77,27 @@ export default function Footer() {
             <div className="space-y-3 font-paragraph text-sm text-[#F3E6C4]">
               <div>
                 <p className="font-semibold text-[#F7F3E8]">Sunday Service</p>
-                <p>9:00 AM</p>
+                <p>9:00 – 10:30 AM</p>
               </div>
               <div>
                 <p className="font-semibold text-[#F7F3E8]">Sunday School</p>
-                <p>10:30 AM</p>
+                <p>9:30 – 10:30 AM</p>
               </div>
               <div>
                 <p className="font-semibold text-[#F7F3E8]">Prayer Meeting (Tue)</p>
-                <p>7:00 PM</p>
+                <p>7:00 – 8:00 PM</p>
               </div>
               <div>
                 <p className="font-semibold text-[#F7F3E8]">Home Fellowship (Thu)</p>
-                <p>7:00 PM</p>
+                <p>7:00 – 8:00 PM</p>
               </div>
               <div>
                 <p className="font-semibold text-[#F7F3E8]">Youth Meeting (Fri)</p>
-                <p>7:30 PM</p>
+                <p>7:30 – 9:30 PM</p>
               </div>
               <div>
                 <p className="font-semibold text-[#F7F3E8]">Laudium Outreach (Mon)</p>
-                <p>6:30 PM</p>
+                <p>6:30 – 7:30 PM</p>
               </div>
             </div>
           </div>

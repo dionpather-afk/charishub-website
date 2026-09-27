@@ -22,6 +22,12 @@ const to12h = (time: string) => {
   return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`;
 };
 
+// "9:00 – 10:30 AM" (AM/PM written once when both times share it).
+const toRange = (start: string, end: string) => {
+  const [a, b] = [to12h(start), to12h(end)];
+  return a.slice(-2) === b.slice(-2) ? `${a.slice(0, -3)} – ${b}` : `${a} – ${b}`;
+};
+
 export const GET: APIRoute = () => {
   const link = (path: string) => `${SITE_URL}${path}`;
 
@@ -38,7 +44,7 @@ export const GET: APIRoute = () => {
     '',
     '## Weekly gatherings',
     '',
-    ...WEEKLY_GATHERINGS.map((g) => `- ${g.name}: ${g.day} ${to12h(g.startTime)}`),
+    ...WEEKLY_GATHERINGS.map((g) => `- ${g.name}: ${g.day} ${toRange(g.startTime, g.endTime)}`),
     '',
     '## Special events',
     '',
