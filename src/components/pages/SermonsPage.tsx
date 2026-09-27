@@ -8,6 +8,11 @@ import { BaseCrudService } from '@/integrations';
 import { Sermons } from '@/entities';
 import { Image } from '@/components/ui/image';
 
+// Main Sermons picture: sermons1.jpeg (1536x1024), Media Manager folder "Nags 26sept2026".
+const SERMONS_PHOTO_FILE = 'dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg';
+const sermonsPhotoUrl = (w: number) =>
+  `https://static.wixstatic.com/media/${SERMONS_PHOTO_FILE}/v1/fit/w_${w},h_${Math.round((w * 2) / 3)},q_85,enc_auto/${SERMONS_PHOTO_FILE}`;
+
 export default function SermonsPage() {
   const [sermons, setSermons] = useState<Sermons[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -62,11 +67,17 @@ export default function SermonsPage() {
             <p className="font-paragraph text-lg md:text-xl text-[#061426] max-w-3xl mx-auto leading-relaxed">
               Faithful exposition of God's Word, preached with clarity and conviction.
             </p>
-            <div className="mt-10 max-w-xs mx-auto rounded-2xl overflow-hidden border-4 border-off-white/20">
+            {/* Shown whole at its own 3:2 shape, so nothing is cropped; the
+                browser picks the Wix copy that matches the screen width. */}
+            <div className="mt-10 max-w-6xl mx-auto rounded-2xl overflow-hidden border-4 border-off-white/20">
               <Image
-                src="https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg"
-                alt="Our Pastor at RCA Charisma"
-                className="w-full h-auto object-cover"
+                src={sermonsPhotoUrl(1536)}
+                srcSet={[640, 1024, 1536].map((w) => `${sermonsPhotoUrl(w)} ${w}w`).join(', ')}
+                sizes="(min-width: 1250px) 1152px, calc(100vw - 48px)"
+                width={1536}
+                height={1024}
+                alt="Sermons at RCA Charisma"
+                className="block w-full h-auto aspect-[3/2] object-cover"
               />
             </div>
           </motion.div>
