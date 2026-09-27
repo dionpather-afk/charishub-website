@@ -17,10 +17,10 @@ export const SITE_NAME = SITE_CONFIG.churchName;
 // structured data and llms.txt (whatever domain the page is served from).
 export const SITE_URL = 'https://www.rcacharisma.com';
 
-// Home page church photo (portrait), used as the church's picture in the
+// Home page church photo (Homepage2), used as the church's picture in the
 // structured data.
 export const CHURCH_IMAGE =
-  'https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
+  'https://static.wixstatic.com/media/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
 
 // Share-preview picture: the home page photo, Homepage2 (1600x900), cropped
 // by Wix to the 1200x630 share size.
