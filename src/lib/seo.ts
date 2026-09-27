@@ -22,11 +22,11 @@ export const SITE_URL = 'https://www.rcacharisma.com';
 export const CHURCH_IMAGE =
   'https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
 
-// Share-preview picture: the landscape "congregation in church" gallery photo
-// (1280x853), cropped by Wix to the 1200x630 share size.
+// Share-preview picture: the home page photo, Homepage2 (1600x900), cropped
+// by Wix to the 1200x630 share size.
 export const DEFAULT_OG_IMAGE =
-  'https://static.wixstatic.com/media/dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-congregation.jpg';
-export const DEFAULT_OG_IMAGE_ALT = 'RCA Charisma congregation in church in Laudium, Pretoria';
+  'https://static.wixstatic.com/media/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
+export const DEFAULT_OG_IMAGE_ALT = 'RCA Charisma church in Laudium, Pretoria';
 
 export interface PageSeo {
   title: string;
