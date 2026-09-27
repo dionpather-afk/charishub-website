@@ -38,6 +38,15 @@ const formatEventDates = (start: string, end: string) => {
   return `${format(a, 'd')} – ${format(b, 'd MMM yyyy')}`;
 };
 
+// The RCA Synod is shown as a full-width featured event above the others
+// while it is upcoming. Its CMS entry has no photo, so it uses the Synod
+// banner (1280x720) that is also on the Home page.
+const SYNOD_BANNER_FILE = 'dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg';
+const SYNOD_BANNER_URL = `https://static.wixstatic.com/media/${SYNOD_BANNER_FILE}/v1/fit/w_1280,h_720,q_85,enc_auto/${SYNOD_BANNER_FILE}`;
+const SYNOD_BANNER_ALT = 'RCA National Synod 2026, hosted by RCA Charisma, 29 September – 4 October 2026';
+const isUpcomingSynod = (e: Events, today: string) =>
+  /synod/i.test(e.eventTitle || '') && (dayOf(e.eventEndDate) || dayOf(e.eventDate)) >= today;
+
 // schema.org Event data for search engines, one entry per dated CMS event.
 const buildEventsJsonLd = (events: Events[]) => ({
   '@context': 'https://schema.org',
@@ -92,6 +101,9 @@ export default function EventsPage() {
     }
   };
 
+  const featuredEvent = events.find((e) => isUpcomingSynod(e, dayOf(new Date())));
+  const otherEvents = featuredEvent ? events.filter((e) => e._id !== featuredEvent._id) : events;
+
   return (
     <div className="min-h-screen bg-off-white">
       <Header />
@@ -125,8 +137,89 @@ export default function EventsPage() {
                 </p>
               </div>
             ) : (
+              <>
+                {featuredEvent && (
+                  <motion.article
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    aria-labelledby="featured-event-title"
+                    className="bg-white rounded-lg overflow-hidden border-2 border-muted-gold mb-16 md:mb-24"
+                  >
+                    <div className="grid lg:grid-cols-12">
+                      {/* Whole banner shown (it carries text), never cropped. */}
+                      <div className="lg:col-span-7 bg-[#102B4E] flex items-center">
+                        <Image
+                          src={featuredEvent.eventImage || SYNOD_BANNER_URL}
+                          alt={featuredEvent.eventImage ? featuredEvent.eventTitle || 'Featured event' : SYNOD_BANNER_ALT}
+                          className="block w-full h-auto aspect-video object-contain"
+                          width={1280}
+                        />
+                      </div>
+                      <div className="lg:col-span-5 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+                        <p className="font-paragraph text-sm text-[#7A5A14] font-semibold uppercase tracking-widest mb-4">
+                          Featured Event
+                        </p>
+                        <h2
+                          id="featured-event-title"
+                          className="font-heading text-4xl md:text-5xl text-royal-blue mb-6"
+                        >
+                          {featuredEvent.eventTitle}
+                        </h2>
+
+                        <div className="space-y-4 mb-8 font-paragraph text-base text-dark-slate">
+                          {featuredEvent.eventDate && (
+                            <div className="flex items-center gap-3">
+                              <Calendar className="w-5 h-5 text-muted-gold flex-shrink-0" />
+                              <span className="font-semibold">
+                                {formatEventDates(dayOf(featuredEvent.eventDate), dayOf(featuredEvent.eventEndDate))}
+                              </span>
+                            </div>
+                          )}
+                          {featuredEvent.eventTime && (
+                            <div className="flex items-center gap-3">
+                              <Clock className="w-5 h-5 text-muted-gold flex-shrink-0" />
+                              <span>{featuredEvent.eventTime}</span>
+                            </div>
+                          )}
+                          {featuredEvent.location && (
+                            <div className="flex items-center gap-3">
+                              <MapPin className="w-5 h-5 text-muted-gold flex-shrink-0" />
+                              <span>{featuredEvent.location}</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {featuredEvent.eventDescription && (
+                          <p className="font-paragraph text-base text-dark-slate/80 leading-relaxed whitespace-pre-line">
+                            {featuredEvent.eventDescription}
+                          </p>
+                        )}
+
+                        {featuredEvent.registrationUrl && (
+                          <a
+                            href={featuredEvent.registrationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-8 self-start inline-flex items-center gap-2 bg-royal-blue text-primary-foreground px-8 py-3 rounded-sm font-paragraph font-semibold transition-all duration-300 hover:bg-opacity-90 hover:shadow-md"
+                          >
+                            Register Now
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </motion.article>
+                )}
+
+                {featuredEvent && otherEvents.length > 0 && (
+                  <h2 className="font-heading text-4xl md:text-5xl text-royal-blue text-center mb-12">
+                    More Events
+                  </h2>
+                )}
+
               <div className="grid md:grid-cols-2 gap-12">
-                {events.map((event, index) => (
+                {otherEvents.map((event, index) => (
                   <motion.div
                     key={event._id}
                     initial={{ opacity: 0, y: 20 }}
@@ -200,6 +293,7 @@ export default function EventsPage() {
                   </motion.div>
                 ))}
               </div>
+              </>
             )}
           </div>
         </div>
