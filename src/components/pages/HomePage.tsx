@@ -13,6 +13,9 @@ import iconLeadership from '@/assets/icons/icon-leadership.svg?url';
 
 // --- Canonical Data Sources ---
 const ICON_BASE = "https://static.wixstatic.com/shapes/";
+// Hero photo: Homepage2.jpeg, Media Manager folder "Nags 26sept2026".
+const HERO_PHOTO_FILE = "dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg";
+const HERO_PHOTO_BASE = `https://static.wixstatic.com/media/${HERO_PHOTO_FILE}`;
 const serviceTimes = [
   { title: "Sunday Service", time: "Sunday · 9:00 AM", icon: ICON_BASE + "dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg", desc: "Come worship the Lord with us through prayer, praise, and the faithful preaching of His Word." },
   { title: "Sunday School", time: "Sunday · 10:30 AM", icon: ICON_BASE + "dd740b_158537e800a14a77946916f12eae3e34.svg", desc: "Grow in the knowledge of Christ through Bible teaching and discipleship for every age, straight after the service." },
@@ -79,17 +82,32 @@ export default function HomePage() {
 
       {/* --- HERO SECTION: The Grand Entrance --- */}
       <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] overflow-clip bg-royal-blue flex items-center justify-center">
-        {/* Blurred, darkened copy of the photo fills any space around the full photo
-            (tablet/desktop only; on phones the photo itself fills the hero) */}
-        <div className="absolute inset-0 hidden md:block" aria-hidden="true">
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="" className="w-full h-full object-cover scale-110 blur-2xl brightness-75" />
-        </div>
+        {/* Homepage2.jpeg (1600x900) fills the whole hero on every screen.
+            Phones get a portrait copy cropped by Wix (small, fast download);
+            larger screens get the full photo. */}
         <motion.div
           className="absolute inset-0 w-full h-full"
           style={{ y: heroY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg" alt="RCA Charisma church building in Laudium" className="w-full h-full object-cover object-[center_30%] md:object-contain md:object-center brightness-110 contrast-[1.05] saturate-[1.2]" />
+          <picture className="block w-full h-full">
+            <source
+              media="(max-width: 767px)"
+              srcSet={`${HERO_PHOTO_BASE}/v1/fill/w_720,h_1280,q_80,enc_auto/${HERO_PHOTO_FILE}`}
+            />
+            <Image
+              src={`${HERO_PHOTO_BASE}/v1/fit/w_1600,h_900,q_85,enc_auto/${HERO_PHOTO_FILE}`}
+              alt="RCA Charisma church building in Laudium"
+              className="w-full h-full object-cover object-center brightness-110 contrast-[1.05] saturate-[1.2]"
+            />
+          </picture>
         </motion.div>
+        {/* Tablet/desktop: the same soft navy fade as on phones (clear at the
+            top, ~55% navy from the middle down), spread across the full-width
+            photo so the heading and paragraph stay readable. */}
+        <div
+          aria-hidden="true"
+          className="hidden md:block absolute inset-0 pointer-events-none bg-[linear-gradient(to_bottom,rgba(6,20,38,0)_0%,rgba(6,20,38,0.55)_50%,rgba(6,20,38,0.55)_100%)]"
+        />
 
         <motion.div
           className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center text-center mt-20"
