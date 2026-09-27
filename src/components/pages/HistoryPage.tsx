@@ -1,19 +1,58 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { PhotoGallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 
+// Historic photos (Media Manager folder "Nags 26sept2026"), in order hist1-hist8.
+// All are 1280x853 originals.
+const HISTORIC_PHOTO_FILES = [
+  'dd740b_2d93cdb706c0418cb17fdd3a2912c546~mv2.jpg', // hist1
+  'dd740b_6484fdbdebe44209964005e961f7d344~mv2.jpg', // hist2
+  'dd740b_88176ade9d5a4991bb3be8384399424b~mv2.jpg', // hist3
+  'dd740b_fa68910bcb574e978193550497fb0866~mv2.jpg', // hist4
+  'dd740b_f78cbd724e084fba83bb40344e609962~mv2.jpg', // hist5
+  'dd740b_d036945a94bc4fc69235fcbd2a736916~mv2.jpg', // hist6
+  'dd740b_b5dd66901ece4c02bdca7a2df8c5818e~mv2.jpg', // hist7
+  'dd740b_31b4fc6a3a0d4753ba928d41c9308f37~mv2.jpg', // hist8
+];
+const HISTORIC_PHOTO_ALT = 'Historic photo of RCA Charisma';
+
+// Grid thumbnails are a small 3:2 copy from Wix's image service; the full
+// photo only downloads when it is opened.
+const historicThumbUrl = (file: string) =>
+  `https://static.wixstatic.com/media/${file}/v1/fill/w_600,h_400,q_80,enc_auto/${file}`;
+const historicFullUrl = (file: string) =>
+  `https://static.wixstatic.com/media/${file}/v1/fit/w_1280,h_1280,q_85,enc_auto/${file}`;
+
 export default function HistoryPage() {
   const [ministers, setMinisters] = useState<PhotoGallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'history' | 'reverends'>('history');
+  const [openPhoto, setOpenPhoto] = useState<string | null>(null);
 
   useEffect(() => {
     loadMinisters();
   }, []);
+
+  // While a photo is open: Escape closes it and the page behind stays still
+  // (same behaviour as the Gallery pop-up).
+  useEffect(() => {
+    if (!openPhoto) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenPhoto(null);
+    };
+    window.addEventListener('keydown', onKey);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previous;
+    };
+  }, [openPhoto]);
 
   const loadMinisters = async () => {
     try {
@@ -164,6 +203,36 @@ export default function HistoryPage() {
               </div>
             </div>
           </section>
+
+          {/* Historic photos */}
+          <section className="w-full py-16 md:py-24 bg-white">
+            <div className="max-w-[100rem] mx-auto px-4 md:px-12">
+              <h2 className="font-heading text-4xl md:text-5xl text-royal-blue text-center mb-10">
+                Historic Photos
+              </h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+                {HISTORIC_PHOTO_FILES.map((file) => (
+                  <button
+                    key={file}
+                    type="button"
+                    onClick={() => setOpenPhoto(file)}
+                    className="block w-full aspect-[3/2] overflow-hidden rounded-lg border border-slate-gray/20 bg-slate-gray/10 hover:border-muted-gold transition-colors duration-300 group"
+                    aria-label={`${HISTORIC_PHOTO_ALT} (open full size)`}
+                  >
+                    <Image
+                      src={historicThumbUrl(file)}
+                      alt={HISTORIC_PHOTO_ALT}
+                      loading="lazy"
+                      decoding="async"
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
         </>
       )}
 
@@ -258,6 +327,49 @@ export default function HistoryPage() {
           </section>
         </>
       )}
+
+      {/* Historic photo pop-up (same style as the Gallery) */}
+      <AnimatePresence>
+        {openPhoto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 bg-dark-slate/95 overflow-y-auto overscroll-contain"
+            onClick={() => setOpenPhoto(null)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <button
+              onClick={() => setOpenPhoto(null)}
+              className="fixed top-4 right-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-[#102B4E] border border-[#AD843D] text-[#DCAC53] shadow-lg hover:text-[#FFF0B0] transition-colors duration-300"
+              aria-label="Close"
+            >
+              <X className="w-7 h-7" />
+            </button>
+
+            {/* Tapping anywhere outside the photo closes the pop-up. */}
+            <div className="min-h-full flex items-center justify-center px-4 py-16">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="max-w-6xl w-full"
+              >
+                <Image
+                  src={historicFullUrl(openPhoto)}
+                  alt={HISTORIC_PHOTO_ALT}
+                  className="block mx-auto w-auto max-w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                  width={1280}
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </div>
