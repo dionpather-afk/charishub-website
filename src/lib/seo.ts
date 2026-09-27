@@ -40,7 +40,7 @@ export const PAGE_SEO: Record<string, PageSeo> = {
   '/': {
     title: 'RCA Charisma | Reformed Church in Laudium, Pretoria',
     description:
-      'RCA Charisma is a congregation of the Reformed Church in Africa in Laudium, Pretoria. Join us for Sunday Service at 9:00 and Sunday School at 10:30.',
+      'RCA Charisma is a congregation of the Reformed Church in Africa in Laudium, Pretoria. Join us Sundays: Service 9:00 – 10:30 AM, Sunday School 9:30 – 10:30 AM.',
   },
   '/about': {
     title: `About | ${SUFFIX}`,
@@ -108,12 +108,12 @@ export const getCanonicalUrl = (pathname: string) => `${SITE_URL}${knownPath(pat
 
 // Weekly gatherings, as listed on the home page.
 export const WEEKLY_GATHERINGS = [
-  { name: 'Sunday Service', day: 'Sunday', startTime: '09:00' },
-  { name: 'Sunday School', day: 'Sunday', startTime: '10:30' },
-  { name: 'Laudium Outreach', day: 'Monday', startTime: '18:30' },
-  { name: 'Prayer Meeting', day: 'Tuesday', startTime: '19:00' },
-  { name: 'Home Fellowship', day: 'Thursday', startTime: '19:00' },
-  { name: 'Youth Meeting', day: 'Friday', startTime: '19:30' },
+  { name: 'Sunday Service', day: 'Sunday', startTime: '09:00', endTime: '10:30' },
+  { name: 'Sunday School', day: 'Sunday', startTime: '09:30', endTime: '10:30' },
+  { name: 'Laudium Outreach', day: 'Monday', startTime: '18:30', endTime: '19:30' },
+  { name: 'Prayer Meeting', day: 'Tuesday', startTime: '19:00', endTime: '20:00' },
+  { name: 'Home Fellowship', day: 'Thursday', startTime: '19:00', endTime: '20:00' },
+  { name: 'Youth Meeting', day: 'Friday', startTime: '19:30', endTime: '21:30' },
 ];
 
 export const CHURCH_ADDRESS = {
@@ -160,6 +160,7 @@ export const buildChurchJsonLd = (origin: string, logoUrl: string) => {
             '@type': 'Schedule',
             byDay: `https://schema.org/${g.day}`,
             startTime: g.startTime,
+            endTime: g.endTime,
             repeatFrequency: 'P1W',
             scheduleTimezone: 'Africa/Johannesburg',
           },

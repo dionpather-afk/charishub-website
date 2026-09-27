@@ -17,12 +17,12 @@ const ICON_BASE = "https://static.wixstatic.com/shapes/";
 const HERO_PHOTO_FILE = "dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg";
 const HERO_PHOTO_BASE = `https://static.wixstatic.com/media/${HERO_PHOTO_FILE}`;
 const serviceTimes = [
-  { title: "Sunday Service", time: "Sunday · 9:00 AM", icon: ICON_BASE + "dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg", desc: "Come worship the Lord with us through prayer, praise, and the faithful preaching of His Word." },
-  { title: "Sunday School", time: "Sunday · 10:30 AM", icon: ICON_BASE + "dd740b_158537e800a14a77946916f12eae3e34.svg", desc: "Grow in the knowledge of Christ through Bible teaching and discipleship for every age, straight after the service." },
-  { title: "Prayer Meeting", time: "Tuesday · 7:00 PM", icon: ICON_BASE + "dd740b_afa6d6b9af86411aa4f1a694e13bf4e2.svg", desc: "Join us as we seek God together and lift up our church, our neighbours, and our community in prayer." },
-  { title: "Home Fellowship", time: "Thursday · 7:00 PM", icon: ICON_BASE + "dd740b_80d409b327ff4f3d8b579e818b52423f.svg", desc: "Share life and Scripture in homes across the community, encouraging one another to walk faithfully with Christ." },
-  { title: "Youth Meeting", time: "Friday · 7:30 PM", icon: ICON_BASE + "dd740b_0e168e5ff5954381b001bb35371705bb.svg", desc: "A welcoming place for young people to deepen their faith, build lasting friendships, and discover the joy of serving God." },
-  { title: "Laudium Outreach", time: "Monday · 6:30 PM", icon: ICON_BASE + "dd740b_c21cb2fb61ff43558cbe8d90b0c3b9a4.svg", desc: "Carry the love of Christ into Laudium through the Gospel, compassionate service, and practical care." }
+  { title: "Sunday Service", time: "Sunday · 9:00 – 10:30 AM", icon: ICON_BASE + "dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg", desc: "Come worship the Lord with us through prayer, praise, and the faithful preaching of His Word." },
+  { title: "Sunday School", time: "Sunday · 9:30 – 10:30 AM", icon: ICON_BASE + "dd740b_158537e800a14a77946916f12eae3e34.svg", desc: "Grow in the knowledge of Christ through Bible teaching and discipleship for every age, while the Sunday Service is in progress." },
+  { title: "Prayer Meeting", time: "Tuesday · 7:00 – 8:00 PM", icon: ICON_BASE + "dd740b_afa6d6b9af86411aa4f1a694e13bf4e2.svg", desc: "Join us as we seek God together and lift up our church, our neighbours, and our community in prayer." },
+  { title: "Home Fellowship", time: "Thursday · 7:00 – 8:00 PM", icon: ICON_BASE + "dd740b_80d409b327ff4f3d8b579e818b52423f.svg", desc: "Share life and Scripture in homes across the community, encouraging one another to walk faithfully with Christ." },
+  { title: "Youth Meeting", time: "Friday · 7:30 – 9:30 PM", icon: ICON_BASE + "dd740b_0e168e5ff5954381b001bb35371705bb.svg", desc: "A welcoming place for young people to deepen their faith, build lasting friendships, and discover the joy of serving God." },
+  { title: "Laudium Outreach", time: "Monday · 6:30 – 7:30 PM", icon: ICON_BASE + "dd740b_c21cb2fb61ff43558cbe8d90b0c3b9a4.svg", desc: "Carry the love of Christ into Laudium through the Gospel, compassionate service, and practical care." }
 ];
 
 const foundations = [
