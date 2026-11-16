@@ -1,0 +1,43 @@
+name: Harvest Wix photos
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: Live Wix site address
+        default: https://www.rcacharisma.com
+permissions:
+  contents: write
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install tools
+        run: |
+          mkdir -p /tmp/h
+          cp harvest.mjs /tmp/h/
+          cd /tmp/h
+          npm init -y
+          npm pkg set type=module
+          npm install playwright
+          npx playwright install --with-deps chromium
+      - name: Harvest
+        run: node /tmp/h/harvest.mjs
+        env:
+          SITE: ${{ inputs.site }}
+          OUT: ${{ github.workspace }}/migration/harvest
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wix-harvest
+          path: migration/harvest
+      - name: Save results on their own branch
+        run: |
+          git config user.name "migration-bot"
+          git config user.email "migration-bot@users.noreply.github.com"
+          git checkout -b harvest/wix-assets
+          git add -f migration/harvest
+          git commit -m "Harvest photos and data from Wix"
+          git push -f origin harvest/wix-assets
