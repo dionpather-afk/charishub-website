@@ -14,8 +14,9 @@ const bare = h => h.replace(/^www\./, '');
 const sameSite = u => { try { return bare(new URL(u).host) === bare(new URL(SITE).host); } catch { return false; } };
 const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
 const pageSlug = u => { const p = new URL(u).pathname; return slug(p === '/' ? 'home' : p) || 'page'; };
-const wixId = u => (u.match(/^https:\/\/static\.wixstatic\.com\/media\/([^\/?#]+)/) || [])[1] || null;
-const wixBase = u => { const id = wixId(u); return id ? `https://static.wixstatic.com/media/${id}` : null; };
+const wixId = u => (u.match(/^https:\/\/static\.wixstatic\.com\/(?:media|shapes)\/([^\/?#]+)/) || [])[1] || null;
+const wixBase = u => { const m = u.match(/^(https:\/\/static\.wixstatic\.com\/(?:media|shapes)\/[^\/?#]+)/); return m ? m[1] : null; };
+const ROUTES = (process.env.ROUTES || '/about,/leadership,/ministries,/sermons,/events,/devotionals,/history,/gallery,/giving,/contact').split(',').map(x => x.trim()).filter(Boolean);
 const normalize = u => { const x = new URL(u); x.hash = ''; return x.href.replace(/\/$/, '') || SITE; };
 
 async function getText(u) {
@@ -71,12 +72,13 @@ await fs.mkdir(path.join(OUT, 'html'), { recursive: true });
 await fs.mkdir(path.join(OUT, 'assets/images'), { recursive: true });
 await fs.mkdir(path.join(OUT, 'originals'), { recursive: true });
 
-const queue = [SITE + '/', ...(await sitemapUrls())];
+const queue = [SITE + '/', ...ROUTES.map(r => SITE + r), ...(await sitemapUrls())];
 const seen = new Set();
 const occurrences = [];
 const baselineIndex = [];
 const pageErrors = [];
 const apiHits = [];
+const apiSeen = new Set();
 const browser = await chromium.launch();
 
 while (queue.length && seen.size < MAX_PAGES) {
@@ -91,17 +93,27 @@ while (queue.length && seen.size < MAX_PAGES) {
     const net = new Set();
     page.on('response', async r => {
       const u = r.url();
-      if (u.includes('static.wixstatic.com/media/')) net.add(u);
+      if (/static\.wixstatic\.com\/(media|shapes)\//.test(u)) net.add(u);
       const ct = r.headers()['content-type'] || '';
-      if (vp.w === 1440 && ct.includes('json') && /wixapis\.com|\/_api\/|wix-data/.test(u) && !/frog\.wix|analytics|bi-|monitoring/.test(u)) {
-        try { apiHits.push({ page: new URL(url).pathname, url: u, method: r.request().method(), status: r.status(), body: await r.text() }); } catch { /* ignore */ }
+      if (ct.includes('json') && /wixapis\.com|\/_api\/|wix-data/.test(u) && !/frog\.wix|analytics|bi-|monitoring|tag-manager/.test(u)) {
+        try {
+          const body = await r.text(); const post = r.request().postData() || '';
+          const key = u + '|' + post + '|' + body.length;
+          if (!apiSeen.has(key)) { apiSeen.add(key); apiHits.push({ page: new URL(url).pathname, viewport: vp.w, url: u, method: r.request().method(), request: post, status: r.status(), body }); }
+        } catch { /* ignore */ }
       }
     });
     try {
-      await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 });
-      await autoScroll(page);
-      await page.waitForTimeout(1500);
-      const data = await page.evaluate(collect);
+      let data;
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 });
+        await page.waitForSelector('#root a, #root img', { timeout: 45000 }).catch(() => {});
+        await autoScroll(page);
+        await page.waitForTimeout(2500);
+        data = await page.evaluate(collect);
+        if (data.links.length > 0 || data.images.length > 0) break;
+        console.log(`  page looked empty (attempt ${attempt}), retrying`);
+      }
       const ps = pageSlug(url);
       const shot = `${ps}-${vp.w}.png`;
       await page.screenshot({ path: path.join(OUT, 'baseline', shot), fullPage: true });
