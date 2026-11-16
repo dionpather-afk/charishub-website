@@ -1,0 +1,90 @@
+[
+  {
+    "page": "home",
+    "width": 1440,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": [
+      "https://static.wixstatic.com/shapes/dd740b_afa6d6b9af86411aa4f1a694e13bf4e2.svg",
+      "https://static.wixstatic.com/media/dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg",
+      "https://static.wixstatic.com/shapes/dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg",
+      "https://static.wixstatic.com/shapes/dd740b_c21cb2fb61ff43558cbe8d90b0c3b9a4.svg",
+      "https://static.wixstatic.com/shapes/dd740b_158537e800a14a77946916f12eae3e34.svg",
+      "https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg",
+      "https://static.wixstatic.com/shapes/dd740b_0e168e5ff5954381b001bb35371705bb.svg",
+      "https://static.wixstatic.com/media/dd740b_24288f64270b43fe9eca2514f4c0ee1f~mv2.jpeg",
+      "https://static.wixstatic.com/shapes/dd740b_80d409b327ff4f3d8b579e818b52423f.svg",
+      "https://static.wixstatic.com/media/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg/v1/fit/w_1600,h_900,q_85,enc_auto/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg"
+    ]
+  },
+  {
+    "page": "about",
+    "width": 375,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "leadership",
+    "width": 768,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "ministries",
+    "width": 375,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "ministries",
+    "width": 768,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "sermons",
+    "width": 1440,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "events",
+    "width": 375,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "history",
+    "width": 768,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "giving",
+    "width": 375,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "giving",
+    "width": 1440,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  },
+  {
+    "page": "contact",
+    "width": 375,
+    "ok": true,
+    "error": "",
+    "wixPhotosSeen": []
+  }
+]
