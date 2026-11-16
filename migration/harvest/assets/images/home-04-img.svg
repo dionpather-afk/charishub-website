@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="2 2 124 124" aria-label="Sunday Service" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g>
+        <defs>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="0afb8f03-bd6f-4499-a88e-2735e9f9fe64">
+                <stop stop-color="#102b4e"/>
+                <stop stop-color="#061426" offset="1"/>
+            </linearGradient>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="c3ba92f2-f5bb-4825-bbb2-45aeccfdc8db">
+                <stop stop-color="#fff0b0"/>
+                <stop stop-color="#dcac53" offset=".55"/>
+                <stop stop-color="#a8782e" offset="1"/>
+            </linearGradient>
+            <radialGradient id="6ddef45f-2755-470e-84e1-6cae3fe02091">
+                <stop stop-opacity=".38" stop-color="#2f647a"/>
+                <stop stop-opacity="0" stop-color="#2f647a" offset="1"/>
+            </radialGradient>
+        </defs>
+        <path stroke-width="2" stroke="#ad843d" fill="url(#0afb8f03-bd6f-4499-a88e-2735e9f9fe64)" d="M126 31v66c0 16.016-12.984 29-29 29H31c-16.016 0-29-12.984-29-29V31C2 14.984 14.984 2 31 2h66c16.016 0 29 12.984 29 29z"/>
+        <path fill="url(#6ddef45f-2755-470e-84e1-6cae3fe02091)" d="M117 62c0 29.271-23.729 53-53 53S11 91.271 11 62 34.729 9 64 9s53 23.729 53 53"/>
+        <g stroke-linejoin="round" stroke-linecap="round">
+            <path d="M28 91V56a36 36 0 0 1 72 0v35" stroke="url(#c3ba92f2-f5bb-4825-bbb2-45aeccfdc8db)" stroke-width="3.6" fill="none"/>
+            <path d="M37 91V58a27 27 0 0 1 54 0v33" stroke="#dfbf7b" stroke-width="2" fill="none"/>
+            <path d="M64 21v23M53 33h22" stroke="url(#c3ba92f2-f5bb-4825-bbb2-45aeccfdc8db)" stroke-width="3.6" fill="none"/>
+            <path d="M25 97h78" stroke="url(#c3ba92f2-f5bb-4825-bbb2-45aeccfdc8db)" stroke-width="3.6" fill="none"/>
+            <path fill="#89d3d7" d="M52 71a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+            <path fill="#89d3d7" d="M70 66a6 6 0 1 1-12 0 6 6 0 0 1 12 0"/>
+            <path fill="#89d3d7" d="M86 71a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+            <path d="M36 88c0-8 5-12 11-12s11 4 11 12m-6 2c0-10 5-16 12-16s12 6 12 16m-6-2c0-8 5-12 11-12s11 4 11 12" stroke="#89d3d7" stroke-width="2.6" fill="none"/>
+            <path d="m21 43-6-3m92 3 6-3M64 9V5" stroke="#b9a773" stroke-width="2" fill="none"/>
+        </g>
+    </g>
+</svg>

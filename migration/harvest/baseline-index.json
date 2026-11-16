@@ -1,0 +1,134 @@
+[
+  {
+    "file": "home-375.png",
+    "path": "/",
+    "width": 375,
+    "height": 812
+  },
+  {
+    "file": "home-768.png",
+    "path": "/",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "about-768.png",
+    "path": "/about",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "about-1440.png",
+    "path": "/about",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "leadership-375.png",
+    "path": "/leadership",
+    "width": 375,
+    "height": 812
+  },
+  {
+    "file": "leadership-1440.png",
+    "path": "/leadership",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "ministries-1440.png",
+    "path": "/ministries",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "sermons-375.png",
+    "path": "/sermons",
+    "width": 375,
+    "height": 812
+  },
+  {
+    "file": "sermons-768.png",
+    "path": "/sermons",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "events-768.png",
+    "path": "/events",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "events-1440.png",
+    "path": "/events",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "devotionals-375.png",
+    "path": "/devotionals",
+    "width": 375,
+    "height": 812
+  },
+  {
+    "file": "devotionals-768.png",
+    "path": "/devotionals",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "devotionals-1440.png",
+    "path": "/devotionals",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "history-375.png",
+    "path": "/history",
+    "width": 375,
+    "height": 812
+  },
+  {
+    "file": "history-1440.png",
+    "path": "/history",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "gallery-375.png",
+    "path": "/gallery",
+    "width": 375,
+    "height": 812
+  },
+  {
+    "file": "gallery-768.png",
+    "path": "/gallery",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "gallery-1440.png",
+    "path": "/gallery",
+    "width": 1440,
+    "height": 900
+  },
+  {
+    "file": "giving-768.png",
+    "path": "/giving",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "contact-768.png",
+    "path": "/contact",
+    "width": 768,
+    "height": 1024
+  },
+  {
+    "file": "contact-1440.png",
+    "path": "/contact",
+    "width": 1440,
+    "height": 900
+  }
+]

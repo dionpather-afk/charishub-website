@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="2 2 124 124" aria-label="Sunday School" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g>
+        <defs>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="027796b3-e6af-48c6-a62a-9f47bf3d0172">
+                <stop stop-color="#102b4e"/>
+                <stop stop-color="#061426" offset="1"/>
+            </linearGradient>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="936331e0-661f-464d-b550-dd58d8c96278">
+                <stop stop-color="#fff0b0"/>
+                <stop stop-color="#dcac53" offset=".55"/>
+                <stop stop-color="#a8782e" offset="1"/>
+            </linearGradient>
+            <radialGradient id="88121677-d7e1-4391-b415-eed74c9ef652">
+                <stop stop-opacity=".38" stop-color="#2f647a"/>
+                <stop stop-opacity="0" stop-color="#2f647a" offset="1"/>
+            </radialGradient>
+        </defs>
+        <path stroke-width="2" stroke="#ad843d" fill="url(#027796b3-e6af-48c6-a62a-9f47bf3d0172)" d="M126 31v66c0 16.016-12.984 29-29 29H31c-16.016 0-29-12.984-29-29V31C2 14.984 14.984 2 31 2h66c16.016 0 29 12.984 29 29z"/>
+        <path fill="url(#88121677-d7e1-4391-b415-eed74c9ef652)" d="M117 62c0 29.271-23.729 53-53 53S11 91.271 11 62 34.729 9 64 9s53 23.729 53 53"/>
+        <g stroke-linejoin="round" stroke-linecap="round">
+            <path d="M64 89c-15-10-30-10-43-6V43c14-4 30-4 43 6 13-10 29-10 43-6v40c-13-4-28-4-43 6" stroke="url(#936331e0-661f-464d-b550-dd58d8c96278)" stroke-width="3.6" fill="none"/>
+            <path d="M64 49v40M29 56c10-2 20 0 28 5m14 0c8-5 18-7 28-5M29 68c10-2 20 0 28 5m14 0c8-5 18-7 28-5" stroke="#dfbf7b" stroke-width="2" fill="none"/>
+            <path d="M64 41V24m0 9c-9 0-13-5-13-12 7 0 13 4 13 12m0-3c0-7 5-12 13-13 0 8-4 13-13 13" stroke="#89d3d7" stroke-width="2.6" fill="none"/>
+            <path d="m43 27-6-5m49 4 5-6m-27-7V8" stroke="#b9a773" stroke-width="2" fill="none"/>
+        </g>
+    </g>
+</svg>

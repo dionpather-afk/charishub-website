@@ -1,0 +1,884 @@
+{
+  "https://static.wixstatic.com/media/dd740b_c8f26e93ebbf45299a1781dde1d32144~mv2.jpg": {
+    "id": "dd740b_c8f26e93ebbf45299a1781dde1d32144~mv2.jpg",
+    "file": "/assets/images/leadership-01-shaylin-pillay.jpg",
+    "original": "originals/leadership-01-shaylin-pillay.jpg",
+    "displayedWidth": 176,
+    "displayedHeight": 176,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_36752a5996e04b4b9dd2c5b6a4cc3294~mv2.jpg": {
+    "id": "dd740b_36752a5996e04b4b9dd2c5b6a4cc3294~mv2.jpg",
+    "file": "/assets/images/leadership-02-romulen-pillay.jpg",
+    "original": "originals/leadership-02-romulen-pillay.jpg",
+    "displayedWidth": 176,
+    "displayedHeight": 176,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_3fb71af730ab4b4e8d817122215f25d2~mv2.jpg": {
+    "id": "dd740b_3fb71af730ab4b4e8d817122215f25d2~mv2.jpg",
+    "file": "/assets/images/leadership-03-ricky-moodley.jpg",
+    "original": "originals/leadership-03-ricky-moodley.jpg",
+    "displayedWidth": 176,
+    "displayedHeight": 176,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_392331d9b9e746caa5a77c6f5ff7b949~mv2.jpg": {
+    "id": "dd740b_392331d9b9e746caa5a77c6f5ff7b949~mv2.jpg",
+    "file": "/assets/images/leadership-04-roy-govender.jpg",
+    "original": "originals/leadership-04-roy-govender.jpg",
+    "displayedWidth": 176,
+    "displayedHeight": 176,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_7c036852a341468a8a0551026fdf460f~mv2.jpg": {
+    "id": "dd740b_7c036852a341468a8a0551026fdf460f~mv2.jpg",
+    "file": "/assets/images/leadership-05-ismail-gunde.jpg",
+    "original": "originals/leadership-05-ismail-gunde.jpg",
+    "displayedWidth": 176,
+    "displayedHeight": 176,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_e02beb5e9ad845fabe1202cb8f1a1908~mv2.jpg": {
+    "id": "dd740b_e02beb5e9ad845fabe1202cb8f1a1908~mv2.jpg",
+    "file": "/assets/images/leadership-06-sunker-moodley.jpg",
+    "original": "originals/leadership-06-sunker-moodley.jpg",
+    "displayedWidth": 176,
+    "displayedHeight": 176,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_3baa8776540549479e076af81e81c9c3~mv2.jpg": {
+    "id": "dd740b_3baa8776540549479e076af81e81c9c3~mv2.jpg",
+    "file": "/assets/images/leadership-07-dr-rev-victor-pillay-and-his-wife.jpg",
+    "original": "originals/leadership-07-dr-rev-victor-pillay-and-his-wife.jpg",
+    "displayedWidth": 1150,
+    "displayedHeight": 766,
+    "pages": [
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_35feb6b5dcb14c7ab59663f9a6cec541~mv2.png/v1/fill/w_382,h_287,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dd740b_35feb6b5dcb14c7ab59663f9a6cec541~mv2.png": {
+    "id": "dd740b_35feb6b5dcb14c7ab59663f9a6cec541~mv2.png",
+    "file": "/assets/images/ministries-01-youth-ministry.png",
+    "original": "originals/ministries-01-youth-ministry.png",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_98fbe4a79f5d40e999d508cf62f8084a~mv2.png/v1/fill/w_382,h_287,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dd740b_98fbe4a79f5d40e999d508cf62f8084a~mv2.png": {
+    "id": "dd740b_98fbe4a79f5d40e999d508cf62f8084a~mv2.png",
+    "file": "/assets/images/ministries-02-worship-ministry.png",
+    "original": "originals/ministries-02-worship-ministry.png",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_805c17e38ce7489a92c99d1f4539dd0a~mv2.png/v1/fill/w_382,h_287,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dd740b_805c17e38ce7489a92c99d1f4539dd0a~mv2.png": {
+    "id": "dd740b_805c17e38ce7489a92c99d1f4539dd0a~mv2.png",
+    "file": "/assets/images/ministries-03-sunday-school-ministry.png",
+    "original": "originals/ministries-03-sunday-school-ministry.png",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_5ef75968d1cd401ea3b646af06e24075~mv2.png/v1/fill/w_382,h_287,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dd740b_5ef75968d1cd401ea3b646af06e24075~mv2.png": {
+    "id": "dd740b_5ef75968d1cd401ea3b646af06e24075~mv2.png",
+    "file": "/assets/images/ministries-04-missions-and-outreach-ministry.png",
+    "original": "originals/ministries-04-missions-and-outreach-ministry.png",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_4d0f4ffeb69a4f00a1cfdb71fa87157c~mv2.png/v1/fill/w_382,h_287,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dd740b_4d0f4ffeb69a4f00a1cfdb71fa87157c~mv2.png": {
+    "id": "dd740b_4d0f4ffeb69a4f00a1cfdb71fa87157c~mv2.png",
+    "file": "/assets/images/ministries-05-ladies-ministry.png",
+    "original": "originals/ministries-05-ladies-ministry.png",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_9b8d16c259b64086a5ec6fb63d968a5d~mv2.png/v1/fill/w_382,h_287,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dd740b_9b8d16c259b64086a5ec6fb63d968a5d~mv2.png": {
+    "id": "dd740b_9b8d16c259b64086a5ec6fb63d968a5d~mv2.png",
+    "file": "/assets/images/ministries-06-deacons.png",
+    "original": "originals/ministries-06-deacons.png",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_f7b25e3bf0f34b9387ea6a7bfa67d198~mv2.jpg/v1/fill/w_382,h_287,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd740b_f7b25e3bf0f34b9387ea6a7bfa67d198~mv2.jpg": {
+    "id": "dd740b_f7b25e3bf0f34b9387ea6a7bfa67d198~mv2.jpg",
+    "file": "/assets/images/ministries-07-audio-visual-ministry.jpg",
+    "original": "originals/ministries-07-audio-visual-ministry.jpg",
+    "displayedWidth": 382,
+    "displayedHeight": 287,
+    "pages": [
+      "/ministries"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_c530c0b0fef24d8fa09621fa04f16474~mv2.jpg": {
+    "id": "dd740b_c530c0b0fef24d8fa09621fa04f16474~mv2.jpg",
+    "file": "/assets/images/events-01-img.jpg",
+    "original": "originals/events-01-img.jpg",
+    "displayedWidth": 658,
+    "displayedHeight": 370,
+    "pages": [
+      "/events"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg": {
+    "id": "dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg",
+    "file": "/assets/images/events-02-img.jpg",
+    "original": "originals/events-02-img.jpg",
+    "displayedWidth": 658,
+    "displayedHeight": 370,
+    "pages": [
+      "/events"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_b372903a55f54d6a8ac445d6ccfafc5c~mv2.jpg": {
+    "id": "dd740b_b372903a55f54d6a8ac445d6ccfafc5c~mv2.jpg",
+    "file": "/assets/images/events-03-img.jpg",
+    "original": "originals/events-03-img.jpg",
+    "displayedWidth": 658,
+    "displayedHeight": 370,
+    "pages": [
+      "/events"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_42c350a3f93746baad502813c0729ca1~mv2.jpg": {
+    "id": "dd740b_42c350a3f93746baad502813c0729ca1~mv2.jpg",
+    "file": "/assets/images/events-04-img.jpg",
+    "original": "originals/events-04-img.jpg",
+    "displayedWidth": 658,
+    "displayedHeight": 370,
+    "pages": [
+      "/events"
+    ]
+  },
+  "https://static.wixstatic.com/media/12d367_4f26ccd17f8f4e3a8958306ea08c2332~mv2.png": {
+    "id": "12d367_4f26ccd17f8f4e3a8958306ea08c2332~mv2.png",
+    "file": "/assets/images/history-01-rca-charisma-logo.png",
+    "original": "originals/history-01-rca-charisma-logo.png",
+    "displayedWidth": 200,
+    "displayedHeight": 200,
+    "pages": [
+      "/history",
+      "/gallery",
+      "/leadership"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_fb1ddded32bd4767bb0782c976bd36a5~mv2.jpeg": {
+    "id": "dd740b_fb1ddded32bd4767bb0782c976bd36a5~mv2.jpeg",
+    "file": "/assets/images/history-02-church-construction-1972.jpg",
+    "original": "originals/history-02-church-construction-1972.jpg",
+    "displayedWidth": 928,
+    "displayedHeight": 693,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg": {
+    "id": "dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg",
+    "file": "/assets/images/history-03-the-declaration-of-laudium.jpg",
+    "original": "originals/history-03-the-declaration-of-laudium.jpg",
+    "displayedWidth": 654,
+    "displayedHeight": 981,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_2d93cdb706c0418cb17fdd3a2912c546~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_2d93cdb706c0418cb17fdd3a2912c546~mv2.jpg": {
+    "id": "dd740b_2d93cdb706c0418cb17fdd3a2912c546~mv2.jpg",
+    "file": "/assets/images/history-04-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-04-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_6484fdbdebe44209964005e961f7d344~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_6484fdbdebe44209964005e961f7d344~mv2.jpg": {
+    "id": "dd740b_6484fdbdebe44209964005e961f7d344~mv2.jpg",
+    "file": "/assets/images/history-05-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-05-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_88176ade9d5a4991bb3be8384399424b~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_88176ade9d5a4991bb3be8384399424b~mv2.jpg": {
+    "id": "dd740b_88176ade9d5a4991bb3be8384399424b~mv2.jpg",
+    "file": "/assets/images/history-06-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-06-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_fa68910bcb574e978193550497fb0866~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_fa68910bcb574e978193550497fb0866~mv2.jpg": {
+    "id": "dd740b_fa68910bcb574e978193550497fb0866~mv2.jpg",
+    "file": "/assets/images/history-07-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-07-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_f78cbd724e084fba83bb40344e609962~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_f78cbd724e084fba83bb40344e609962~mv2.jpg": {
+    "id": "dd740b_f78cbd724e084fba83bb40344e609962~mv2.jpg",
+    "file": "/assets/images/history-08-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-08-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_d036945a94bc4fc69235fcbd2a736916~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_d036945a94bc4fc69235fcbd2a736916~mv2.jpg": {
+    "id": "dd740b_d036945a94bc4fc69235fcbd2a736916~mv2.jpg",
+    "file": "/assets/images/history-09-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-09-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_b5dd66901ece4c02bdca7a2df8c5818e~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_b5dd66901ece4c02bdca7a2df8c5818e~mv2.jpg": {
+    "id": "dd740b_b5dd66901ece4c02bdca7a2df8c5818e~mv2.jpg",
+    "file": "/assets/images/history-10-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-10-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_31b4fc6a3a0d4753ba928d41c9308f37~mv2.jpg/v1/fill/w_600,h_400,q_80,enc_auto/dd740b_31b4fc6a3a0d4753ba928d41c9308f37~mv2.jpg": {
+    "id": "dd740b_31b4fc6a3a0d4753ba928d41c9308f37~mv2.jpg",
+    "file": "/assets/images/history-11-historic-photo-of-rca-charisma.jpg",
+    "original": "originals/history-11-historic-photo-of-rca-charisma.jpg",
+    "displayedWidth": 316,
+    "displayedHeight": 210,
+    "pages": [
+      "/history"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_785f2ae7cb8344eab2498d3d7e0b716b~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_785f2ae7cb8344eab2498d3d7e0b716b~mv2.jpg": {
+    "id": "dd740b_785f2ae7cb8344eab2498d3d7e0b716b~mv2.jpg",
+    "file": "/assets/images/gallery-01-rev-hendrik-j-pieters-1998-history-rca-c.jpg",
+    "original": "originals/gallery-01-rev-hendrik-j-pieters-1998-history-rca-c.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_9cb59c7844d04d829177714981ffb4bd~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_9cb59c7844d04d829177714981ffb4bd~mv2.jpg": {
+    "id": "dd740b_9cb59c7844d04d829177714981ffb4bd~mv2.jpg",
+    "file": "/assets/images/gallery-02-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-02-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 224,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_6e0ed822f447479b9c69ef5d3ad661bc~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_6e0ed822f447479b9c69ef5d3ad661bc~mv2.jpg": {
+    "id": "dd740b_6e0ed822f447479b9c69ef5d3ad661bc~mv2.jpg",
+    "file": "/assets/images/gallery-03-history-18-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-03-history-18-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_fcb3ea40ed824ff4b468c60b3afd8683~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_fcb3ea40ed824ff4b468c60b3afd8683~mv2.jpg": {
+    "id": "dd740b_fcb3ea40ed824ff4b468c60b3afd8683~mv2.jpg",
+    "file": "/assets/images/gallery-04-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-04-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 299,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_cc500b7573044dd38bd6739b199e5c65~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_cc500b7573044dd38bd6739b199e5c65~mv2.jpg": {
+    "id": "dd740b_cc500b7573044dd38bd6739b199e5c65~mv2.jpg",
+    "file": "/assets/images/gallery-05-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-05-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 299,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_c43ea2f2e1044754aa473020a5a48a83~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_c43ea2f2e1044754aa473020a5a48a83~mv2.jpg": {
+    "id": "dd740b_c43ea2f2e1044754aa473020a5a48a83~mv2.jpg",
+    "file": "/assets/images/gallery-06-history-19-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-06-history-19-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_efb0f4d38a35458395eab19bf945e311~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_efb0f4d38a35458395eab19bf945e311~mv2.jpg": {
+    "id": "dd740b_efb0f4d38a35458395eab19bf945e311~mv2.jpg",
+    "file": "/assets/images/gallery-07-rev-nobin-shunmugam-1987-1991-history-rc.jpg",
+    "original": "originals/gallery-07-rev-nobin-shunmugam-1987-1991-history-rc.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_26b2f8bc718d4e3ba06c8d747e17e8f2~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_26b2f8bc718d4e3ba06c8d747e17e8f2~mv2.jpg": {
+    "id": "dd740b_26b2f8bc718d4e3ba06c8d747e17e8f2~mv2.jpg",
+    "file": "/assets/images/gallery-08-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-08-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 179,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_c4b7f31854d04c568296f686280f66d4~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_c4b7f31854d04c568296f686280f66d4~mv2.jpg": {
+    "id": "dd740b_c4b7f31854d04c568296f686280f66d4~mv2.jpg",
+    "file": "/assets/images/gallery-09-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-09-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 224,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg": {
+    "id": "dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg",
+    "file": "/assets/images/gallery-10-church-and-times-1-church-times-rca-char.jpg",
+    "original": "originals/gallery-10-church-and-times-1-church-times-rca-char.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_f84b9409cc4242fd9307330dd665bebd~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_f84b9409cc4242fd9307330dd665bebd~mv2.jpg": {
+    "id": "dd740b_f84b9409cc4242fd9307330dd665bebd~mv2.jpg",
+    "file": "/assets/images/gallery-11-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-11-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 179,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_f84b976e38284ecc80978e20b8947ca7~mv2.png/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_f84b976e38284ecc80978e20b8947ca7~mv2.png": {
+    "id": "dd740b_f84b976e38284ecc80978e20b8947ca7~mv2.png",
+    "file": "/assets/images/gallery-12-church-and-times-2-church-times-rca-char.png",
+    "original": "originals/gallery-12-church-and-times-2-church-times-rca-char.png",
+    "displayedWidth": 398,
+    "displayedHeight": 205,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_fd04ae5c61314e4e96a5c8c472ccead9~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_fd04ae5c61314e4e96a5c8c472ccead9~mv2.jpg": {
+    "id": "dd740b_fd04ae5c61314e4e96a5c8c472ccead9~mv2.jpg",
+    "file": "/assets/images/gallery-13-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-13-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 299,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_4a056f01330f4c1cb70d97574897a28f~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_4a056f01330f4c1cb70d97574897a28f~mv2.jpg": {
+    "id": "dd740b_4a056f01330f4c1cb70d97574897a28f~mv2.jpg",
+    "file": "/assets/images/gallery-14-rev-jnj-klippies-kritzinger-1979-1984-hi.jpg",
+    "original": "originals/gallery-14-rev-jnj-klippies-kritzinger-1979-1984-hi.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_72c90f954b1c4e07b2c768b4bfd83a96~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_72c90f954b1c4e07b2c768b4bfd83a96~mv2.jpg": {
+    "id": "dd740b_72c90f954b1c4e07b2c768b4bfd83a96~mv2.jpg",
+    "file": "/assets/images/gallery-15-church-and-times-3-church-times-rca-char.jpg",
+    "original": "originals/gallery-15-church-and-times-3-church-times-rca-char.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_9979cbb7a2864a44af1d4a1d53b1ba3e~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_9979cbb7a2864a44af1d4a1d53b1ba3e~mv2.jpg": {
+    "id": "dd740b_9979cbb7a2864a44af1d4a1d53b1ba3e~mv2.jpg",
+    "file": "/assets/images/gallery-16-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-16-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 179,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_60a5e69835d04a859972f0886900b753~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_60a5e69835d04a859972f0886900b753~mv2.jpg": {
+    "id": "dd740b_60a5e69835d04a859972f0886900b753~mv2.jpg",
+    "file": "/assets/images/gallery-17-church-and-times-4-church-times-rca-char.jpg",
+    "original": "originals/gallery-17-church-and-times-4-church-times-rca-char.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_2532c6005c734602985fb5c63c247c3e~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_2532c6005c734602985fb5c63c247c3e~mv2.jpg": {
+    "id": "dd740b_2532c6005c734602985fb5c63c247c3e~mv2.jpg",
+    "file": "/assets/images/gallery-18-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-18-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 531,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_081263ba8b1e485c9bfbf6ab6422596e~mv2.jpeg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_081263ba8b1e485c9bfbf6ab6422596e~mv2.jpeg": {
+    "id": "dd740b_081263ba8b1e485c9bfbf6ab6422596e~mv2.jpeg",
+    "file": "/assets/images/gallery-19-congregation-formal-28-congregation-rca-.jpg",
+    "original": "originals/gallery-19-congregation-formal-28-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_a504cce91e254fc887468709d05a308d~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_a504cce91e254fc887468709d05a308d~mv2.jpg": {
+    "id": "dd740b_a504cce91e254fc887468709d05a308d~mv2.jpg",
+    "file": "/assets/images/gallery-20-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-20-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 224,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_691dbcf7b4b149ab8ec1490c657241f1~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_691dbcf7b4b149ab8ec1490c657241f1~mv2.jpg": {
+    "id": "dd740b_691dbcf7b4b149ab8ec1490c657241f1~mv2.jpg",
+    "file": "/assets/images/gallery-21-church-and-times-5-church-times-rca-char.jpg",
+    "original": "originals/gallery-21-church-and-times-5-church-times-rca-char.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_e726301f92b844f98947521d11758d15~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_e726301f92b844f98947521d11758d15~mv2.jpg": {
+    "id": "dd740b_e726301f92b844f98947521d11758d15~mv2.jpg",
+    "file": "/assets/images/gallery-22-history-2-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-22-history-2-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_3e2f82c1fb604cbbb3db6f7d40e43ce8~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_3e2f82c1fb604cbbb3db6f7d40e43ce8~mv2.jpg": {
+    "id": "dd740b_3e2f82c1fb604cbbb3db6f7d40e43ce8~mv2.jpg",
+    "file": "/assets/images/gallery-23-church-and-times-6-church-times-rca-char.jpg",
+    "original": "originals/gallery-23-church-and-times-6-church-times-rca-char.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg": {
+    "id": "dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg",
+    "file": "/assets/images/gallery-24-congregation-formal-27-congregation-rca-.jpg",
+    "original": "originals/gallery-24-congregation-formal-27-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_7d58aacaa1ba4dd0a3bfeb69f462c143~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_7d58aacaa1ba4dd0a3bfeb69f462c143~mv2.jpg": {
+    "id": "dd740b_7d58aacaa1ba4dd0a3bfeb69f462c143~mv2.jpg",
+    "file": "/assets/images/gallery-25-congregation-formal-9-congregation-rca-c.jpg",
+    "original": "originals/gallery-25-congregation-formal-9-congregation-rca-c.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_76780ea986834d699a00cf103da1bf8a~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_76780ea986834d699a00cf103da1bf8a~mv2.jpg": {
+    "id": "dd740b_76780ea986834d699a00cf103da1bf8a~mv2.jpg",
+    "file": "/assets/images/gallery-26-history-6-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-26-history-6-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg": {
+    "id": "dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg",
+    "file": "/assets/images/gallery-27-church-and-times-7-church-times-rca-char.jpg",
+    "original": "originals/gallery-27-church-and-times-7-church-times-rca-char.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_77605228cc974bf5813b6ad0dc09f9ad~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_77605228cc974bf5813b6ad0dc09f9ad~mv2.jpg": {
+    "id": "dd740b_77605228cc974bf5813b6ad0dc09f9ad~mv2.jpg",
+    "file": "/assets/images/gallery-28-congregation-formal-11-congregation-rca-.jpg",
+    "original": "originals/gallery-28-congregation-formal-11-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_ebc606760046445ba9ced546b038e338~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_ebc606760046445ba9ced546b038e338~mv2.jpg": {
+    "id": "dd740b_ebc606760046445ba9ced546b038e338~mv2.jpg",
+    "file": "/assets/images/gallery-29-history-7-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-29-history-7-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_808c3048741343c784e6c2f028d4c309~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_808c3048741343c784e6c2f028d4c309~mv2.jpg": {
+    "id": "dd740b_808c3048741343c784e6c2f028d4c309~mv2.jpg",
+    "file": "/assets/images/gallery-30-congregation-formal-12-congregation-rca-.jpg",
+    "original": "originals/gallery-30-congregation-formal-12-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_eaee9cc4a3fe461598971d6a226fb465~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_eaee9cc4a3fe461598971d6a226fb465~mv2.jpg": {
+    "id": "dd740b_eaee9cc4a3fe461598971d6a226fb465~mv2.jpg",
+    "file": "/assets/images/gallery-31-history-9-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-31-history-9-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_c7402f3668714e96a33b791e54e9ca20~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_c7402f3668714e96a33b791e54e9ca20~mv2.jpg": {
+    "id": "dd740b_c7402f3668714e96a33b791e54e9ca20~mv2.jpg",
+    "file": "/assets/images/gallery-32-rev-pj-perold-de-beer-1966-79-1991-histo.jpg",
+    "original": "originals/gallery-32-rev-pj-perold-de-beer-1966-79-1991-histo.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_572dafd051614841a6c7afec043b7459~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_572dafd051614841a6c7afec043b7459~mv2.jpg": {
+    "id": "dd740b_572dafd051614841a6c7afec043b7459~mv2.jpg",
+    "file": "/assets/images/gallery-33-congregation-formal-13-congregation-rca-.jpg",
+    "original": "originals/gallery-33-congregation-formal-13-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_d63558d9cd724cc483ea89731dd78363~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_d63558d9cd724cc483ea89731dd78363~mv2.jpg": {
+    "id": "dd740b_d63558d9cd724cc483ea89731dd78363~mv2.jpg",
+    "file": "/assets/images/gallery-34-history-10-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-34-history-10-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_6e561265d47a4cf781d7cc2bc2ccd817~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_6e561265d47a4cf781d7cc2bc2ccd817~mv2.jpg": {
+    "id": "dd740b_6e561265d47a4cf781d7cc2bc2ccd817~mv2.jpg",
+    "file": "/assets/images/gallery-35-congregation-formal-15-congregation-rca-.jpg",
+    "original": "originals/gallery-35-congregation-formal-15-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_dab95d76464f4136b307548d7307afda~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_dab95d76464f4136b307548d7307afda~mv2.jpg": {
+    "id": "dd740b_dab95d76464f4136b307548d7307afda~mv2.jpg",
+    "file": "/assets/images/gallery-36-history-15-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-36-history-15-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_7b53d451e7bf44959e4da50553452416~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_7b53d451e7bf44959e4da50553452416~mv2.jpg": {
+    "id": "dd740b_7b53d451e7bf44959e4da50553452416~mv2.jpg",
+    "file": "/assets/images/gallery-37-congregation-formal-16-congregation-rca-.jpg",
+    "original": "originals/gallery-37-congregation-formal-16-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg": {
+    "id": "dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg",
+    "file": "/assets/images/gallery-38-history-16-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-38-history-16-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_d414a7deae4e42f1967963a334b8bd7f~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_d414a7deae4e42f1967963a334b8bd7f~mv2.jpg": {
+    "id": "dd740b_d414a7deae4e42f1967963a334b8bd7f~mv2.jpg",
+    "file": "/assets/images/gallery-39-rev-weitz-lf-botes-1964-1966-history-rca.jpg",
+    "original": "originals/gallery-39-rev-weitz-lf-botes-1964-1966-history-rca.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_9804533094f940999c1baff56c2ca580~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_9804533094f940999c1baff56c2ca580~mv2.jpg": {
+    "id": "dd740b_9804533094f940999c1baff56c2ca580~mv2.jpg",
+    "file": "/assets/images/gallery-40-congregation-formal-19-congregation-rca-.jpg",
+    "original": "originals/gallery-40-congregation-formal-19-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_3c25d366d9ab4439a3e26d5823399e61~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_3c25d366d9ab4439a3e26d5823399e61~mv2.jpg": {
+    "id": "dd740b_3c25d366d9ab4439a3e26d5823399e61~mv2.jpg",
+    "file": "/assets/images/gallery-41-congregation-formal-21-congregation-rca-.jpg",
+    "original": "originals/gallery-41-congregation-formal-21-congregation-rca-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 265,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_f790575bd91e4b8fa5763ca062a4394f~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_f790575bd91e4b8fa5763ca062a4394f~mv2.jpg": {
+    "id": "dd740b_f790575bd91e4b8fa5763ca062a4394f~mv2.jpg",
+    "file": "/assets/images/gallery-42-history-17-history-rca-charisma-laudium.jpg",
+    "original": "originals/gallery-42-history-17-history-rca-charisma-laudium.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_d56bb3c7fb244a16a749a35f04ed05c2~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_d56bb3c7fb244a16a749a35f04ed05c2~mv2.jpg": {
+    "id": "dd740b_d56bb3c7fb244a16a749a35f04ed05c2~mv2.jpg",
+    "file": "/assets/images/gallery-43-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-43-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 224,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_6af4ad7ef33d466da9b423b5b318d61e~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_6af4ad7ef33d466da9b423b5b318d61e~mv2.jpg": {
+    "id": "dd740b_6af4ad7ef33d466da9b423b5b318d61e~mv2.jpg",
+    "file": "/assets/images/gallery-44-rev-chris-ja-greyling-1955-1964-history-.jpg",
+    "original": "originals/gallery-44-rev-chris-ja-greyling-1955-1964-history-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 598,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_4f220ebd6dc44a8396def822d60df056~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_4f220ebd6dc44a8396def822d60df056~mv2.jpg": {
+    "id": "dd740b_4f220ebd6dc44a8396def822d60df056~mv2.jpg",
+    "file": "/assets/images/gallery-45-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-45-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 299,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg/v1/fit/w_600,h_900,q_80,enc_auto/dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg": {
+    "id": "dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg",
+    "file": "/assets/images/gallery-46-missions-and-random-congregational-pics-.jpg",
+    "original": "originals/gallery-46-missions-and-random-congregational-pics-.jpg",
+    "displayedWidth": 398,
+    "displayedHeight": 224,
+    "pages": [
+      "/gallery"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg/v1/fill/w_720,h_1280,q_80,enc_auto/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg": {
+    "id": "dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg",
+    "file": "/assets/images/home-01-rca-charisma-church-building-in-laudium.jpg",
+    "original": "originals/home-01-rca-charisma-church-building-in-laudium.jpg",
+    "displayedWidth": 375,
+    "displayedHeight": 812,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg": {
+    "id": "dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg",
+    "file": "/assets/images/home-02-rca-national-synod-2026-hosted-by-rca-ch.jpg",
+    "original": "originals/home-02-rca-national-synod-2026-hosted-by-rca-ch.jpg",
+    "displayedWidth": 327,
+    "displayedHeight": 185,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_24288f64270b43fe9eca2514f4c0ee1f~mv2.jpeg": {
+    "id": "dd740b_24288f64270b43fe9eca2514f4c0ee1f~mv2.jpeg",
+    "file": "/assets/images/home-03-bible-verse-matthew-11-28.jpg",
+    "original": "originals/home-03-bible-verse-matthew-11-28.jpg",
+    "displayedWidth": 320,
+    "displayedHeight": 426,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg": {
+    "id": "dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg",
+    "file": "/assets/images/home-04-img.svg",
+    "original": "originals/home-04-img.svg",
+    "displayedWidth": 56,
+    "displayedHeight": 56,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/dd740b_158537e800a14a77946916f12eae3e34.svg": {
+    "id": "dd740b_158537e800a14a77946916f12eae3e34.svg",
+    "file": "/assets/images/home-05-img.svg",
+    "original": "originals/home-05-img.svg",
+    "displayedWidth": 56,
+    "displayedHeight": 56,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/dd740b_afa6d6b9af86411aa4f1a694e13bf4e2.svg": {
+    "id": "dd740b_afa6d6b9af86411aa4f1a694e13bf4e2.svg",
+    "file": "/assets/images/home-06-img.svg",
+    "original": "originals/home-06-img.svg",
+    "displayedWidth": 56,
+    "displayedHeight": 56,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/dd740b_80d409b327ff4f3d8b579e818b52423f.svg": {
+    "id": "dd740b_80d409b327ff4f3d8b579e818b52423f.svg",
+    "file": "/assets/images/home-07-img.svg",
+    "original": "originals/home-07-img.svg",
+    "displayedWidth": 56,
+    "displayedHeight": 56,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/dd740b_0e168e5ff5954381b001bb35371705bb.svg": {
+    "id": "dd740b_0e168e5ff5954381b001bb35371705bb.svg",
+    "file": "/assets/images/home-08-img.svg",
+    "original": "originals/home-08-img.svg",
+    "displayedWidth": 56,
+    "displayedHeight": 56,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/dd740b_c21cb2fb61ff43558cbe8d90b0c3b9a4.svg": {
+    "id": "dd740b_c21cb2fb61ff43558cbe8d90b0c3b9a4.svg",
+    "file": "/assets/images/home-09-img.svg",
+    "original": "originals/home-09-img.svg",
+    "displayedWidth": 56,
+    "displayedHeight": 56,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg": {
+    "id": "dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg",
+    "file": "/assets/images/home-10-img.jpg",
+    "original": "originals/home-10-img.jpg",
+    "displayedWidth": 375,
+    "displayedHeight": 700,
+    "pages": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg/v1/fit/w_640,h_427,q_85,enc_auto/dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg": {
+    "id": "dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg",
+    "file": "/assets/images/sermons-01-sermons-at-rca-charisma.jpg",
+    "original": "originals/sermons-01-sermons-at-rca-charisma.jpg",
+    "displayedWidth": 319,
+    "displayedHeight": 213,
+    "pages": [
+      "/sermons"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg/v1/fit/w_1024,h_683,q_85,enc_auto/dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg": {
+    "id": "dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg",
+    "file": "/assets/images/sermons-02-sermons-at-rca-charisma.jpg",
+    "original": "originals/sermons-02-sermons-at-rca-charisma.jpg",
+    "displayedWidth": 664,
+    "displayedHeight": 443,
+    "pages": [
+      "/sermons"
+    ]
+  },
+  "https://static.wixstatic.com/media/dd740b_9a679137889e40c49e6cbb1e7afa93d4~mv2.jpeg": {
+    "id": "dd740b_9a679137889e40c49e6cbb1e7afa93d4~mv2.jpeg",
+    "file": "/assets/images/giving-01-our-pastor-and-his-wife-rca-charisma.jpg",
+    "original": "originals/giving-01-our-pastor-and-his-wife-rca-charisma.jpg",
+    "displayedWidth": 664,
+    "displayedHeight": 374,
+    "pages": [
+      "/giving"
+    ]
+  }
+}
