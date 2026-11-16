@@ -1,0 +1,30 @@
+name: 2 - Compare new site with Wix baseline
+on:
+  workflow_dispatch:
+    inputs:
+      new_url:
+        description: Address of the new copy on Xneelo (test address)
+        required: true
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: harvest/wix-assets
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Install tools
+        working-directory: tools
+        run: npm install && npx playwright install --with-deps chromium
+      - name: Compare
+        run: node tools/visual-compare.mjs
+        env:
+          NEW_URL: ${{ inputs.new_url }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: visual-compare
+          path: migration/compare

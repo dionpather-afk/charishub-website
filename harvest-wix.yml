@@ -1,0 +1,35 @@
+name: 1 - Harvest Wix photos and baseline
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: Live Wix site address
+        default: https://www.rcacharisma.com
+permissions:
+  contents: write
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Install tools
+        working-directory: tools
+        run: npm install && npx playwright install --with-deps chromium
+      - name: Harvest
+        run: node tools/harvest.mjs
+        env:
+          SITE: ${{ inputs.site }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wix-harvest
+          path: migration/harvest
+      - name: Save harvest to its own branch (does not touch your site files)
+        run: |
+          git config user.name "migration-bot"
+          git config user.email "migration-bot@users.noreply.github.com"
+          git checkout -b harvest/wix-assets
+          git add -f migration/harvest
+          git commit -m "Harvest photos and baseline from Wix"
+          git push -f origin harvest/wix-assets
