@@ -1,0 +1,46 @@
+# RCA Charisma — Apache settings for Xneelo hosting
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Always use https://www.rcacharisma.com (same address the Wix site used).
+  # Only applies on the real domain, so Xneelo's test address keeps working.
+  RewriteCond %{HTTP_HOST} ^rcacharisma\.com$ [NC]
+  RewriteRule ^ https://www.rcacharisma.com%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.rcacharisma\.com$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://www.rcacharisma.com%{REQUEST_URI} [L,R=301]
+
+  # Unknown addresses go to the home page (as on the Wix site)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ / [L,R=302]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Build files have unique names, so browsers can keep them for a year
+  <If "%{REQUEST_URI} =~ m#^/_astro/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain
+</IfModule>
