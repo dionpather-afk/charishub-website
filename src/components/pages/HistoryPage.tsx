@@ -10,23 +10,23 @@ import { Image } from '@/components/ui/image';
 // Historic photos (Media Manager folder "Nags 26sept2026"), in order hist1-hist8.
 // All are 1280x853 originals.
 const HISTORIC_PHOTO_FILES = [
-  'dd740b_2d93cdb706c0418cb17fdd3a2912c546~mv2.jpg', // hist1
-  'dd740b_6484fdbdebe44209964005e961f7d344~mv2.jpg', // hist2
-  'dd740b_88176ade9d5a4991bb3be8384399424b~mv2.jpg', // hist3
-  'dd740b_fa68910bcb574e978193550497fb0866~mv2.jpg', // hist4
-  'dd740b_f78cbd724e084fba83bb40344e609962~mv2.jpg', // hist5
-  'dd740b_d036945a94bc4fc69235fcbd2a736916~mv2.jpg', // hist6
-  'dd740b_b5dd66901ece4c02bdca7a2df8c5818e~mv2.jpg', // hist7
-  'dd740b_31b4fc6a3a0d4753ba928d41c9308f37~mv2.jpg', // hist8
+  'dd740b_2d93cdb706c0418cb17fdd3a2912c546.jpg', // hist1
+  'dd740b_6484fdbdebe44209964005e961f7d344.jpg', // hist2
+  'dd740b_88176ade9d5a4991bb3be8384399424b.jpg', // hist3
+  'dd740b_fa68910bcb574e978193550497fb0866.jpg', // hist4
+  'dd740b_f78cbd724e084fba83bb40344e609962.jpg', // hist5
+  'dd740b_d036945a94bc4fc69235fcbd2a736916.jpg', // hist6
+  'dd740b_b5dd66901ece4c02bdca7a2df8c5818e.jpg', // hist7
+  'dd740b_31b4fc6a3a0d4753ba928d41c9308f37.jpg', // hist8
 ];
 const HISTORIC_PHOTO_ALT = 'Historic photo of RCA Charisma';
 
-// Grid thumbnails are a small 3:2 copy from Wix's image service; the full
-// photo only downloads when it is opened.
+// Grid thumbnails are a small copy made at build time (tools/make-images.mjs);
+// the full photo only downloads when it is opened.
 const historicThumbUrl = (file: string) =>
-  `https://static.wixstatic.com/media/${file}/v1/fill/w_600,h_400,q_80,enc_auto/${file}`;
+  `/media/w600/${file}`;
 const historicFullUrl = (file: string) =>
-  `https://static.wixstatic.com/media/${file}/v1/fit/w_1280,h_1280,q_85,enc_auto/${file}`;
+  `/media/${file}`;
 
 export default function HistoryPage() {
   const [ministers, setMinisters] = useState<PhotoGallery[]>([]);
@@ -129,7 +129,7 @@ export default function HistoryPage() {
           <section className="w-full pt-12 pb-4 bg-white">
             <figure className="max-w-5xl mx-auto px-6 md:px-12">
               <Image
-                src="https://static.wixstatic.com/media/dd740b_fb1ddded32bd4767bb0782c976bd36a5~mv2.jpeg"
+                src="/media/dd740b_fb1ddded32bd4767bb0782c976bd36a5.jpeg"
                 alt="Church construction, 1972"
                 className="w-full h-auto object-contain rounded-lg border border-slate-gray/20"
               />
@@ -151,7 +151,7 @@ export default function HistoryPage() {
                   className="rounded-lg overflow-hidden border border-slate-gray/20 shadow-sm"
                 >
                   <Image
-                    src="https://static.wixstatic.com/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg"
+                    src="/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6.jpg"
                     alt="The Declaration of Laudium"
                     className="w-full h-auto object-cover"
                   />
@@ -252,7 +252,7 @@ export default function HistoryPage() {
                 style={{ aspectRatio: '1536 / 932' }}
               >
                 <Image
-                  src="https://static.wixstatic.com/media/dd740b_713aacf31f8d41d6a8aa7803e87be0fa~mv2.jpeg"
+                  src="/media/dd740b_713aacf31f8d41d6a8aa7803e87be0fa.jpeg"
                   alt="Historic Reverends of RCA Charisma"
                   className="w-full h-full object-cover object-bottom"
                 />

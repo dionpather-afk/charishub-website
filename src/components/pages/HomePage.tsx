@@ -1,6 +1,7 @@
 // HPI 1.7-G
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { mediaUrl } from '@/lib/media';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { BookOpen, ArrowRight, Clock, MapPin } from 'lucide-react';
 import Header from '@/components/Header';
@@ -12,10 +13,10 @@ import iconFaithfulGiving from '@/assets/icons/icon-faithful-giving.svg?url';
 import iconLeadership from '@/assets/icons/icon-leadership.svg?url';
 
 // --- Canonical Data Sources ---
-const ICON_BASE = "https://static.wixstatic.com/shapes/";
+const ICON_BASE = "/media/";
 // Hero photo: Homepage2.jpeg, Media Manager folder "Nags 26sept2026".
-const HERO_PHOTO_FILE = "dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg";
-const HERO_PHOTO_BASE = `https://static.wixstatic.com/media/${HERO_PHOTO_FILE}`;
+const HERO_PHOTO_FILE = "dd740b_290880b8bfe34a809220f31ffecee390.jpeg";
+const HERO_PHOTO_BASE = `/media/${HERO_PHOTO_FILE}`;
 const serviceTimes = [
   { title: "Sunday Service", time: "Sunday · 9:00 – 10:30 AM", icon: ICON_BASE + "dd740b_dc72a648e65d40d6b7093c1b39d2d235.svg", desc: "Come worship the Lord with us through prayer, praise, and the faithful preaching of His Word." },
   { title: "Sunday School", time: "Sunday · 9:30 – 10:30 AM", icon: ICON_BASE + "dd740b_158537e800a14a77946916f12eae3e34.svg", desc: "Grow in the knowledge of Christ through Bible teaching and discipleship for every age, while the Sunday Service is in progress." },
@@ -92,10 +93,10 @@ export default function HomePage() {
           <picture className="block w-full h-full">
             <source
               media="(max-width: 767px)"
-              srcSet={`${HERO_PHOTO_BASE}/v1/fill/w_720,h_1280,q_80,enc_auto/${HERO_PHOTO_FILE}`}
+              srcSet={mediaUrl(HERO_PHOTO_BASE)}
             />
             <Image
-              src={`${HERO_PHOTO_BASE}/v1/fit/w_1600,h_900,q_85,enc_auto/${HERO_PHOTO_FILE}`}
+              src={`${HERO_PHOTO_BASE}`}
               alt="RCA Charisma church building in Laudium"
               className="w-full h-full object-cover object-center brightness-110 contrast-[1.05] saturate-[1.2]"
             />
@@ -183,7 +184,7 @@ export default function HomePage() {
       <section className="w-full py-16 md:py-24 bg-white relative z-20">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <Image
-            src="https://static.wixstatic.com/media/dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg"
+            src="/media/dd740b_c04f61e1a871440f89168edd2c414b95.jpeg"
             alt="RCA National Synod 2026, hosted by RCA Charisma, 29 September – 4 October 2026"
             className="w-full h-auto object-contain rounded-lg border border-slate-gray/20 shadow-sm"
           />
@@ -221,7 +222,7 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Image
-                    src="https://static.wixstatic.com/media/dd740b_24288f64270b43fe9eca2514f4c0ee1f~mv2.jpeg"
+                    src="/media/dd740b_24288f64270b43fe9eca2514f4c0ee1f.jpeg"
                     alt="Bible verse: Matthew 11:28"
                     className="w-full max-w-xs h-auto object-contain rounded-lg border border-slate-gray/20 shadow-sm mt-10"
                   />
@@ -241,7 +242,7 @@ export default function HomePage() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="group bg-white rounded-lg border border-slate-gray/20 p-8 hover:border-muted-gold hover:shadow-md transition-all duration-300"
                   >
-                    <img src={service.icon} alt="" aria-hidden="true" className="w-14 h-14 mb-6" loading="lazy" />
+                    <img src={mediaUrl(service.icon)} alt="" aria-hidden="true" className="w-14 h-14 mb-6" loading="lazy" />
                     <h3 className="font-heading text-3xl text-royal-blue group-hover:text-muted-gold transition-colors duration-300 mb-2">
                       {service.title}
                     </h3>
@@ -267,7 +268,7 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
           style={{ y: breatherY }}
         >
-          <Image src="https://static.wixstatic.com/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4~mv2.jpg" alt="" className="w-full h-full object-cover" />
+          <Image src="/media/dd740b_a6ebba7a293d495fa08f3a2d5bae58b4.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-royal-blue/80 mix-blend-multiply" />
         </motion.div>
 
@@ -329,7 +330,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex justify-between items-start mb-8">
-                  <img src={item.icon} alt="" aria-hidden="true" className="w-14 h-14" loading="lazy" />
+                  <img src={mediaUrl(item.icon)} alt="" aria-hidden="true" className="w-14 h-14" loading="lazy" />
                   <span className="font-heading text-4xl text-slate-gray/30 group-hover:text-muted-gold/50 transition-colors duration-500">
                     {item.number}
                   </span>

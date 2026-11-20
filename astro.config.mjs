@@ -1,83 +1,28 @@
 // @ts-check
+// Plain static website: `npm run build` writes finished HTML, CSS, JS and
+// media into dist/, which is uploaded as-is to Xneelo (public_html).
+// No Wix, no server code (apart from the small contact.php form mailer).
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import cloudProviderFetchAdapter from "@wix/cloud-provider-fetch-adapter";
-import wix from "@wix/astro";
-import monitoring from "@wix/monitoring-astro";
 import react from "@astrojs/react";
-import sourceAttrsPlugin from "@wix/babel-plugin-jsx-source-attrs";
-import dynamicDataPlugin from "@wix/babel-plugin-jsx-dynamic-data";
-import customErrorOverlayPlugin from "./vite-error-overlay-plugin.js";
-import postcssPseudoToData from "@wix/postcss-pseudo-to-data";
 
-const isBuild = process.env.NODE_ENV == "production";
+// SITE_BASE lets the same code run in a sub-folder for the GitHub preview
+// (e.g. /charishub-website/). On Xneelo it is the site root "/".
+const base = process.env.SITE_BASE || "/";
 
-// https://astro.build/config
 export default defineConfig({
-  output: "server",
-  integrations: [
-    {
-      name: "framewire",
-      hooks: {
-        "astro:config:setup": ({ injectScript, command }) => {
-          if (command === "dev") {
-            injectScript(
-              "page",
-              `import loadFramewire from "framewire.js";
-              loadFramewire(true);`
-            );
-          }
-        },
-      },
-    },
-    tailwind(),
-    wix({
-      htmlEmbeds: isBuild,
-      auth: true,
-    }),
-    ...(isBuild ? [monitoring()] : []),
-    react(isBuild ? {} : {
-      babel: { plugins: [sourceAttrsPlugin, dynamicDataPlugin] },
-    }),
-  ],
-  vite: {
-    plugins: [customErrorOverlayPlugin()],
-    cacheDir: 'node_modules/.cache/.vite',
-    optimizeDeps: {
-      include: [
-        'react',
-        'react-dom',
-        'zustand',
-        'framer-motion',
-        'date-fns',
-        'clsx',
-        'class-variance-authority',
-        'tailwind-merge',
-        '@radix-ui/*',
-        '@wix/*',
-        'zod',
-      ],
-    },
-    css: !isBuild ? {
-      postcss: {
-        plugins: [
-          postcssPseudoToData(),
-        ],
-      },
-    } : undefined,
+  output: "static",
+  site: "https://www.rcacharisma.com",
+  base,
+  trailingSlash: "ignore",
+  build: {
+    format: "directory",
   },
-  ...(isBuild && { adapter: cloudProviderFetchAdapter({}) }),
+  integrations: [tailwind(), react()],
+  vite: {
+    cacheDir: "node_modules/.cache/.vite",
+  },
   devToolbar: {
     enabled: false,
   },
-  image: {
-    domains: ["static.wixstatic.com"],
-  },
-  server: {
-    allowedHosts: true,
-    host: true,
-  },
-  security: {
-    checkOrigin: false
-  }
 });

@@ -9,7 +9,7 @@
     "$date": "2026-09-16T18:38:14.645Z"
    },
    "ministry": "",
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_50ab780f631d42a6a8dc26acfb04b2a0~mv2.jpg",
+   "profilePhoto": "/media/dd740b_50ab780f631d42a6a8dc26acfb04b2a0.jpg",
    "_updatedDate": {
     "$date": "2026-09-16T18:44:46.662Z"
    }
@@ -22,7 +22,7 @@
    "_createdDate": {
     "$date": "2026-09-16T18:38:14.644Z"
    },
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_c8f26e93ebbf45299a1781dde1d32144~mv2.jpg",
+   "profilePhoto": "/media/dd740b_c8f26e93ebbf45299a1781dde1d32144.jpg",
    "_updatedDate": {
     "$date": "2026-09-29T05:45:11.636Z"
    }
@@ -35,7 +35,7 @@
    "_createdDate": {
     "$date": "2026-09-16T18:38:14.643Z"
    },
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_36752a5996e04b4b9dd2c5b6a4cc3294~mv2.jpg",
+   "profilePhoto": "/media/dd740b_36752a5996e04b4b9dd2c5b6a4cc3294.jpg",
    "_updatedDate": {
     "$date": "2026-09-29T05:45:11.707Z"
    }
@@ -48,7 +48,7 @@
    "_createdDate": {
     "$date": "2026-09-16T18:38:14.642Z"
    },
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_3fb71af730ab4b4e8d817122215f25d2~mv2.jpg",
+   "profilePhoto": "/media/dd740b_3fb71af730ab4b4e8d817122215f25d2.jpg",
    "_updatedDate": {
     "$date": "2026-09-21T18:30:06.518Z"
    }
@@ -61,7 +61,7 @@
    "_createdDate": {
     "$date": "2026-09-16T18:38:14.641Z"
    },
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_392331d9b9e746caa5a77c6f5ff7b949~mv2.jpg",
+   "profilePhoto": "/media/dd740b_392331d9b9e746caa5a77c6f5ff7b949.jpg",
    "_updatedDate": {
     "$date": "2026-09-21T18:30:06.518Z"
    }
@@ -74,7 +74,7 @@
    "_createdDate": {
     "$date": "2026-09-16T18:38:14.640Z"
    },
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_7c036852a341468a8a0551026fdf460f~mv2.jpg",
+   "profilePhoto": "/media/dd740b_7c036852a341468a8a0551026fdf460f.jpg",
    "_updatedDate": {
     "$date": "2026-09-21T18:30:06.518Z"
    }
@@ -87,7 +87,7 @@
    "_createdDate": {
     "$date": "2026-09-16T18:38:14.639Z"
    },
-   "profilePhoto": "https://static.wixstatic.com/media/dd740b_e02beb5e9ad845fabe1202cb8f1a1908~mv2.jpg",
+   "profilePhoto": "/media/dd740b_e02beb5e9ad845fabe1202cb8f1a1908.jpg",
    "_updatedDate": {
     "$date": "2026-09-21T18:30:06.518Z"
    }
@@ -96,7 +96,7 @@
  "ministries": [
   {
    "name": "Deacons",
-   "photo": "wix:image://v1/dd740b_9b8d16c259b64086a5ec6fb63d968a5d~mv2.png/Deacons.png#originWidth=602&originHeight=432",
+   "photo": "/media/dd740b_9b8d16c259b64086a5ec6fb63d968a5d.png#originWidth=602&originHeight=432",
    "description": "Serving the church's practical needs and supporting the leadership in caring for the congregation.",
    "_id": "41352dac-8336-4920-989e-6ea33b446f2e",
    "_createdDate": {
@@ -109,7 +109,7 @@
   },
   {
    "name": "Audio Visual Ministry",
-   "photo": "wix:image://v1/dd740b_f7b25e3bf0f34b9387ea6a7bfa67d198~mv2.jpg/Audio%20Visual%20Ministry_edited.jpg#originWidth=569&originHeight=385",
+   "photo": "/media/dd740b_f7b25e3bf0f34b9387ea6a7bfa67d198.jpg#originWidth=569&originHeight=385",
    "description": "Managing sound, media, and technical support to help every service run smoothly.",
    "_id": "02f7f0ce-284c-48d4-a02c-34a532350935",
    "_createdDate": {
@@ -122,7 +122,7 @@
   },
   {
    "name": "Ladies Ministry",
-   "photo": "wix:image://v1/dd740b_4d0f4ffeb69a4f00a1cfdb71fa87157c~mv2.png/Ladies%20Ministry.png#originWidth=606&originHeight=512",
+   "photo": "/media/dd740b_4d0f4ffeb69a4f00a1cfdb71fa87157c.png#originWidth=606&originHeight=512",
    "description": "A fellowship of women in the church growing together in faith and service.",
    "_id": "4248449a-a8b5-4374-8c20-557793aa794a",
    "_createdDate": {
@@ -135,7 +135,7 @@
   },
   {
    "name": "Youth Ministry",
-   "photo": "wix:image://v1/dd740b_35feb6b5dcb14c7ab59663f9a6cec541~mv2.png/Youth%20Ministry.png#originWidth=556&originHeight=431",
+   "photo": "/media/dd740b_35feb6b5dcb14c7ab59663f9a6cec541.png#originWidth=556&originHeight=431",
    "description": "Discipling and equipping the youth of our church in their walk with Christ.",
    "_id": "a99ee385-9e5a-4105-9a80-0805675546ae",
    "_createdDate": {
@@ -148,7 +148,7 @@
   },
   {
    "name": "Sunday School Ministry",
-   "photo": "wix:image://v1/dd740b_805c17e38ce7489a92c99d1f4539dd0a~mv2.png/Sunday%20School%20Ministry.png#originWidth=651&originHeight=472",
+   "photo": "/media/dd740b_805c17e38ce7489a92c99d1f4539dd0a.png#originWidth=651&originHeight=472",
    "description": "Teaching our children the truths of Scripture in a way they can understand and grow from.",
    "_id": "832de887-107c-48dd-b1fc-b5531109212e",
    "_createdDate": {
@@ -161,7 +161,7 @@
   },
   {
    "name": "Worship Ministry",
-   "photo": "wix:image://v1/dd740b_98fbe4a79f5d40e999d508cf62f8084a~mv2.png/Worship%20Ministry.png#originWidth=592&originHeight=487",
+   "photo": "/media/dd740b_98fbe4a79f5d40e999d508cf62f8084a.png#originWidth=592&originHeight=487",
    "description": "Leading the congregation in heartfelt worship through music and song.",
    "_id": "6cd32a08-5cff-4c29-a33d-efe6e4c3b056",
    "_createdDate": {
@@ -174,7 +174,7 @@
   },
   {
    "name": "Missions and Outreach Ministry",
-   "photo": "wix:image://v1/dd740b_5ef75968d1cd401ea3b646af06e24075~mv2.png/Missions%20and%20Outreach%20Ministry.png#originWidth=602&originHeight=536",
+   "photo": "/media/dd740b_5ef75968d1cd401ea3b646af06e24075.png#originWidth=602&originHeight=536",
    "description": "Sharing the Gospel and serving those in need in our community and beyond.",
    "_id": "f9e8499a-2301-4071-bc81-edea20afcb6f",
    "_createdDate": {
@@ -195,7 +195,7 @@
    "_updatedDate": {
     "$date": "2026-09-15T13:27:42.812Z"
    },
-   "youtubeUrl": "https://video.wixstatic.com/video/dd740b_f31142a97ff247ea8c49728919a4fd82/file",
+   "youtubeUrl": "/media/dd740b_f31142a97ff247ea8c49728919a4fd82.mp4",
    "title": "Candlelight Worship Service"
   }
  ],
@@ -224,7 +224,7 @@
    "_updatedDate": {
     "$date": "2026-09-21T17:34:03.695Z"
    },
-   "eventImage": "https://static.wixstatic.com/media/dd740b_b372903a55f54d6a8ac445d6ccfafc5c~mv2.jpg",
+   "eventImage": "/media/dd740b_b372903a55f54d6a8ac445d6ccfafc5c.jpg",
    "eventDate": "2026-12-25",
    "eventTime": "8:00 AM",
    "eventDescription": "Join us as we celebrate the birth of our Lord and Savior Jesus Christ in a special Christmas Day service."
@@ -239,7 +239,7 @@
    "_updatedDate": {
     "$date": "2026-09-27T11:20:34.087Z"
    },
-   "eventImage": "https://static.wixstatic.com/media/dd740b_42c350a3f93746baad502813c0729ca1~mv2.jpg",
+   "eventImage": "/media/dd740b_42c350a3f93746baad502813c0729ca1.jpg",
    "eventDate": "2026-12-31",
    "eventTime": "7:00 PM",
    "eventDescription": "Close out the year in prayer and worship together as we welcome in the new year."
@@ -254,7 +254,7 @@
    "_updatedDate": {
     "$date": "2026-09-21T17:34:03.695Z"
    },
-   "eventImage": "https://static.wixstatic.com/media/dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg",
+   "eventImage": "/media/dd740b_709c57d3cae44e4a9e7e6bace832bbc5.jpg",
    "eventDate": "2026-12-22",
    "eventDescription": "Join us for a special evening of carols by candlelight, celebrating the season ahead of Christmas. Date to be confirmed (pencilled in for 22–23 December)."
   },
@@ -268,7 +268,7 @@
    "_updatedDate": {
     "$date": "2026-09-21T18:32:31.096Z"
    },
-   "eventImage": "https://static.wixstatic.com/media/dd740b_c530c0b0fef24d8fa09621fa04f16474~mv2.jpg",
+   "eventImage": "/media/dd740b_c530c0b0fef24d8fa09621fa04f16474.jpg",
    "eventDate": "2026-12-11",
    "eventDescription": "Our Sunday School children present their end-of-year Christmas play. Date to be confirmed (pencilled in for two weeks before Christmas)."
   }
@@ -363,7 +363,7 @@
  "photogallery": [
   {
    "eventName": "congregation formal",
-   "image": "wix:image://v1/dd740b_081263ba8b1e485c9bfbf6ab6422596e~mv2.jpeg/victor%20preaching.jpeg#originWidth=853&originHeight=1280",
+   "image": "/media/dd740b_081263ba8b1e485c9bfbf6ab6422596e.jpeg#originWidth=853&originHeight=1280",
    "description": "",
    "_id": "941b7cc9-c64b-462a-afe8-10d0f19b6923",
    "_createdDate": {
@@ -376,7 +376,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "wix:image://v1/dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg/congregation%20in%20church.jpeg#originWidth=1280&originHeight=853",
+   "image": "/media/dd740b_48e235c1e9954f4ca7bf708f70d31ba7.jpeg#originWidth=1280&originHeight=853",
    "description": "",
    "_id": "22b1402f-7a51-4f2d-85fe-cfbacbdec995",
    "_createdDate": {
@@ -388,7 +388,7 @@
    "title": "congregation formal 27"
   },
   {
-   "image": "wix:image://v1/dd740b_48e235c1e9954f4ca7bf708f70d31ba7~mv2.jpeg/congregation%20in%20church.jpeg#originWidth=1280&originHeight=853",
+   "image": "/media/dd740b_48e235c1e9954f4ca7bf708f70d31ba7.jpeg#originWidth=1280&originHeight=853",
    "_id": "dd913f82-39b4-49c4-b15f-7f46911a242f",
    "_createdDate": {
     "$date": "2026-09-25T18:53:07.230Z"
@@ -400,7 +400,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_c7402f3668714e96a33b791e54e9ca20~mv2.jpg",
+   "image": "/media/dd740b_c7402f3668714e96a33b791e54e9ca20.jpg",
    "description": "First minister of the congregation Charisma, established Oct 29 1972. Earlier, on the 4th of Oct 1967, the first place of worship was dedicated at 27th Ivor Street, Laudium. On the 29th of Apr 1971 the present church complex was inaugurated. On returning to Charisma, the Charisma Evangelism Council was formed on Sept 21 1996 and the vision Laudium a mission field was born and Chapel Hill was developed. On the 1st of Aug 1997 the Church assisted in the establishment of Excel to help meet the para-medical needs of the people.",
    "_id": "5983ef4b-05dc-4737-91c8-118d7a816662",
    "_createdDate": {
@@ -414,7 +414,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_d414a7deae4e42f1967963a334b8bd7f~mv2.jpg",
+   "image": "/media/dd740b_d414a7deae4e42f1967963a334b8bd7f.jpg",
    "description": "First missionary to the Indian people as minister to the Northern Transvaal region. He was stationed as pastor on the 16th of April 1965 he baptised sister Angeline Naidoo, the first member of the Transvaal congregation of the Indian Reformed Church in the Pretoria region.",
    "_id": "80994003-7ebd-4f3f-9733-4f5f6895a0f4",
    "_createdDate": {
@@ -428,7 +428,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_6af4ad7ef33d466da9b423b5b318d61e~mv2.jpg",
+   "image": "/media/dd740b_6af4ad7ef33d466da9b423b5b318d61e.jpg",
    "description": "First missionary of the Dutch Reformed Church called to reach out to the Indian people of Transvaal. He gave guidance and assistance to the DRC Youth who reached out to the people of Prinsloo Street and Marabastad in Pretoria since 10 June 1956. He was stationed in Johannesburg and initiated the official mission work in Pretoria.",
    "_id": "df26e4fe-77bd-4457-a2a4-b96be483f1b2",
    "_createdDate": {
@@ -442,7 +442,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_efb0f4d38a35458395eab19bf945e311~mv2.jpg",
+   "image": "/media/dd740b_efb0f4d38a35458395eab19bf945e311.jpg",
    "description": "During his ministry in Charisma the RCA Synod met for its fourth yearly meeting in Laudium 2-7 October 1990. At this time the first Hymnbook, Hymns and Spiritual Songs, was officially adopted for use in the RCA. At the same event the Laudium Declaration, signifying the evangelical thrust of the RCA, was unanimously adopted by the church.",
    "_id": "4b33ba7f-1739-4fcb-9c20-19a2d08b7a73",
    "_createdDate": {
@@ -456,7 +456,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_785f2ae7cb8344eab2498d3d7e0b716b~mv2.jpg",
+   "image": "/media/dd740b_785f2ae7cb8344eab2498d3d7e0b716b.jpg",
    "description": "For the first time in the history of Charisma, a second minister could be called. His call made it possible to increase the missionary thrust of the congregation. During 1998 the vision of Charisma further developed to Caring for one another and the world.",
    "_id": "5230e2ce-b7c6-40a8-9675-7923e4190086",
    "_createdDate": {
@@ -470,7 +470,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_4a056f01330f4c1cb70d97574897a28f~mv2.jpg",
+   "image": "/media/dd740b_4a056f01330f4c1cb70d97574897a28f.jpg",
    "description": "During his ministry the Reformed Church in Africa passed through the very painful period of the demise of apartheid and the stress of political change with its resultant effect upon the local congregation. He introduced the congregation to the tentmaking ministry.",
    "_id": "03a85081-33d9-4d4c-a997-824563fbe668",
    "_createdDate": {
@@ -484,7 +484,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_7d58aacaa1ba4dd0a3bfeb69f462c143~mv2.jpg",
+   "image": "/media/dd740b_7d58aacaa1ba4dd0a3bfeb69f462c143.jpg",
    "description": "",
    "_id": "df3299fb-ff73-4d06-a9a3-998563f3f122",
    "_createdDate": {
@@ -497,7 +497,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_15b3cbb184c140c38d07a9e786617989~mv2.jpg",
+   "image": "/media/dd740b_15b3cbb184c140c38d07a9e786617989.jpg",
    "description": "",
    "_id": "64b97adc-ac1a-472e-8bcc-08b7e42ecb89",
    "_createdDate": {
@@ -510,7 +510,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_77605228cc974bf5813b6ad0dc09f9ad~mv2.jpg",
+   "image": "/media/dd740b_77605228cc974bf5813b6ad0dc09f9ad.jpg",
    "description": "",
    "_id": "d4dbe968-36b3-4db2-9051-61068894defa",
    "_createdDate": {
@@ -523,7 +523,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_808c3048741343c784e6c2f028d4c309~mv2.jpg",
+   "image": "/media/dd740b_808c3048741343c784e6c2f028d4c309.jpg",
    "description": "",
    "_id": "08f7fe82-192e-4f06-8c60-f4ad3d641fad",
    "_createdDate": {
@@ -536,7 +536,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_572dafd051614841a6c7afec043b7459~mv2.jpg",
+   "image": "/media/dd740b_572dafd051614841a6c7afec043b7459.jpg",
    "description": "",
    "_id": "63562c03-d5da-42ee-ad92-6b75874edfa2",
    "_createdDate": {
@@ -549,7 +549,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_6e561265d47a4cf781d7cc2bc2ccd817~mv2.jpg",
+   "image": "/media/dd740b_6e561265d47a4cf781d7cc2bc2ccd817.jpg",
    "description": "",
    "_id": "b43e0f63-b6ec-4490-a32c-c4266d20023b",
    "_createdDate": {
@@ -562,7 +562,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_7b53d451e7bf44959e4da50553452416~mv2.jpg",
+   "image": "/media/dd740b_7b53d451e7bf44959e4da50553452416.jpg",
    "description": "",
    "_id": "90090b05-7956-4841-ab36-ab9862f80a7f",
    "_createdDate": {
@@ -575,7 +575,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_b224b1ff255b4c49a872eb1d3b7ffd50~mv2.jpg",
+   "image": "/media/dd740b_b224b1ff255b4c49a872eb1d3b7ffd50.jpg",
    "description": "",
    "_id": "4b58a28e-295a-483e-9384-038bf98dffb2",
    "_createdDate": {
@@ -588,7 +588,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_9804533094f940999c1baff56c2ca580~mv2.jpg",
+   "image": "/media/dd740b_9804533094f940999c1baff56c2ca580.jpg",
    "description": "",
    "_id": "86cf43f6-2a56-46cd-a5f9-94d845f2979b",
    "_createdDate": {
@@ -601,7 +601,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_3c25d366d9ab4439a3e26d5823399e61~mv2.jpg",
+   "image": "/media/dd740b_3c25d366d9ab4439a3e26d5823399e61.jpg",
    "description": "",
    "_id": "2a6ebc6f-dbd4-436a-93fc-be56d8df242a",
    "_createdDate": {
@@ -614,7 +614,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_3083fc234e654be4b5b0277530479eed~mv2.jpg",
+   "image": "/media/dd740b_3083fc234e654be4b5b0277530479eed.jpg",
    "description": "",
    "_id": "2cf3f2d6-d388-4b65-8738-c31c263cbfba",
    "_createdDate": {
@@ -627,7 +627,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_d56bb3c7fb244a16a749a35f04ed05c2~mv2.jpg",
+   "image": "/media/dd740b_d56bb3c7fb244a16a749a35f04ed05c2.jpg",
    "description": "",
    "_id": "0d5c80ec-ee1d-48b0-a073-6dda02c9cf36",
    "_createdDate": {
@@ -640,7 +640,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_4f220ebd6dc44a8396def822d60df056~mv2.jpg",
+   "image": "/media/dd740b_4f220ebd6dc44a8396def822d60df056.jpg",
    "description": "",
    "_id": "a993cdd7-6964-4f1d-84e7-0af476e84992",
    "_createdDate": {
@@ -653,7 +653,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_709c57d3cae44e4a9e7e6bace832bbc5~mv2.jpg",
+   "image": "/media/dd740b_709c57d3cae44e4a9e7e6bace832bbc5.jpg",
    "description": "",
    "_id": "d9bdfb0e-9637-45d4-8343-96e78d93f18d",
    "_createdDate": {
@@ -666,7 +666,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_9cb59c7844d04d829177714981ffb4bd~mv2.jpg",
+   "image": "/media/dd740b_9cb59c7844d04d829177714981ffb4bd.jpg",
    "description": "",
    "_id": "3aedd7ae-636e-4d28-86f1-ce67da7c45e3",
    "_createdDate": {
@@ -679,7 +679,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_fcb3ea40ed824ff4b468c60b3afd8683~mv2.jpg",
+   "image": "/media/dd740b_fcb3ea40ed824ff4b468c60b3afd8683.jpg",
    "description": "",
    "_id": "7f5da632-ad4c-4374-b639-0cdbb6fc8b18",
    "_createdDate": {
@@ -692,7 +692,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_cc500b7573044dd38bd6739b199e5c65~mv2.jpg",
+   "image": "/media/dd740b_cc500b7573044dd38bd6739b199e5c65.jpg",
    "description": "",
    "_id": "172359f0-d901-492a-b43f-90dd8009b859",
    "_createdDate": {
@@ -705,7 +705,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_26b2f8bc718d4e3ba06c8d747e17e8f2~mv2.jpg",
+   "image": "/media/dd740b_26b2f8bc718d4e3ba06c8d747e17e8f2.jpg",
    "description": "",
    "_id": "a0e2a2c1-e828-434a-860d-043a03256e97",
    "_createdDate": {
@@ -718,7 +718,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_c4b7f31854d04c568296f686280f66d4~mv2.jpg",
+   "image": "/media/dd740b_c4b7f31854d04c568296f686280f66d4.jpg",
    "description": "",
    "_id": "7c39a62f-bd90-4d77-85b1-31615fabac2f",
    "_createdDate": {
@@ -731,7 +731,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_f84b9409cc4242fd9307330dd665bebd~mv2.jpg",
+   "image": "/media/dd740b_f84b9409cc4242fd9307330dd665bebd.jpg",
    "description": "",
    "_id": "a14beea7-83e4-44e5-b0a7-c9b52c4ab210",
    "_createdDate": {
@@ -744,7 +744,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_fd04ae5c61314e4e96a5c8c472ccead9~mv2.jpg",
+   "image": "/media/dd740b_fd04ae5c61314e4e96a5c8c472ccead9.jpg",
    "description": "",
    "_id": "4aa55ff8-3e72-4462-8948-f07e1000cd95",
    "_createdDate": {
@@ -757,7 +757,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_9979cbb7a2864a44af1d4a1d53b1ba3e~mv2.jpg",
+   "image": "/media/dd740b_9979cbb7a2864a44af1d4a1d53b1ba3e.jpg",
    "description": "",
    "_id": "cf5d652d-f6de-4212-b120-b2dd91d15d6a",
    "_createdDate": {
@@ -770,7 +770,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_2532c6005c734602985fb5c63c247c3e~mv2.jpg",
+   "image": "/media/dd740b_2532c6005c734602985fb5c63c247c3e.jpg",
    "description": "",
    "_id": "b37c9fe1-093b-4c4c-a67d-2b536fd87a70",
    "_createdDate": {
@@ -783,7 +783,7 @@
   },
   {
    "eventName": "Missions and random congregational pics",
-   "image": "https://static.wixstatic.com/media/dd740b_a504cce91e254fc887468709d05a308d~mv2.jpg",
+   "image": "/media/dd740b_a504cce91e254fc887468709d05a308d.jpg",
    "description": "",
    "_id": "0f2729f9-9562-4909-b453-267c0c0ea6ca",
    "_createdDate": {
@@ -796,7 +796,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_e726301f92b844f98947521d11758d15~mv2.jpg",
+   "image": "/media/dd740b_e726301f92b844f98947521d11758d15.jpg",
    "description": "",
    "_id": "7f3ac0d3-a2fa-4105-b33e-cdaf16d33c90",
    "_createdDate": {
@@ -809,7 +809,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_76780ea986834d699a00cf103da1bf8a~mv2.jpg",
+   "image": "/media/dd740b_76780ea986834d699a00cf103da1bf8a.jpg",
    "description": "",
    "_id": "dcf4dfde-38ea-4c5a-870b-497598303929",
    "_createdDate": {
@@ -822,7 +822,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_ebc606760046445ba9ced546b038e338~mv2.jpg",
+   "image": "/media/dd740b_ebc606760046445ba9ced546b038e338.jpg",
    "description": "",
    "_id": "5d208dbf-3fec-4434-8b64-ca0e38322bb4",
    "_createdDate": {
@@ -835,7 +835,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_eaee9cc4a3fe461598971d6a226fb465~mv2.jpg",
+   "image": "/media/dd740b_eaee9cc4a3fe461598971d6a226fb465.jpg",
    "description": "",
    "_id": "f3f7280d-5221-4ebe-8749-2773c17c4986",
    "_createdDate": {
@@ -848,7 +848,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_d63558d9cd724cc483ea89731dd78363~mv2.jpg",
+   "image": "/media/dd740b_d63558d9cd724cc483ea89731dd78363.jpg",
    "description": "",
    "_id": "3a3bc810-31c4-4c24-8e6f-5c3440490325",
    "_createdDate": {
@@ -861,7 +861,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_dab95d76464f4136b307548d7307afda~mv2.jpg",
+   "image": "/media/dd740b_dab95d76464f4136b307548d7307afda.jpg",
    "description": "",
    "_id": "d88cf1a2-d5df-4671-beb0-fc6720dbc77a",
    "_createdDate": {
@@ -874,7 +874,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6~mv2.jpg",
+   "image": "/media/dd740b_e2c019f03fa1440792fb30ab4455c6b6.jpg",
    "description": "",
    "_id": "fcc6880d-381a-41ed-aca3-50173ba1180e",
    "_createdDate": {
@@ -887,7 +887,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_f790575bd91e4b8fa5763ca062a4394f~mv2.jpg",
+   "image": "/media/dd740b_f790575bd91e4b8fa5763ca062a4394f.jpg",
    "description": "",
    "_id": "06ccfccc-7cef-4c7f-aeb7-10ea630ebcc1",
    "_createdDate": {
@@ -900,7 +900,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_6e0ed822f447479b9c69ef5d3ad661bc~mv2.jpg",
+   "image": "/media/dd740b_6e0ed822f447479b9c69ef5d3ad661bc.jpg",
    "description": "",
    "_id": "5729a535-fad0-4c99-9dc0-166422b6d93a",
    "_createdDate": {
@@ -913,7 +913,7 @@
   },
   {
    "eventName": "History",
-   "image": "https://static.wixstatic.com/media/dd740b_c43ea2f2e1044754aa473020a5a48a83~mv2.jpg",
+   "image": "/media/dd740b_c43ea2f2e1044754aa473020a5a48a83.jpg",
    "description": "",
    "_id": "7c57bbc8-46bc-464f-b3f5-f40f22699bf0",
    "_createdDate": {
@@ -926,7 +926,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "https://static.wixstatic.com/media/dd740b_171668057d28415f83785fe82bfa4bd5~mv2.jpg",
+   "image": "/media/dd740b_171668057d28415f83785fe82bfa4bd5.jpg",
    "description": "",
    "_id": "4e290cfa-35ff-447f-9744-87f3c17d94f6",
    "_createdDate": {
@@ -939,7 +939,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "wix:image://v1/dd740b_f84b976e38284ecc80978e20b8947ca7~mv2.png/car%20building.png#originWidth=632&originHeight=326",
+   "image": "/media/dd740b_f84b976e38284ecc80978e20b8947ca7.png#originWidth=632&originHeight=326",
    "description": "",
    "_id": "daad3127-489d-4ff1-b409-fe7bf10e9d1d",
    "_createdDate": {
@@ -952,7 +952,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "https://static.wixstatic.com/media/dd740b_72c90f954b1c4e07b2c768b4bfd83a96~mv2.jpg",
+   "image": "/media/dd740b_72c90f954b1c4e07b2c768b4bfd83a96.jpg",
    "description": "",
    "_id": "f62a4c4f-57cc-4798-bb12-5f220e0e2029",
    "_createdDate": {
@@ -965,7 +965,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "https://static.wixstatic.com/media/dd740b_60a5e69835d04a859972f0886900b753~mv2.jpg",
+   "image": "/media/dd740b_60a5e69835d04a859972f0886900b753.jpg",
    "description": "",
    "_id": "edcd33a7-a5c0-4dd1-abc6-c9fb2f9fc5c3",
    "_createdDate": {
@@ -978,7 +978,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "https://static.wixstatic.com/media/dd740b_691dbcf7b4b149ab8ec1490c657241f1~mv2.jpg",
+   "image": "/media/dd740b_691dbcf7b4b149ab8ec1490c657241f1.jpg",
    "description": "",
    "_id": "e358c60a-97d4-4ff6-9e8a-550d3720ec7f",
    "_createdDate": {
@@ -991,7 +991,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "https://static.wixstatic.com/media/dd740b_3e2f82c1fb604cbbb3db6f7d40e43ce8~mv2.jpg",
+   "image": "/media/dd740b_3e2f82c1fb604cbbb3db6f7d40e43ce8.jpg",
    "description": "",
    "_id": "620c289d-3fee-4404-b06c-2570633f74eb",
    "_createdDate": {
@@ -1004,7 +1004,7 @@
   },
   {
    "eventName": "church and times",
-   "image": "https://static.wixstatic.com/media/dd740b_dae12d6e461c41f99e4e5548f0777039~mv2.jpg",
+   "image": "/media/dd740b_dae12d6e461c41f99e4e5548f0777039.jpg",
    "description": "",
    "_id": "f088ea5c-87d5-4d5a-8592-cc17e3a19d8d",
    "_createdDate": {
@@ -1017,7 +1017,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_e7128a151a0c49cbb48ceabdd5cc5886~mv2.jpg",
+   "image": "/media/dd740b_e7128a151a0c49cbb48ceabdd5cc5886.jpg",
    "description": "",
    "_id": "74078420-f33e-42cd-9a59-ab26da1f6cdf",
    "_createdDate": {
@@ -1030,7 +1030,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_d24cf730beae4081a10085eab8b6ea9c~mv2.jpg",
+   "image": "/media/dd740b_d24cf730beae4081a10085eab8b6ea9c.jpg",
    "description": "",
    "_id": "fabd3040-8698-42fe-a481-286f5a7229d4",
    "_createdDate": {
@@ -1043,7 +1043,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_4a8bc96f58224cd3b13cb34b1931efd9~mv2.jpg",
+   "image": "/media/dd740b_4a8bc96f58224cd3b13cb34b1931efd9.jpg",
    "description": "",
    "_id": "d9a5bf84-8e9d-4183-b770-2e882a61049c",
    "_createdDate": {
@@ -1056,7 +1056,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_3785ecbf59b147cfb9fb594ee1d9659d~mv2.jpg",
+   "image": "/media/dd740b_3785ecbf59b147cfb9fb594ee1d9659d.jpg",
    "description": "",
    "_id": "1a847c7f-d54c-435c-996b-bc99a9ce9e2c",
    "_createdDate": {
@@ -1069,7 +1069,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_db8bf2af2fa9482899a969609b183611~mv2.jpg",
+   "image": "/media/dd740b_db8bf2af2fa9482899a969609b183611.jpg",
    "description": "",
    "_id": "79d908c5-b387-44d5-a4cf-f0a5710fe300",
    "_createdDate": {
@@ -1082,7 +1082,7 @@
   },
   {
    "eventName": "congregation formal",
-   "image": "https://static.wixstatic.com/media/dd740b_50a68b4fa8b94bf3880b3a9af84870b9~mv2.jpg",
+   "image": "/media/dd740b_50a68b4fa8b94bf3880b3a9af84870b9.jpg",
    "description": "",
    "_id": "88d397c3-67e3-413f-8425-db99f2e09d35",
    "_createdDate": {

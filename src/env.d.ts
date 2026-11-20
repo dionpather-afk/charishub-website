@@ -1,29 +1,11 @@
-import type { PageMetadata } from "@wix/astro-pages";
-
 /// <reference types="astro/client" />
 /// <reference path="../.astro/types.d.ts" />
-
-declare const Astro: Readonly<import("astro").AstroGlobal>;
+export {};
 
 declare global {
-  interface SDKTypeMode {
-    strict: true;
-  }
-
-  interface ImportMeta {
-    readonly env: ImportMetaEnv;
-  }
-
   interface ImportMetaEnv {
-    readonly BASE_NAME: string;
+    /** "on" lets search engines index the site (only after go-live approval). */
+    readonly SITE_INDEXING?: string;
   }
 }
 
-declare module "react-router-dom" {
-  export interface IndexRouteObject {
-    routeMetadata?: PageMetadata;
-  }
-  export interface NonIndexRouteObject {
-    routeMetadata?: PageMetadata;
-  }
-}

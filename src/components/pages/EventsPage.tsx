@@ -41,8 +41,8 @@ const formatEventDates = (start: string, end: string) => {
 // The RCA Synod is shown as a full-width featured event above the others
 // while it is upcoming. Its CMS entry has no photo, so it uses the Synod
 // banner (1280x720) that is also on the Home page.
-const SYNOD_BANNER_FILE = 'dd740b_c04f61e1a871440f89168edd2c414b95~mv2.jpeg';
-const SYNOD_BANNER_URL = `https://static.wixstatic.com/media/${SYNOD_BANNER_FILE}/v1/fit/w_1280,h_720,q_85,enc_auto/${SYNOD_BANNER_FILE}`;
+const SYNOD_BANNER_FILE = 'dd740b_c04f61e1a871440f89168edd2c414b95.jpeg';
+const SYNOD_BANNER_URL = `/media/${SYNOD_BANNER_FILE}`;
 const SYNOD_BANNER_ALT = 'RCA National Synod 2026, hosted by RCA Charisma, 29 September – 4 October 2026';
 const isUpcomingSynod = (e: Events, today: string) =>
   /synod/i.test(e.eventTitle || '') && (dayOf(e.eventEndDate) || dayOf(e.eventDate)) >= today;

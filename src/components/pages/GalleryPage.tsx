@@ -38,20 +38,19 @@ const DUPLICATE_PHOTO_IDS = new Set([
   'f458ef0b-cdf5-4f11-b6da-79044ce8bd2e', // congregation formal 23 (same as formal 20)
 ]);
 
-// The same Wix file can be stored as "wix:image://v1/<file>/name.jpg#..." or
-// "https://static.wixstatic.com/media/<file>". Compare by the file itself so a
-// photo added twice in different formats only shows once.
+// Compare photos by the file itself (without the "#size" part), so a photo
+// added twice only shows once.
 const getImageKey = (image: string) => {
-  const match = image.match(/^wix:image:\/\/v1\/([^/#]+)/) || image.match(/static\.wixstatic\.com\/media\/([^/?#]+)/);
+  const match = image.match(/^\/media\/([^/?#]+)/);
   return match ? match[1] : image;
 };
 
-// Grid thumbnails: ask Wix's image service for a ~600px-wide copy instead of
-// the full original (the full image is only loaded when a photo is opened).
+// Grid thumbnails: a ~600px-wide copy made at build time (tools/make-images.mjs);
+// the full original is only loaded when a photo is opened.
 const getThumbnailUrl = (image: string) => {
   const key = getImageKey(image);
-  if (key === image) return image; // not a Wix media file; use as is
-  return `https://static.wixstatic.com/media/${key}/v1/fit/w_600,h_900,q_80,enc_auto/${key}`;
+  if (key === image) return image; // not one of our media files; use as is
+  return `/media/w600/${key}`;
 };
 
 // A grid photo that only downloads when it nears the screen. Until then it

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { mediaUrl } from '@/lib/media';
 import { motion } from 'framer-motion';
 import { Calendar, User } from 'lucide-react';
 import { format } from 'date-fns';
@@ -9,9 +10,9 @@ import { Sermons } from '@/entities';
 import { Image } from '@/components/ui/image';
 
 // Main Sermons picture: sermons1.jpeg (1536x1024), Media Manager folder "Nags 26sept2026".
-const SERMONS_PHOTO_FILE = 'dd740b_31654a43f9cc4113891b5ed93ea46d89~mv2.jpeg';
+const SERMONS_PHOTO_FILE = 'dd740b_31654a43f9cc4113891b5ed93ea46d89.jpeg';
 const sermonsPhotoUrl = (w: number) =>
-  `https://static.wixstatic.com/media/${SERMONS_PHOTO_FILE}/v1/fit/w_${w},h_${Math.round((w * 2) / 3)},q_85,enc_auto/${SERMONS_PHOTO_FILE}`;
+  `/media/${SERMONS_PHOTO_FILE}`;
 
 export default function SermonsPage() {
   const [sermons, setSermons] = useState<Sermons[]>([]);
@@ -47,7 +48,7 @@ export default function SermonsPage() {
     return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
   };
 
-  const isDirectVideoFile = (url?: string) => !!url && !getYouTubeEmbedUrl(url) && (url.includes('video.wixstatic.com') || /\.(mp4|webm|mov)$/i.test(url));
+  const isDirectVideoFile = (url?: string) => !!url && !getYouTubeEmbedUrl(url) && /\.(mp4|webm|mov)$/i.test(url);
 
   return (
     <div className="min-h-screen bg-off-white">
@@ -72,7 +73,7 @@ export default function SermonsPage() {
             <div className="mt-10 max-w-6xl mx-auto rounded-2xl overflow-hidden border-4 border-off-white/20">
               <Image
                 src={sermonsPhotoUrl(1536)}
-                srcSet={[640, 1024, 1536].map((w) => `${sermonsPhotoUrl(w)} ${w}w`).join(', ')}
+                srcSet={`${mediaUrl(sermonsPhotoUrl(1536))} 1536w`}
                 sizes="(min-width: 1250px) 1152px, calc(100vw - 48px)"
                 width={1536}
                 height={1024}
@@ -109,7 +110,7 @@ export default function SermonsPage() {
                       <div className="aspect-video">
                         {selectedSermon.youtubeUrl && isDirectVideoFile(selectedSermon.youtubeUrl) ? (
                           <video
-                            src={selectedSermon.youtubeUrl}
+                            src={mediaUrl(selectedSermon.youtubeUrl)}
                             title={selectedSermon.title}
                             className="w-full h-full"
                             controls

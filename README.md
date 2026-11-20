@@ -1,147 +1,46 @@
-# Wixstro - Wix Astro Template
+# RCA Charisma website
 
-A modern, full-featured Wix Astro template built with React, TypeScript, and Tailwind CSS. This template provides a solid foundation for building dynamic, interactive websites with Wix's powerful ecosystem.
+The website of RCA Charisma (Reformed Church in Africa, Laudium, Pretoria),
+built and maintained by TLC (Talent Learn Consult).
 
-## 🚀 Features
+**GitHub is the source of truth.** The site is a plain static website hosted
+on Xneelo. It no longer depends on Wix in any way.
 
-- **Astro Framework** - Modern static site generator with server-side rendering
-- **React Integration** - Full React support with JSX components
-- **TypeScript** - Type-safe development experience
-- **Tailwind CSS** - Utility-first CSS framework with custom components
-- **Wix Integration** - Seamless integration with Wix services and APIs
-- **Modern UI Components** - Radix UI components with custom styling
-- **Authentication** - Built-in member authentication and protected routes
-- **CMS Integration** - Content management system integration
-- **Client-side Routing** - React Router for seamless navigation
-- **Responsive Design** - Mobile-first responsive design
-- **Testing** - Vitest testing framework setup
-- **Development Tools** - ESLint, TypeScript checking, and more
+## How it is built
 
-## 🛠️ Tech Stack
+| Part | Where |
+|---|---|
+| Pages and design | `src/components/pages/*.tsx` (React + Tailwind, built with Astro) |
+| Church content (team, ministries, events, sermons, gallery, giving, reading plan) | `src/data/cms.json` |
+| Photos, icons, video | `public/media/` (copied 1:1 from the old Wix media library) |
+| Contact form mailer | `public/contact.php` (emails the form; nothing is stored) |
+| Server settings for Xneelo | `public/.htaccess` |
+| Search titles and descriptions | `src/lib/seo.ts` |
 
-- **Framework**: Astro 5.8.0
-- **Frontend**: React 18.3.0
-- **Styling**: Tailwind CSS 3.4.14
-- **Language**: TypeScript 5.8.3
-- **UI Components**: Radix UI
-- **State Management**: Zustand
-- **Forms**: React Hook Form with Zod validation
-- **Testing**: Vitest
-- **Build Tool**: Vite
-- **Deployment**: Cloudflare
-
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (version 18 or higher)
-- npm or yarn package manager
-- Wix account and site
-
-### Installation
-
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Set up environment variables**:
-   ```bash
-   npm run env
-   ```
-
-3. **Start development server**:
-   ```bash
-   npm run dev
-   ```
-
-The development server will start and you can view your site at `http://localhost:4321`.
-
-## 📁 Project Structure
-
-```
-main/
-├── src/
-│   ├── components/          # React components
-│   │   ├── ui/             # Reusable UI components
-│   │   ├── Head.tsx        # Page head component
-│   │   └── Router.tsx      # Routing component
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility functions
-│   ├── pages/              # Astro pages
-│   └── styles/             # Global styles
-├── integrations/           # Wix integrations
-│   ├── cms/               # CMS integration
-│   └── members/           # Member authentication
-├── public/                # Static assets
-└── eslint-rules/          # Custom ESLint rules
-```
-
-## 🎨 UI Components
-
-This template includes a comprehensive set of UI components built with Radix UI and styled with Tailwind CSS:
-
-- **Layout**: Accordion, Collapsible, Tabs, Sheet
-- **Forms**: Input, Select, Checkbox, Radio Group, Switch
-- **Navigation**: Navigation Menu, Menubar, Breadcrumb
-- **Feedback**: Alert, Toast, Progress, Skeleton
-- **Overlays**: Dialog, Popover, Tooltip, Hover Card
-- **Data Display**: Table, Card, Badge, Avatar
-- **Interactive**: Button, Toggle, Slider, Command
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run release` - Release to Wix
-- `npm run env` - Pull environment variables
-- `npm run check` - Type check with Astro
-- `npm run test:run` - Run tests
-- `npm install` - Install dependencies
-
-## 🧪 Testing
-
-The project includes Vitest for testing:
+## Everyday commands
 
 ```bash
-npm run test:run
+npm ci                 # install
+npm run dev            # local preview at http://localhost:4321
+npm run build          # makes the finished site in dist/ (upload dist/ to Xneelo public_html)
 ```
 
-## 📱 Responsive Design
+Build settings:
+- `SITE_BASE=/charishub-website/` builds for the GitHub Pages preview sub-folder. On Xneelo it's left empty.
+- `SITE_INDEXING=on` lets Google index the site. The Wix site was set to "noindex". Only switch this on after go-live approval.
 
-The template is built with a mobile-first approach and includes:
+## Changing content
 
-- Responsive breakpoints
-- Touch-friendly interactions
-- Optimized images
-- Flexible layouts
+Edit `src/data/cms.json`, commit, and redeploy. For a new photo, add the file to `public/media/` and refer to it as `/media/<file name>`.
 
-## 🚀 Deployment
-
-The template is configured for deployment on Cloudflare:
+## Checking a build before sharing a link
 
 ```bash
-npm run build
+node tools/check-site.mjs https://<address>/ ./screenshots
 ```
 
-## 🤝 Contributing
+This checks every page at phone, tablet and desktop size. It reports broken links, missing pictures, script errors and anything that still loads from Wix.
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+## Migration from Wix (Nov 2026)
 
-## 🆘 Support
-
-For support and questions:
-
-- Check the [Wix Developer Documentation](https://dev.wix.com/)
-- Review the [Astro Documentation](https://docs.astro.build/)
-
-
----
-
-Built with ❤️ using Wix Vibe, Astro, and modern web technologies.
+See `migration/RUNBOOK.md`. The full Wix media library backup is in `migration/wix-backup/`.

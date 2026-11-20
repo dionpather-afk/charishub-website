@@ -7,7 +7,7 @@ import { BaseCrudService } from '@/integrations';
 import { TeamBios } from '@/entities';
 import { Image } from '@/components/ui/image';
 
-const PASTOR_AND_WIFE_PHOTO = 'https://static.wixstatic.com/media/dd740b_3baa8776540549479e076af81e81c9c3~mv2.jpg';
+const PASTOR_AND_WIFE_PHOTO = '/media/dd740b_3baa8776540549479e076af81e81c9c3.jpg';
 
 const hasBio = (m: TeamBios) => !!m.biography && m.biography !== 'Bio TBA — full details coming soon.';
 

@@ -6,8 +6,8 @@
  * them without running JavaScript, and kept in sync in the browser when a
  * visitor moves between pages (see Router.tsx).
  *
- * Indexing (robots / noindex) is NOT set here: it stays under the Wix SEO
- * settings until launch.
+ * Indexing (robots / noindex) is set by the SITE_INDEXING build setting
+ * (see src/pages/[...slug].astro).
  */
 import { SITE_CONFIG } from '@/lib/site-config';
 
@@ -20,12 +20,12 @@ export const SITE_URL = 'https://www.rcacharisma.com';
 // Home page church photo (Homepage2), used as the church's picture in the
 // structured data.
 export const CHURCH_IMAGE =
-  'https://static.wixstatic.com/media/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
+  `${SITE_URL}/media/share/rca-charisma-church.jpg`;
 
 // Share-preview picture: the home page photo, Homepage2 (1600x900), cropped
-// by Wix to the 1200x630 share size.
+// to the 1200x630 share size (made by tools/make-share-image.mjs).
 export const DEFAULT_OG_IMAGE =
-  'https://static.wixstatic.com/media/dd740b_290880b8bfe34a809220f31ffecee390~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/rca-charisma-church.jpg';
+  `${SITE_URL}/media/share/rca-charisma-church.jpg`;
 export const DEFAULT_OG_IMAGE_ALT = 'RCA Charisma church in Laudium, Pretoria';
 
 export interface PageSeo {

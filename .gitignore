@@ -41,3 +41,7 @@ docs/*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Generated at build time by tools/make-images.mjs
+public/media/w600/
+public/media/share/
