@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="2 2 124 124" aria-label="Home Fellowship" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g>
+        <defs>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="1c977671-7349-4700-a3cf-5c58c75171ce">
+                <stop stop-color="#102b4e"/>
+                <stop stop-color="#061426" offset="1"/>
+            </linearGradient>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="b6007828-9e83-4e8f-9021-7667043c59bc">
+                <stop stop-color="#fff0b0"/>
+                <stop stop-color="#dcac53" offset=".55"/>
+                <stop stop-color="#a8782e" offset="1"/>
+            </linearGradient>
+            <radialGradient id="7c12f4fa-f99e-4193-8b33-005eb00aa0ab">
+                <stop stop-opacity=".38" stop-color="#2f647a"/>
+                <stop stop-opacity="0" stop-color="#2f647a" offset="1"/>
+            </radialGradient>
+        </defs>
+        <path stroke-width="2" stroke="#ad843d" fill="url(#1c977671-7349-4700-a3cf-5c58c75171ce)" d="M126 31v66c0 16.016-12.984 29-29 29H31c-16.016 0-29-12.984-29-29V31C2 14.984 14.984 2 31 2h66c16.016 0 29 12.984 29 29z"/>
+        <path fill="url(#7c12f4fa-f99e-4193-8b33-005eb00aa0ab)" d="M117 62c0 29.271-23.729 53-53 53S11 91.271 11 62 34.729 9 64 9s53 23.729 53 53"/>
+        <g stroke-linejoin="round" stroke-linecap="round">
+            <path d="m18 56 46-35 46 35m-82-8v53h72V48" stroke="url(#b6007828-9e83-4e8f-9021-7667043c59bc)" stroke-width="3.6" fill="none"/>
+            <path d="M41 100V67h46v33" stroke="#dfbf7b" stroke-width="2" fill="none"/>
+            <path d="M47 84c10-6 18-6 17-1 1-5 9-5 17 1v13c-8-4-16-4-17 0-2-4-10-4-17 0zm17-1v14" stroke="#89d3d7" stroke-width="2.6" fill="none"/>
+            <path fill="#e5bd6e" d="M50 62a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill="#e5bd6e" d="M67 59a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill="#e5bd6e" d="M84 62a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path d="M64 13V8M26 27l-5-5m81 5 5-5" stroke="#b9a773" stroke-width="2" fill="none"/>
+        </g>
+    </g>
+</svg>

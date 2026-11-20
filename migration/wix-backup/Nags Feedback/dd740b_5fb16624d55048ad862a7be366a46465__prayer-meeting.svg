@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="2 2 124 124" aria-label="Prayer Meeting" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" data-type="ugc">
+    <g>
+        <defs>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="72e88d49-c399-47d6-aecb-30721fe40ef2">
+                <stop stop-color="#102b4e"/>
+                <stop stop-color="#061426" offset="1"/>
+            </linearGradient>
+            <linearGradient y2="1" x2="1" y1="0" x1="0" id="1bc27a92-8ed8-4f12-853a-0c8644e815ea">
+                <stop stop-color="#fff0b0"/>
+                <stop stop-color="#dcac53" offset=".55"/>
+                <stop stop-color="#a8782e" offset="1"/>
+            </linearGradient>
+            <radialGradient id="89826920-66d4-489a-81a1-9cd580518bfa">
+                <stop stop-opacity=".38" stop-color="#2f647a"/>
+                <stop stop-opacity="0" stop-color="#2f647a" offset="1"/>
+            </radialGradient>
+        </defs>
+        <path stroke-width="2" stroke="#ad843d" fill="url(#72e88d49-c399-47d6-aecb-30721fe40ef2)" d="M126 31v66c0 16.016-12.984 29-29 29H31c-16.016 0-29-12.984-29-29V31C2 14.984 14.984 2 31 2h66c16.016 0 29 12.984 29 29z"/>
+        <path fill="url(#89826920-66d4-489a-81a1-9cd580518bfa)" d="M117 62c0 29.271-23.729 53-53 53S11 91.271 11 62 34.729 9 64 9s53 23.729 53 53"/>
+        <g stroke-linejoin="round" stroke-linecap="round">
+            <path d="M23 78c12-2 18-10 23-23 2-6 8-5 9 0l1 12 8 9 8-9 1-12c1-5 7-6 9 0 5 13 11 21 23 23" stroke="url(#1bc27a92-8ed8-4f12-853a-0c8644e815ea)" stroke-width="3.6" fill="none"/>
+            <path d="M23 78c11 2 18 11 23 22h36c5-11 12-20 23-22m-60 22-8 8m46-8 8 8" stroke="url(#1bc27a92-8ed8-4f12-853a-0c8644e815ea)" stroke-width="3.6" fill="none"/>
+            <path d="M64 27c-6 9-10 13-10 20a10 10 0 0 0 20 0c0-7-4-11-10-20" stroke="#89d3d7" stroke-width="2.6" fill="none"/>
+            <path d="M64 13V6M46 21l-5-6m41 6 5-6M33 40l-7-2m69 2 7-2" stroke="#b9a773" stroke-width="2" fill="none"/>
+        </g>
+    </g>
+</svg>

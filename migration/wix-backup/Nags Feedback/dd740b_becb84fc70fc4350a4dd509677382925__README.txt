@@ -1,0 +1,5 @@
+RCA Charlsma gathering icons
+
+Six original standalone SVG icons (128 × 128 viewBox) and a responsive preview.html.
+Use each SVG in an <img> tag or as an inline SVG. Colors: navy, gold and soft teal.
+Order: Sunday Service, Sunday School, Prayer Meeting, Home Fellowship, Youth Meeting, Laudium Outreach.
