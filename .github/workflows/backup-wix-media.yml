@@ -1,0 +1,23 @@
+name: Back up Wix media library
+on:
+  push:
+    branches: [migration/xneelo]
+    paths: [migration/wix-media-manifest.tsv, tools/backup-wix-media.mjs]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node tools/backup-wix-media.mjs
+      - name: Commit backup to this branch
+        run: |
+          git config user.name "migration-bot"
+          git config user.email "migration-bot@users.noreply.github.com"
+          git add migration/wix-backup public/media
+          git commit -m "Back up full Wix media library and site media copies" || echo "nothing new"
+          git push
