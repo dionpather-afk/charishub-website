@@ -1,0 +1,47 @@
+name: Deploy to Xneelo
+# Uploads the finished site to the RCA Charisma hosting package on Xneelo.
+# Runs ONLY when started by hand (Actions tab -> "Deploy to Xneelo" -> Run workflow),
+# so nothing ever goes to Xneelo by accident.
+#
+# Needs three repository secrets (Settings -> Secrets and variables -> Actions):
+#   XNEELO_FTP_SERVER    the FTP server name from the Xneelo Control Panel
+#   XNEELO_FTP_USERNAME  the FTP username
+#   XNEELO_FTP_PASSWORD  the FTP password
+#
+# Rollback: re-run this workflow from an earlier commit (Run workflow -> choose
+# the branch/commit), or keep the domain pointed at Wix. Uploading here does not
+# change what visitors to rcacharisma.com see until the DNS is switched.
+on:
+  workflow_dispatch:
+    inputs:
+      indexing:
+        description: "Let Google index the site? (off until Dion approves go-live)"
+        type: choice
+        options: ["off", "on"]
+        default: "off"
+permissions:
+  contents: read
+concurrency:
+  group: deploy-xneelo
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run build
+        env:
+          SITE_INDEXING: ${{ inputs.indexing }}
+      - name: Upload to Xneelo (public_html)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.XNEELO_FTP_SERVER }}
+          username: ${{ secrets.XNEELO_FTP_USERNAME }}
+          password: ${{ secrets.XNEELO_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ./public_html/
+          dangerous-clean-slate: false
