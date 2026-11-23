@@ -43,3 +43,11 @@ Note: Wix only served the church video at 480p, so that's the copy we have.
 - **Email on the domain:** if any @rcacharisma.com mailboxes exist (via Wix/Google Workspace), their MX records must be kept unchanged when the A records move.
 - **Google Analytics:** the Wix site loaded tag G-K1BGZ5TM24 through Wix. It wasn't carried over, because we don't know who owns it and it needs a cookie notice. Needs Dion's decision.
 - **Indexing:** Wix had the site hidden from Google ("noindex"). It stays hidden until Dion decides.
+
+## Attempt 1: 23 Nov 2026, 18:3x–19:13 (rolled back)
+- DNS switched to Xneelo (197.221.14.61) at about 18:35 through the Wix DNS API. Google and Cloudflare resolvers picked it up within minutes.
+- Xneelo's Let's Encrypt certificate had **not** been issued after about 40 minutes, and the control panel has no button to request it. Browsers forced https (the old Wix site had served https), so visitors got a certificate warning.
+- Rolled back at 19:13, restoring the exact Wix records from `dns-backup-wix-2026-11-23_1719.json` (TTL kept at 600 for the next attempt). Public DNS was back on Wix by 19:16.
+- The `.htaccess` https redirect on Xneelo is still commented out ("TEMPORARILY OFF"). Turn it back on once the certificate is active.
+
+**Lesson / next attempt:** sort out the certificate with Xneelo support *before* switching. Ask whether they can issue Let's Encrypt for a domain whose DNS stays at Wix, and whether they can validate it in advance (a DNS TXT record we add at Wix). Otherwise, agree a window where they issue it right after the switch.
