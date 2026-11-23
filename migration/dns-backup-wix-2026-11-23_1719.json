@@ -1,0 +1,13 @@
+{
+  "takenAt": "2026-11-23 Africa/Johannesburg, before any DNS change",
+  "source": "Wix Domain DNS API, GET /domains/v1/dns-zones/rcacharisma.com",
+  "note": "ROLLBACK = put the A and www CNAME records back exactly as below (TTL 3600). Nothing else needs changing.",
+  "dnsZone": {"domainName":"rcacharisma.com","dnssecEnabled":false,"records":[
+    {"type":"A","hostName":"rcacharisma.com","ttl":3600,"values":["185.230.63.107","185.230.63.186","185.230.63.171"]},
+    {"type":"NS","hostName":"rcacharisma.com","ttl":86400,"values":["ns0.wixdns.net","ns1.wixdns.net"]},
+    {"type":"SOA","hostName":"rcacharisma.com","ttl":3600,"values":["ns0.wixdns.net. support.wix.com. 2026061312 10800 3600 1209600 3600"]},
+    {"type":"CNAME","hostName":"en.rcacharisma.com","ttl":3600,"values":["cdn3.wixdns.net"]},
+    {"type":"CNAME","hostName":"www.rcacharisma.com","ttl":3600,"values":["cdn3.wixdns.net"]}
+  ]},
+  "noEmail": "No MX records exist: the domain has no email to protect."
+}
