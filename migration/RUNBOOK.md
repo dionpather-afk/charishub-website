@@ -61,3 +61,10 @@ Note: Wix only served the church video at 480p, so that's the copy we have.
 - Warning gap: about 6 minutes (08:07 to about 08:13).
 - Next: send a contact-form test (needs Dion's OK), clean up the upload zip on the server, keep Wix for 14 days (to 8 Dec 2026), then cancel only the Wix site plan.
 - **Lesson for future clients:** before switching DNS for a hosting-only Xneelo package, agree a manual certificate install with Xneelo live chat, and switch outside their run hours.
+
+## 24 Nov 2026 — SEO and hardening (live)
+- Google indexing approved by Dion. "noindex" removed from all 11 pages, and the default build now allows indexing (`SITE_INDEXING=off` hides the site again).
+- Added `robots.txt` (blocks only /contact.php) and `sitemap.xml` (11 pages).
+- `.htaccess` hardening: Permissions-Policy, Cross-Origin-Opener-Policy, HSTS (max-age 1 day to start; raise to 1 year after a stable month), X-Powered-By removed, hidden and leftover files blocked (403).
+- Deployed by editing files in the Xneelo File Manager. All 13 changed files were checked against the GitHub build by SHA-256: they match exactly.
+- Incident (fixed within minutes): one automated File Editor save wrote the About page into the home `index.html`. Page content was unaffected, because the app builds each page itself; only the page title and description were wrong. It was caught by the hash check and restored from the build. **Lesson:** open each file from the file list (full reload) before editing, and always hash-check after deploying.
