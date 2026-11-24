@@ -31,9 +31,9 @@ const pageSeo = getPageSeo(pagePath);
 const pageUrl = getCanonicalUrl(pagePath);
 const churchJsonLd = toJsonLd(buildChurchJsonLd(SITE_URL, new URL(goldLogo, SITE_URL).href));
 
-// Search engines: the Wix site was set to "noindex" (hidden from Google).
-// We keep that until Dion approves go-live: build with SITE_INDEXING=on to allow indexing.
-const allowIndexing = import.meta.env.SITE_INDEXING === 'on';
+// Search engines: indexing approved by Dion on 24 Nov 2026 (site live on Xneelo).
+// Build with SITE_INDEXING=off to hide the site from Google again.
+const allowIndexing = import.meta.env.SITE_INDEXING !== 'off';
 ---
 
 <html lang="en" class="w-full h-full">

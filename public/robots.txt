@@ -1,0 +1,6 @@
+# RCA Charisma — www.rcacharisma.com
+User-agent: *
+Allow: /
+Disallow: /contact.php
+
+Sitemap: https://www.rcacharisma.com/sitemap.xml

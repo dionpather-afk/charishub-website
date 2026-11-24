@@ -4,7 +4,7 @@ export {};
 
 declare global {
   interface ImportMetaEnv {
-    /** "on" lets search engines index the site (only after go-live approval). */
+    /** "off" hides the site from search engines (indexing is on by default). */
     readonly SITE_INDEXING?: string;
   }
 }

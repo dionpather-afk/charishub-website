@@ -15,10 +15,10 @@ on:
   workflow_dispatch:
     inputs:
       indexing:
-        description: "Let Google index the site? (off until Dion approves go-live)"
+        description: "Let Google index the site? (approved 24 Nov 2026)"
         type: choice
-        options: ["off", "on"]
-        default: "off"
+        options: ["on", "off"]
+        default: "on"
 permissions:
   contents: read
 concurrency:
