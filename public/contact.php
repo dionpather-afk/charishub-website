@@ -8,8 +8,8 @@
  */
 
 // ---- Settings ---------------------------------------------------------------
-// Same inbox the Wix automation used.
-const TO_ADDRESS   = 'developer5@talentlearnconsult.com';
+// Every Contact-page message goes to the church's own inbox.
+const TO_ADDRESS   = 'vicpillay@mweb.co.za';  // church contact (same address shown on the Contact page). Changed 24 Nov 2026 per Dion.
 // Must be a real mailbox / allowed sender on this hosting (set up on Xneelo).
 const FROM_ADDRESS = 'website@rcacharisma.com';
 const FROM_NAME    = 'RCA Charisma Website';
