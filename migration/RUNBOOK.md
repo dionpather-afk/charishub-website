@@ -69,9 +69,21 @@ Note: Wix only served the church video at 480p, so that's the copy we have.
 - Deployed by editing files in the Xneelo File Manager. All 13 changed files were checked against the GitHub build by SHA-256: they match exactly.
 - Incident (fixed within minutes): one automated File Editor save wrote the About page into the home `index.html`. Page content was unaffected, because the app builds each page itself; only the page title and description were wrong. It was caught by the hash check and restored from the build. **Lesson:** open each file from the file list (full reload) before editing, and always hash-check after deploying.
 
-## AEO fix: page text snapshot (24 Nov 2026, preview only, not yet live)
+## AEO fix: page text snapshot (24 Nov 2026) — LIVE since ~12:30 SAST, approved by Dion ("Go live")
 - Problem: pages are drawn by JavaScript, so AI tools and simple crawlers saw an empty page.
 - Fix: `tools/snapshot-pages.py` (run after build: `npm run build && npm run snapshot`) opens each built page in a headless browser and copies the visible text into `<noscript>` in that page's HTML. Visitors see no change.
 - Tested locally: all 11 pages snapshotted (130–488 words each); pages still render at phone and desktop sizes with no JavaScript errors; the snapshot isn't added to the visible page.
 - Preview build now also sets `SITE_INDEXING=off`, so the github.io copy stays out of Google.
 - Rollback: deploy the previous build (xneelo-build branch history) or rebuild without `npm run snapshot`. Only the 11 `index.html` files change.
+- Deployed 24 Nov ~12:25–12:30 SAST:
+  - Uploaded the 11-file zip and extracted it. Xneelo extracts into a subfolder and Copy won't overwrite.
+  - So each live index.html was replaced in the File Editor. Each file was opened by full page load and its old hash checked before saving.
+  - The temporary folder and zip were then deleted from the server.
+- Verified live (SHA-256, first 12 characters): home 83df6f63d8b9, about ec269d300365, contact 7d8c4d78a195, devotionals c94b7514a43e, events 8d3028ff972c, gallery 53c28cc02991, giving f0a28bb52bb2, history fe542ac9950a, leadership a818f1a0de12, ministries 22c0c8ca58fd, sermons f345e4ec9672. All 11 match the build.
+- Production build reproduces the previous live hashes exactly (home 2cd260c1a61e, about 5b4eb24c45a7, sitemap 4bf5cac37c31), which proves only the 11 index.html files changed.
+- Rollback: `releases/rollback-pre-aeo-2026-11-24_1220.zip` on the xneelo-build branch (the previous 11 files).
+- Lessons:
+  - A JS click on the editor's top Save button does nothing; a real click on the bottom Save works.
+  - Xneelo's Extract never overwrites; it creates a folder named after the zip.
+  - WebFetch caches pages for 15 minutes, so re-check with a query string.
+- Note: GitHub Actions is blocked by an account billing lock (24 Nov), so the preview was built locally and pushed to gh-pages.
