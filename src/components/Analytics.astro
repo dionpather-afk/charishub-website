@@ -1,0 +1,69 @@
+---
+// Google Analytics (GA4) for RCA Charisma - property "RCA Charisma Website",
+// stream "RCA Charisma", measurement ID G-K1BGZ5TM24 (the same tag the Wix site
+// used, so visitor history carries on). Owned by Dion's Google account.
+//
+// - Loads only on the real site (rcacharisma.com), never on the preview copy.
+// - Shows a small notice on the first visit. "No thanks" switches Analytics
+//   off for that browser; the choice is remembered.
+// - Google Analytics 4 does not store visitors' IP addresses.
+// Rollback: remove <Analytics /> from src/pages/[...slug].astro and rebuild.
+---
+<script is:inline>
+(function () {
+  var ID = 'G-K1BGZ5TM24';
+  var KEY = 'rca-analytics';
+  var host = location.hostname;
+  var live = host === 'www.rcacharisma.com' || host === 'rcacharisma.com';
+  var choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+
+  function load() {
+    if (!live || window.__rcaGa) return;
+    window.__rcaGa = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+    document.head.appendChild(s);
+  }
+
+  if (choice !== 'no') load();
+
+  if (choice === null) {
+    document.addEventListener('DOMContentLoaded', function () {
+      var bar = document.createElement('div');
+      bar.setAttribute('role', 'region');
+      bar.setAttribute('aria-label', 'Website analytics notice');
+      bar.style.cssText = 'position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:#16284D;color:#fff;border:1px solid #C9A227;border-radius:10px;padding:12px 14px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between';
+      var msg = document.createElement('span');
+      msg.textContent = 'We use Google Analytics to count visits and improve this site. No personal details are collected.';
+      msg.style.cssText = 'flex:1 1 260px';
+      var btns = document.createElement('span');
+      btns.style.cssText = 'display:flex;gap:8px';
+      function btn(label, value, primary) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = label;
+        b.style.cssText = 'cursor:pointer;border-radius:6px;padding:6px 14px;font:600 14px system-ui,sans-serif;border:1px solid #C9A227;' + (primary ? 'background:#C9A227;color:#16284D' : 'background:transparent;color:#fff');
+        b.addEventListener('click', function () {
+          try { localStorage.setItem(KEY, value); } catch (e) {}
+          if (value === 'no' && window.gtag) {
+            window['ga-disable-' + ID] = true;
+          }
+          bar.remove();
+        });
+        return b;
+      }
+      btns.appendChild(btn('OK', 'yes', true));
+      btns.appendChild(btn('No thanks', 'no', false));
+      bar.appendChild(msg);
+      bar.appendChild(btns);
+      document.body.appendChild(bar);
+    });
+  }
+})();
+</script>

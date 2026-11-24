@@ -14,7 +14,7 @@ const ROUTES = ['', 'about', 'leadership', 'history', 'events', 'sermons', 'mini
 // Same screen sizes the Wix site was captured at (migration/harvest/baseline).
 const SIZES = [[375, 812], [768, 1024], [1440, 900]];
 // Outside services the site is meant to use (not Wix).
-const ALLOWED_HOSTS = ['www.google.com', 'maps.google.com', 'maps.gstatic.com', 'www.youtube.com', 'www.youtube-nocookie.com', 'i.ytimg.com', 'fonts.gstatic.com'];
+const ALLOWED_HOSTS = ['www.googletagmanager.com', 'www.google-analytics.com', 'region1.google-analytics.com', 'www.google.com', 'maps.google.com', 'maps.gstatic.com', 'www.youtube.com', 'www.youtube-nocookie.com', 'i.ytimg.com', 'fonts.gstatic.com'];
 
 const base = new URL(BASE);
 const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', args: ['--no-sandbox'] });

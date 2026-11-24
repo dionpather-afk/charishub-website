@@ -3,6 +3,7 @@
 // Wix). Each page gets its own title, description and share-preview tags so
 // WhatsApp, Facebook and search engines see them without running JavaScript.
 import { Head } from "@/components/Head";
+import Analytics from "@/components/Analytics.astro";
 import AppRouter from "@/components/Router";
 import {
   SITE_NAME,
@@ -59,6 +60,7 @@ const allowIndexing = import.meta.env.SITE_INDEXING !== 'off';
     <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
     <meta name="twitter:image:alt" content={DEFAULT_OG_IMAGE_ALT} />
     <script type="application/ld+json" is:inline set:html={churchJsonLd} />
+    <Analytics />
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">
