@@ -51,3 +51,13 @@ Note: Wix only served the church video at 480p, so that's the copy we have.
 - The `.htaccess` https redirect on Xneelo is still commented out ("TEMPORARILY OFF"). Turn it back on once the certificate is active.
 
 **Lesson / next attempt:** sort out the certificate with Xneelo support *before* switching. Ask whether they can issue Let's Encrypt for a domain whose DNS stays at Wix, and whether they can validate it in advance (a DNS TXT record we add at Wix). Otherwise, agree a window where they issue it right after the switch.
+
+## Attempt 2: 24 Nov 2026 — LIVE ON XNEELO ✅
+- What Xneelo support told us (live chat, Jonathan B): Let's Encrypt certificates install automatically four times a day (06:00, 12:00, 16:00, 23:00), and only once DNS has fully propagated. Outside those run hours, support can request a manual install.
+- 08:07: switched the @ and www A records to 197.221.14.61 (TTL 600) through the Wix DNS API. Google and Cloudflare DNS showed the change by 08:07.
+- About 08:13: Xneelo installed the certificate manually. Both https://rcacharisma.com and https://www.rcacharisma.com load securely from Xneelo.
+- 08:15: turned the https/www redirect in `.htaccess` back on.
+- Live check: all 11 pages return 200 with the right titles; 334 of 334 files are present (`.htaccess` 403 and `contact.php` 405 are correct); `rcacharisma.com` redirects to `https://www.rcacharisma.com`.
+- Warning gap: about 6 minutes (08:07 to about 08:13).
+- Next: send a contact-form test (needs Dion's OK), clean up the upload zip on the server, keep Wix for 14 days (to 8 Dec 2026), then cancel only the Wix site plan.
+- **Lesson for future clients:** before switching DNS for a hosting-only Xneelo package, agree a manual certificate install with Xneelo live chat, and switch outside their run hours.
