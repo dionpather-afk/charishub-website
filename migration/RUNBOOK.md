@@ -87,3 +87,13 @@ Note: Wix only served the church video at 480p, so that's the copy we have.
   - Xneelo's Extract never overwrites; it creates a folder named after the zip.
   - WebFetch caches pages for 15 minutes, so re-check with a query string.
 - Note: GitHub Actions is blocked by an account billing lock (24 Nov), so the preview was built locally and pushed to gh-pages.
+
+## 24 Nov 2026 (afternoon): contact form, SPF, Google Analytics
+- Contact form: contact.php now sends to vicpillay@mweb.co.za (the church), not developer5@talentlearnconsult.com. Live file hash ef5f284635dc matches the repo. Test sent 12:37 (addressed to the Rev, from Dion).
+- SPF: Dion approved. A root TXT value `v=spf1 a include:spf.host-h.net ~all` was added at Wix. It sits in the same TXT record as the Google verification value, which is kept. Rollback: remove that value.
+- Google Analytics: reuses the Wix-era property "RCA Charisma Website" (G-K1BGZ5TM24, in Dion's Google account).
+  - It loads only on rcacharisma.com.
+  - A first-visit notice offers OK / No thanks (opt-out is remembered in localStorage).
+  - Live at ~12:55; all 11 pages are hash-verified. Realtime confirmed a visit from Durban.
+  - Rollback: remove the GA script block from the 11 index.html files (rebuild without `<Analytics />`).
+- Monthly report: scheduled task trig_0137p49GnsehznmwbLNEjMBx runs on the 1st of each month at 08:23 SAST in Dion's Chrome. It is a PDF for Dion only and is never sent to the client.
