@@ -24,6 +24,12 @@ jobs:
       - run: npm run build
         env:
           SITE_BASE: /charishub-website/
+          SITE_INDEXING: 'off'   # preview copy must never compete with the live site in Google
+      - name: Page text snapshot for AI tools and crawlers (AEO)
+        run: |
+          pip install playwright==1.* >/dev/null
+          python -m playwright install --with-deps chromium >/dev/null
+          python tools/snapshot-pages.py dist /charishub-website/
       - name: Publish to gh-pages branch
         run: |
           cd dist

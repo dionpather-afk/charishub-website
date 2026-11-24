@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:site": "node tools/check-site.mjs dist",
+    "snapshot": "python3 tools/snapshot-pages.py dist /",
     "prebuild": "node tools/make-images.mjs"
   },
   "dependencies": {

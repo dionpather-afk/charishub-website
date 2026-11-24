@@ -68,3 +68,10 @@ Note: Wix only served the church video at 480p, so that's the copy we have.
 - `.htaccess` hardening: Permissions-Policy, Cross-Origin-Opener-Policy, HSTS (max-age 1 day to start; raise to 1 year after a stable month), X-Powered-By removed, hidden and leftover files blocked (403).
 - Deployed by editing files in the Xneelo File Manager. All 13 changed files were checked against the GitHub build by SHA-256: they match exactly.
 - Incident (fixed within minutes): one automated File Editor save wrote the About page into the home `index.html`. Page content was unaffected, because the app builds each page itself; only the page title and description were wrong. It was caught by the hash check and restored from the build. **Lesson:** open each file from the file list (full reload) before editing, and always hash-check after deploying.
+
+## AEO fix: page text snapshot (24 Nov 2026, preview only, not yet live)
+- Problem: pages are drawn by JavaScript, so AI tools and simple crawlers saw an empty page.
+- Fix: `tools/snapshot-pages.py` (run after build: `npm run build && npm run snapshot`) opens each built page in a headless browser and copies the visible text into `<noscript>` in that page's HTML. Visitors see no change.
+- Tested locally: all 11 pages snapshotted (130–488 words each); pages still render at phone and desktop sizes with no JavaScript errors; the snapshot isn't added to the visible page.
+- Preview build now also sets `SITE_INDEXING=off`, so the github.io copy stays out of Google.
+- Rollback: deploy the previous build (xneelo-build branch history) or rebuild without `npm run snapshot`. Only the 11 `index.html` files change.
